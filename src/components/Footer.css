@@ -1,0 +1,22 @@
+/* Estilo general para el footer */
+footer {
+    background-color: #343a40; /* Color de fondo oscuro */
+    color: #f8f9fa; /* Color de texto claro */
+    padding: 20px 0; /* Espaciado vertical */
+}
+
+/* Estilo para el contenido del footer */
+footer p {
+    margin: 0; /* Elimina márgenes predeterminados */
+    font-size: 0.9rem; /* Tamaño de fuente ligeramente menor */
+}
+
+/* Estilo para el enlace en el footer */
+footer a {
+    color: #007bff; /* Color del enlace */
+    text-decoration: none; /* Elimina subrayado */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}

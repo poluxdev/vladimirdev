@@ -1,0 +1,87 @@
+/* General styling for the app */
+.App {
+  text-align: center;
+  margin: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  /* Fuente decorativa */
+  background-color: #f5f5f5;
+  /* Fondo suave */
+  color: #333333;
+  /* Texto oscuro para buen contraste */
+}
+
+/* Background image for the entire page */
+body {
+  background-image: url('/public/images/favicon.png');
+  background-size: cover;
+  /* La imagen de fondo cubrirá toda la pantalla */
+  background-position: center;
+  /* Centrar la imagen de fondo */
+  background-repeat: no-repeat;
+  /* Evitar que la imagen se repita */
+  background-attachment: fixed;
+  /* Fondo fijo para un efecto de parallax */
+  min-height: 100vh;
+  /* Asegura que el fondo cubra al menos el 100% de la altura de la ventana */
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    background-position: top;
+    /* Ajusta la posición para pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-size: auto 100%;
+    /* Ajusta el tamaño de la imagen para dispositivos móviles */
+    background-position: top;
+    /* Asegura que la imagen se vea bien en pantallas pequeñas */
+  }
+}
+
+/* Estilos para la sección About */
+#about {
+  padding: 50px 0;
+  background-color: #f5f5f5;
+  /* Fondo suave */
+}
+
+#about h2 {
+  font-family: 'Cormorant Garamond', serif;
+  /* Fuente decorativa */
+  font-size: 2.5rem;
+  /* Tamaño del título */
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#about p {
+  font-family: 'Cormorant Garamond', serif;
+  /* Fuente decorativa */
+  font-size: 1.2rem;
+  /* Tamaño del párrafo */
+  color: #000000;
+  /* Color negro fuerte para el texto */
+  line-height: 1.6;
+  /* Espaciado entre líneas */
+  margin-bottom: 20px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  #about h2 {
+    font-size: 2rem;
+    /* Ajuste del título para pantallas pequeñas */
+  }
+
+  #about p {
+    font-size: 1rem;
+    /* Ajuste del texto para pantallas pequeñas */
+  }
+}
