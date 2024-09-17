@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/vladimirdev/static/css/main.cac11cb5.css",
+    "main.js": "/vladimirdev/static/js/main.c08ae65d.js",
+    "static/js/453.a858400f.chunk.js": "/vladimirdev/static/js/453.a858400f.chunk.js",
+    "static/media/favicon.png": "/vladimirdev/static/media/favicon.d92e747bc8ca44038cab.png",
+    "static/media/back.jpg": "/vladimirdev/static/media/back.82f796a6495ef282546a.jpg",
+    "index.html": "/vladimirdev/index.html",
+    "main.cac11cb5.css.map": "/vladimirdev/static/css/main.cac11cb5.css.map",
+    "main.c08ae65d.js.map": "/vladimirdev/static/js/main.c08ae65d.js.map",
+    "453.a858400f.chunk.js.map": "/vladimirdev/static/js/453.a858400f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cac11cb5.css",
+    "static/js/main.c08ae65d.js"
+  ]
+}
