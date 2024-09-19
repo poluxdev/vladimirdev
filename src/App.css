@@ -12,6 +12,7 @@
 
 /* Background image for the entire page */
 body {
+  background-color:#2C3E50;
   background-image: url('/public/images/favicon.png');
   background-size: cover;
   /* La imagen de fondo cubrirá toda la pantalla */
