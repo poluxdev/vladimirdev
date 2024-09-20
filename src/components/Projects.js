@@ -28,7 +28,7 @@ const Projects = () => {
     {
       title: 'El Secreto De Tu Numero Celular',
       description: '¿El numero de tu celular te escogio a ti o tu elegiste tu numero celular?',
-      link: 'https://poluxdev.github.io/casualidadocausalidad/'
+      link: 'https://poluxdev.github.io/celularcausalidad/'
     },
     {
 
