@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Button, Row, Col } from 'react-bootstrap';
 import { Typewriter } from 'react-simple-typewriter';
+import FallingStars from './FallingStars'; // Importa el componente de estrellas fugaces
 import './Hero.css'; 
 
 const Hero = () => {
@@ -22,6 +23,7 @@ const Hero = () => {
 
   return (
     <section className="hero">
+      <FallingStars /> {/* Componente de estrellas fugaces */}
       <Container>
         <Row>
           <Col md={8} className="hero-content">
