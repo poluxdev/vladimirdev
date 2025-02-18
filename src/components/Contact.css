@@ -1,0 +1,54 @@
+/* Contact.css */
+.tiktok-icon {
+    width: 50px;
+    height: 50px;
+    background-size: contain; /* Ajusta la imagen para que se vea bien */
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+    /* Animación de campana y crecimiento */
+    animation: campanaYCrecer 2s ease-in-out infinite;
+  }
+  
+  @keyframes campanaYCrecer {
+    0% {
+      transform: translateX(0) scale(1); /* Empieza en su posición original y tamaño normal */
+    }
+    25% {
+      transform: translateX(-10px) scale(1.2); /* Mueve a la izquierda y crece un poco */
+    }
+    50% {
+      transform: translateX(0) scale(1); /* Vuelve a la posición original y tamaño normal */
+    }
+    75% {
+      transform: translateX(10px) scale(1.2); /* Mueve a la derecha y crece un poco */
+    }
+    100% {
+      transform: translateX(0) scale(1); /* Vuelve a la posición original y tamaño normal */
+    }
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  a {
+    display: block;
+  }
+  
+  /* Contact.css */
+  #tiktok-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black; /* Color del texto */
+    text-shadow: 
+      2px 2px 0px white, 
+      -2px -2px 0px white,  
+      2px -2px 0px white, 
+      -2px 2px 0px white; /* Crea el contorno blanco alrededor del texto */
+  }
+  
+  
