@@ -1,8 +1,9 @@
 /* Estilo general para el footer */
 footer {
-    background-color: #343a40; /* Color de fondo oscuro */
-    color: #f8f9fa; /* Color de texto claro */
+    background-color: #343a40; /* Fondo oscuro */
+    color: #f8f9fa; /* Texto claro */
     padding: 20px 0; /* Espaciado vertical */
+    text-align: center; /* Centrar contenido */
 }
 
 /* Estilo para el contenido del footer */
@@ -11,12 +12,94 @@ footer p {
     font-size: 0.9rem; /* Tamaño de fuente ligeramente menor */
 }
 
-/* Estilo para el enlace en el footer */
+/* Estilo para los enlaces */
 footer a {
     color: #007bff; /* Color del enlace */
     text-decoration: none; /* Elimina subrayado */
+    transition: color 0.3s ease-in-out;
 }
 
 footer a:hover {
     text-decoration: underline; /* Subrayado al pasar el ratón */
+    color: #FFD700; /* Cambio de color en hover */
+}
+
+/* Estilo para los textos animados con los círculos de Perú */
+.animated-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Espacio entre el ícono y el texto */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.animated-text:hover {
+    transform: scale(1.1);
+    color: #FFD700; /* Color dorado */
+}
+
+/* Estilos para los botones de métodos de pago */
+.payment-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.payment-buttons button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.payment-buttons .yape {
+    background-color: #800080; /* Morado */
+}
+
+.payment-buttons .plin {
+    background-color: #008000; /* Verde */
+}
+
+.payment-buttons .binance {
+    background-color: #FFD700; /* Dorado */
+    color: black;
+}
+
+/* Efecto hover en botones */
+.payment-buttons button:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+/* Estilos para el mensaje de agradecimiento */
+.footer-thank-you {
+    font-weight: bold;
+    color: #FFA500;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-thank-you:hover {
+    box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.8);
+}
+
+/* Estilos para las imágenes de los códigos QR */
+.qr-container img {
+    width: 150px; /* Tamaño ajustado */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.qr-container img:hover {
+    transform: scale(1.1);
 }
