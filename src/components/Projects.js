@@ -69,7 +69,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-5">
       <Container>
-        <h2 className="text-center mb-4">Mis Proyectos</h2>
+        <h2 className="text-center mb-4">Proyectos</h2>
         <Row>
           {projects.map((project, index) => (
             <Col key={index} md={4} className="mb-4">
