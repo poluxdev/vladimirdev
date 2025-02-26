@@ -29,11 +29,11 @@ const Footer = () => {
           {/* Donaciones en Perú */}
           <Col md={4} className="text-center mb-3 mb-md-0">
             <h5 className="animated-text" style={{ cursor: "pointer" }}>
-              🔴⚪🔴 ¿Te ayudaron estas herramientas a ver con mayor claridad? 🔴⚪🔴
+              🔴⚪🔴 ¿Te sirvieron estas herramientas? Con tu apoyo, podemos seguir manteniéndolas gratuitas y sin publicidad. 🔴⚪🔴
             </h5>
             <p className="text-light">
-              Con tu apoyo, sigues impulsando el despertar de más mentes.  
-              Cada donación es una semilla para el crecimiento y la expansión del conocimiento.
+              Cada donación es un paso más para expandir el conocimiento y mantener estos recursos accesibles para todos.  
+              Si sientes que este proyecto te ha aportado valor, ayúdame a seguir compartiéndolo con el mundo. 💫  
             </p>
             <div className="d-flex justify-content-center gap-2">
               <Button 
