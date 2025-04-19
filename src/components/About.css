@@ -1,0 +1,24 @@
+.certificado-hover {
+    position: relative;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  .certificado-img {
+    display: none;
+    position: absolute;
+    top: 1.5em;
+    left: 0;
+    width: 300px;
+    max-width: 90vw;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .certificado-hover:hover .certificado-img {
+    display: block;
+  }
+  

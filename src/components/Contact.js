@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-5">
       <Container>
-        <h2 className="text-center">Contacto</h2>
+        <h2 className="text-center">Contacto </h2>
         <Row className="justify-content-center">
           {/* Instagram */}
           <Col md={4} className="text-center">
@@ -26,7 +26,7 @@ const Contact = () => {
           {/* TikTok */}
           <Col md={4} className="text-center">
             <a
-              href="https://www.tiktok.com/@polux212023" // Cambia con tu enlace
+              href="https://www.tiktok.com/@polux_tarot" // Cambia con tu enlace
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: '#000000', textDecoration: 'none', fontSize: '1.5rem' }}

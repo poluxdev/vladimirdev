@@ -27,7 +27,7 @@ const Hero = () => {
       <Container>
         <Row>
           <Col md={8} className="hero-content">
-            <h1>Hola, Soy Vladimir</h1>
+            <h1>Hola, Soy Vladimir </h1>
             <p>
               Soy{' '}
               <span style={{ color: '#39ff14', fontWeight: 'bold' }}>
