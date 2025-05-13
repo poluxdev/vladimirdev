@@ -1,94 +1,103 @@
 /* Estilo general para el footer */
 footer {
-    background-color: #343a40; /* Fondo oscuro */
-    color: #f8f9fa; /* Texto claro */
-    padding: 20px 0; /* Espaciado vertical */
-    text-align: center; /* Centrar contenido */
+    background: linear-gradient(to right, #1c1b2f, #292640); /* Fondo místico morado oscuro */
+    color: #f1f1f1; /* Texto claro */
+    padding: 30px 0;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 3px solid #FFD700; /* línea dorada superior */
 }
 
-/* Estilo para el contenido del footer */
+/* Texto principal destacado */
+.footer-main-call {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+/* Texto general */
 footer p {
-    margin: 0; /* Elimina márgenes predeterminados */
-    font-size: 0.9rem; /* Tamaño de fuente ligeramente menor */
+    margin: 0;
+    font-size: 0.95rem;
 }
 
-/* Estilo para los enlaces */
+/* Enlaces */
 footer a {
-    color: #007bff; /* Color del enlace */
-    text-decoration: none; /* Elimina subrayado */
+    color: #a6d8ff;
+    text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 
 footer a:hover {
-    text-decoration: underline; /* Subrayado al pasar el ratón */
-    color: #FFD700; /* Cambio de color en hover */
+    text-decoration: underline;
+    color: #FFD700;
 }
 
-/* Estilo para los textos animados con los círculos de Perú */
+/* Texto animado */
 .animated-text {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px; /* Espacio entre el ícono y el texto */
+    gap: 5px;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .animated-text:hover {
     transform: scale(1.1);
-    color: #FFD700; /* Color dorado */
+    color: #FFD700;
 }
 
-/* Estilos para los botones de métodos de pago */
+/* Botones de métodos de pago */
 .payment-buttons {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
 }
 
 .payment-buttons button {
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 600;
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    width: 200px;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
 }
 
 .payment-buttons .yape {
-    background-color: #800080; /* Morado */
+    background-color: #800080;
 }
 
 .payment-buttons .plin {
-    background-color: #008000; /* Verde */
+    background-color: #008000;
 }
 
 .payment-buttons .binance {
-    background-color: #FFD700; /* Dorado */
+    background-color: #FFD700;
     color: black;
 }
 
-/* Efecto hover en botones */
 .payment-buttons button:hover {
     filter: brightness(1.2);
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
-
-.footer-thank-you:hover {
-    box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.8);
-}
-
-/* Estilos para las imágenes de los códigos QR */
+/* Códigos QR */
 .qr-container img {
-    width: 150px; /* Tamaño ajustado */
+    width: 160px;
     height: auto;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .qr-container img:hover {
     transform: scale(1.1);
 }
+

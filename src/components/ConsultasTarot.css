@@ -1,0 +1,78 @@
+.tarot-section {
+   /* background-image: url('../images/tarot-background.jpg');  Imagen que pedirás a Meta AI */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .tarot-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(12, 12, 20, 0.75); /* Capa oscura para contraste de texto */
+    z-index: -1;
+  }
+  
+  .tarot-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffd700; /* Dorado: confianza, sabiduría */
+  }
+  
+  .tarot-section h3 {
+    font-size: 1.6rem;
+    margin-top: 30px;
+    color: #ff69b4; /* Rosado vibrante: energía emocional */
+  }
+  
+  .tarot-section ul, .tarot-section ol {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .tarot-section li {
+    margin-bottom: 10px;
+  }
+  
+  .tarot-section .cta {
+    margin-top: 40px;
+    font-size: 1.4rem;
+    color: #90ee90; /* Verde claro: esperanza, equilibrio */
+  }
+  
+  .tarot-section .payment-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .tarot-section .payment-buttons button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .tarot-section .payment-buttons button:hover {
+    transform: scale(1.05);
+  }
+  
+  .tarot-section .btn-yape { background-color: #800080; color: #fff; }
+  .tarot-section .btn-plin { background-color: #00A859; color: #fff; }
+  .tarot-section .btn-binance { background-color: #f0b90b; color: #000; }
+  .tarot-section .btn-paypal { background-color: #0070ba; color: #fff; }
+  

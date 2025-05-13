@@ -10,6 +10,7 @@ const NavBar = () => {
         <Nav className="mr-auto">
           <Nav.Link href="#home">Inicio</Nav.Link>
           <Nav.Link href="#about">Sobre Mí</Nav.Link>
+          <Nav.Link href="#tarot">Consultas de Tarot</Nav.Link> {/* ✅ Nuevo enlace */}
           <Nav.Link href="#projects">Proyectos</Nav.Link>
           <Nav.Link href="#contact">Contacto</Nav.Link>
         </Nav>
