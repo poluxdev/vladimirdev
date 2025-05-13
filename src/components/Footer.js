@@ -69,20 +69,29 @@ const Footer = () => {
       </Container>
 
       <Modal show={show} onHide={() => setShow(false)} centered>
-  <Modal.Header closeButton>
-    <Modal.Title>{qrTitle}</Modal.Title>
-  </Modal.Header>
-  <Modal.Body className="text-center">
-    <img src={qrImage} alt="Código QR" style={{ width: '100%', maxWidth: '300px' }} />
-    <p className="mt-3 text-white fw-bold">O también puedes enviar el monto ingresando el número directamente:</p>
-    <p className="text-warning fs-5">📱 <strong>+51 929 441 018</strong> (también es WhatsApp)</p>
-    <p className="mt-2 text-muted">📷 Escanea el código desde la app o escribe el número manualmente.</p>
-  </Modal.Body>
-  <Modal.Footer>
-    <Button variant="secondary" onClick={() => setShow(false)}>Cerrar</Button>
-  </Modal.Footer>
-</Modal>
-
+        <Modal.Header closeButton>
+          <Modal.Title>{qrTitle}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="text-center">
+          <img src={qrImage} alt="Código QR" style={{ width: '100%', maxWidth: '300px' }} />
+          <p className="mt-3 text-white fw-bold">O también puedes enviar el monto ingresando el número directamente:</p>
+          <p className="text-warning fs-5">📱 <strong>+51 929 441 018</strong> (también es WhatsApp)</p>
+          <p className="text-white">
+            📧 <a 
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=eldiariopolux@gmail.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-warning fw-bold"
+            >
+              eldiariopolux@gmail.com
+            </a>
+          </p>
+          <p className="mt-2 text-muted">📷 Escanea el código desde la app o escribe el número manualmente.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShow(false)}>Cerrar</Button>
+        </Modal.Footer>
+      </Modal>
     </footer>
   );
 };

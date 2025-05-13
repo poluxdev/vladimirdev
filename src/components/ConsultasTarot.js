@@ -42,11 +42,19 @@ const ConsultasTarot = () => {
         </ul>
 
         <h3>¿Cómo funciona?</h3>
-        <ol>
-          <li>Realiza tu pago por uno de los medios disponibles.</li>
-          <li>Envía tu pregunta y comprobante de pago por WhatsApp o correo.</li>
-          <li>Recibirás tu lectura personalizada en menos de 24 horas (texto + foto de la tirada).</li>
-        </ol>
+<ol>
+  <li>Realiza tu pago por uno de los medios disponibles.</li>
+  <li>
+  Envía tu pregunta y comprobante de pago por WhatsApp o correo:
+  <br />
+  📧 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=eldiariopolux@gmail.com" target="_blank" rel="noopener noreferrer">
+    eldiariopolux@gmail.com
+  </a>
+</li>
+
+  <li>Recibirás tu lectura personalizada en menos de 24 horas (texto + foto de la tirada).</li>
+</ol>
+
 
         <h3>Costos:</h3>
         <p>🇵🇪 Perú: S/ 15 (Yape o Plin)</p>
