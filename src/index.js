@@ -4,6 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Importar CSS de Bootstrap
 import './index.css'; // Importar tus estilos personalizados
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ReactGA from 'react-ga4'; // 👈 Importamos GA4
+
+// 👇 Inicializamos Google Analytics
+ReactGA.initialize('G-QTFVQ7PPG6');
+ReactGA.send('pageview');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +17,5 @@ root.render(
   </React.StrictMode>
 );
 
-// Si quieres comenzar a medir el rendimiento en tu aplicación, pasa una función
-// para registrar los resultados (por ejemplo: reportWebVitals(console.log))
-// o envíalos a un endpoint de análisis. Aprende más en: https://bit.ly/CRA-vitals
+// Opcional: medir el rendimiento
 reportWebVitals();
