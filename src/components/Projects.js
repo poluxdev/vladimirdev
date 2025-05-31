@@ -60,6 +60,11 @@ const Projects = () => {
       description: 'Información de Lilith, la Luna Negra, y su significado en la carta natal.',
       link: 'https://poluxdev.github.io/lilith-calculator/'
     },
+    {
+      title: 'Bitácora de Trading con Numerología',
+      description: 'Registra tus operaciones, calcula ganancias diarias y optimiza tu gestión del riesgo en base a tu perfil numerológico.',
+      link: 'https://poluxdev.github.io/bitacorabinarias/'
+    }
   ];
 
   // Función para rastrear clics en los botones
