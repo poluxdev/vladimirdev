@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import certificado from '../images/certificado.jpg'; // Asegúrate que la ruta sea correcta
-import './About.css'; // Si aún no lo tienes, crea este CSS
+import './About.css';
 
 const About = () => {
   return (
@@ -9,15 +9,15 @@ const About = () => {
       <Container>
         <h2 className="text-center">Sobre Mí</h2>
         <p>
-          Hola, soy Vladimir García. Soy un coach de vida apasionado por ayudar a las personas a comprenderse mejor a través de herramientas como la numerología, el tarot y la astrología. Mi enfoque único combina técnicas tradicionales con un entendimiento profundo de la psicología para proporcionar orientación y apoyo personalizado.
+          Hola, soy Vladimir García. Me muevo en la intersección entre el pensamiento simbólico y lo técnico: exploro el tarot, la numerología y la astrología con una mirada psicológica, profunda y no dogmática. No busco dar respuestas cerradas, sino abrir preguntas que inviten a mirarte distinto.
         </p>
         <p>
-          Además, soy <span className="certificado-hover">desarrollador web full stack
+          También soy <span className="certificado-hover">desarrollador web full stack
             <img src={certificado} alt="Certificado de Desarrollador Web" className="certificado-img" />
-          </span> con experiencia en la creación de aplicaciones web completas, desde el diseño de interfaces intuitivas hasta la implementación de soluciones backend robustas. Mi enfoque autodidacta me ha permitido adaptarme y aprender continuamente sobre las últimas tecnologías y mejores prácticas en el desarrollo web.
+          </span>, con experiencia en crear soluciones digitales desde cero: diseño, funcionalidad y estructura backend. Aprendí de forma autodidacta, combinando curiosidad, lógica y constancia para mantenerme actualizado con las últimas tecnologías.
         </p>
         <p>
-          Con una sólida formación en psicología y una pasión por el aprendizaje continuo, me dedico a fusionar mi conocimiento en estas áreas para ofrecer soluciones innovadoras y efectivas. En este portafolio, podrás explorar algunos de mis proyectos más destacados y ver cómo mi combinación de habilidades técnicas y conocimientos en coaching puede ofrecer valor único.
+          Mi formación en psicología y mi enfoque transversal me permiten conectar patrones entre lo interno y lo externo, lo simbólico y lo práctico. En este espacio comparto proyectos, ideas y reflexiones que muestran cómo se puede integrar lo espiritual, lo técnico y lo humano sin perder autenticidad.
         </p>
       </Container>
     </section>
