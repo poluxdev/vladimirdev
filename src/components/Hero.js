@@ -32,7 +32,7 @@ const Hero = () => {
               Soy{' '}
               <span style={{ color: '#39ff14', fontWeight: 'bold' }}>
                 <Typewriter
-                  words={['Desarrollador Web', 'Diseñador Creativo', 'Coach de vida']}
+                  words={['Desarrollador Web','Psicólogo Humanístico', 'Tarotista Humanistico', 'Numerologo Humanistico', 'Astrologo Humanistico', 'Creador Digital']}
                   loop={9} 
                   cursor
                   cursorStyle="_"
