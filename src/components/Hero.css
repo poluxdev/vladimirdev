@@ -61,3 +61,10 @@ button:hover {
 h1 {
   font-size: 200 px;
 }
+@media screen and (max-width: 768px) {
+  .hero {
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+}
