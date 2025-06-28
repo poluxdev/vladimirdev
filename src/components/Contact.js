@@ -19,7 +19,8 @@ const Contact = () => {
               style={{ color: '#E1306C', textDecoration: 'none', fontSize: '1.5rem' }}
             >
               <FaInstagram size={50} />
-              <p>Sígueme en Instagram</p>
+              <p id="instagram-text">Sígueme en Instagram y mantente al tanto del clima astrológico</p>
+
             </a>
           </Col>
 

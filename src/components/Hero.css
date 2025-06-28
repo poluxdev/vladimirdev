@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color: #f6f4f9; /* lavanda muy claro */
   height: 100vh;
   width: 100%;
   display: flex;
@@ -11,55 +11,114 @@
   perspective: 1000px;
   position: relative;
   overflow: hidden;
+  padding: 2rem;
+}
+
+/* Animación sutil con profundidad */
+.hero-content {
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease-out;
+  text-align: center;
 }
 
 .hero-content {
   transform-style: preserve-3d;
-  transition: transform 0.2s ease-out;
+  transition: transform 0.4s ease-out;
+  text-align: left; /* Alineación a la izquierda */
+  max-width: 480px; /* Evita que se expanda demasiado */
+  padding-left: 2rem; /* Lo empuja al centro del recuadro rojo */
+  z-index: 2;
 }
 
-.hero:hover .hero-content {
-  transform: rotateY(15deg) rotateX(15deg);
+@media screen and (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+    padding-left: 0;
+    max-width: 100%;
+  }
 }
-
-h1 {
-  color: white;
-  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+.hero-content h1 {
   font-size: 64px;
+  color: #5e4b8b;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.hero-content h1 {
+  font-size: 64px;
+  color: #5e4b8b; /* Violeta profundo */
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  text-align: left;
+  font-weight: bold;
+  text-shadow:
+    0 0 5px #b799ff,
+    0 0 10px #a077ff,
+    0 0 15px #8d6fd1,
+    0 0 20px #8d6fd1;
 }
 
+
+/* Título espiritual */
+h1 {
+  color: #5e4b8b; /* Violeta profundo espiritual */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  letter-spacing: 1px;
+}
+
+/* Botón espiritual primario para hero */
 button {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease-in-out;
+  background-color: #6b4ea0;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(107, 78, 160, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 2rem;
 }
 
 button:hover {
-  transform: translateZ(10px);
+  background-color: #8d6fd1;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(141, 111, 209, 0.5);
 }
 
+
+/* Reloj etéreo */
 .clock {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #39ff14;
-  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #6b4ea0;
+  background-color: rgba(255, 255, 255, 0.75);
   padding: 10px 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
-  white-space: nowrap;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(107, 78, 160, 0.25);
+  font-family: 'Segoe UI', sans-serif;
 }
 
+/* Responsive */
 @media screen and (max-width: 768px) {
   .hero {
-    background-size: cover;
-    background-position: center center;
-    height: 100vh;
-    padding: 0;
+    height: auto;
+    padding: 3rem 1rem;
+    flex-direction: column;
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 36px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
   }
 }

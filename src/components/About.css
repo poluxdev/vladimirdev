@@ -1,24 +1,90 @@
+/* Fondo general suave para la sección */
+#about {
+  background-color: #f9f7fb; /* lavanda claro */
+  color: #333;
+  padding: 3rem 0;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+/* Título principal */
+#about h2 {
+  font-family: 'Playfair Display', serif;
+  color: #5e4b8b;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+/* Párrafos normales */
+#about p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+/* Párrafos destacados (últimos) */
+#about p.fw-bold {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-left: 4px solid #7a5ba3;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin-top: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+/* Estilo para el texto con hover (desarrollador) */
 .certificado-hover {
-    position: relative;
-    cursor: pointer;
-    color: #007bff;
-    text-decoration: underline;
+  position: relative;
+  cursor: pointer;
+  color: #6b4ea0;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.certificado-hover:hover {
+  color: #8d6fd1;
+}
+
+/* Imagen del certificado (hover visible) */
+.certificado-img {
+  display: none;
+  position: absolute;
+  top: 2em;
+  left: 0;
+  width: 280px;
+  max-width: 90vw;
+  border: 1.5px solid #d4c9ec;
+  border-radius: 10px;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(107, 78, 160, 0.25);
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.certificado-hover:hover .certificado-img {
+  display: block;
+}
+
+/* Responsive: para que no se corte nada en móvil */
+@media (max-width: 576px) {
+  #about {
+    padding: 2rem 1rem;
   }
-  
+
+  #about h2 {
+    font-size: 1.8rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+
   .certificado-img {
-    display: none;
-    position: absolute;
-    top: 1.5em;
+    width: 90vw;
     left: 0;
-    width: 300px;
-    max-width: 90vw;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    z-index: 10;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
-  
-  .certificado-hover:hover .certificado-img {
-    display: block;
-  }
-  
+}

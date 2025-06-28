@@ -31,15 +31,14 @@ const Hero = () => {
       <Container>
         <Row>
           <Col md={8} className="hero-content">
-            <h1>Hola, Soy Vladimir</h1>
+            <h1>Polux</h1>
             <p>
               Soy{' '}
               <span style={{ color: '#39ff14', fontWeight: 'bold' }}>
                 <Typewriter
                   words={[
-                    'Desarrollador Web',
-                    'Psicólogo Humanístico',
                     'Tarotista Humanístico',
+                    'Psicólogo Humanístico',
                     'Numerólogo Humanístico',
                     'Astrólogo Humanístico',
                     'Creador Digital'
@@ -53,7 +52,7 @@ const Hero = () => {
                 />
               </span>
             </p>
-            <Button variant="light" href="#projects">Ver Proyectos</Button>
+            <Button variant="light" href="#projects">Explora Tu Mundo Interior</Button>
           </Col>
           <Col md={4} className="d-flex justify-content-center align-items-center hero-content">
             {/* Puedes agregar algo visual aquí */}

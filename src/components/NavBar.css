@@ -1,0 +1,52 @@
+/* Estilo general del navbar */
+.navbar {
+  background: linear-gradient(to right, #1e1a30, #2c2440);
+  border-bottom: 2px solid #d9c6f3;
+  font-family: 'Cormorant Garamond', serif;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(107, 78, 160, 0.2);
+}
+
+/* Marca / título del navbar */
+.navbar-brand {
+  color: #c9a0dc !important;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #e4c8ff !important;
+}
+
+/* Enlaces del navbar */
+.nav-link {
+  color: #dcd3ec !important;
+  font-size: 1.1rem;
+  margin-right: 15px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #d5b2ff !important;
+  transform: translateY(-2px);
+}
+
+/* Activo / Enlace enfocado */
+.nav-link:focus, .nav-link.active {
+  color: #f5e1ff !important;
+  font-weight: 600;
+}
+
+/* Hamburguesa menú toggle */
+.navbar-toggler {
+  border-color: #d9c6f3;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}

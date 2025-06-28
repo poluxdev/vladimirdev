@@ -22,11 +22,11 @@ const Footer = () => {
       <Container>
         <Row>
           <Col md={4} className="text-center text-md-start mb-3 mb-md-0">
-            <p>&copy; {new Date().getFullYear()} Portafolio.poluxdev - Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Polux_Tarot - Todos los derechos reservados.</p>
           </Col>
 
           <Col md={4} className="text-center mb-3 mb-md-0">
-            <h5 className="mb-3 fw-bold" style={{ fontSize: '1.25rem' }}>🔮 Solicita tu lectura personalizada 🔮</h5>
+            <h5 className="mb-3 fw-bold" style={{ fontSize: '1.25rem' }}>🔮 Solicita Tu Lectura Perzonalizada 🔮</h5>
             <div className="d-flex flex-column align-items-center gap-2">
               <Button 
                 id="btn-yape"

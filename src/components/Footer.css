@@ -1,103 +1,104 @@
 /* Estilo general para el footer */
 footer {
-    background: linear-gradient(to right, #1c1b2f, #292640); /* Fondo místico morado oscuro */
-    color: #f1f1f1; /* Texto claro */
-    padding: 30px 0;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-top: 3px solid #FFD700; /* línea dorada superior */
+  background: linear-gradient(to right, #1e1a30, #2c2440); /* Fondo violeta profundo */
+  color: #f5f0fa; /* Texto claro y suave */
+  padding: 40px 0;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  border-top: 2px solid #d9c6f3; /* Línea lavanda clara */
 }
 
 /* Texto principal destacado */
 .footer-main-call {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #FFD700;
-    margin-bottom: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #c9a0dc; /* oro lavanda */
+  margin-bottom: 15px;
 }
 
 /* Texto general */
 footer p {
-    margin: 0;
-    font-size: 0.95rem;
+  margin: 0;
+  font-size: 1rem;
+  color: #ddd;
 }
 
 /* Enlaces */
 footer a {
-    color: #a6d8ff;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
+  color: #bca3ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
-    color: #FFD700;
+  text-decoration: underline;
+  color: #d5b2ff;
 }
 
 /* Texto animado */
 .animated-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .animated-text:hover {
-    transform: scale(1.1);
-    color: #FFD700;
+  transform: scale(1.05);
+  color: #e1c1ff;
 }
 
 /* Botones de métodos de pago */
 .payment-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .payment-buttons button {
-    border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 200px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 200px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .payment-buttons .yape {
-    background-color: #800080;
+  background-color: #7a30a7; /* amatista profundo */
 }
 
 .payment-buttons .plin {
-    background-color: #008000;
+  background-color: #2e8b57; /* verde esmeralda */
 }
 
 .payment-buttons .binance {
-    background-color: #FFD700;
-    color: black;
+  background-color: #e4c665; /* oro pastel */
+  color: #2d2d2d;
 }
 
 .payment-buttons button:hover {
-    filter: brightness(1.2);
-    transform: scale(1.06);
+  filter: brightness(1.15);
+  transform: scale(1.06);
 }
 
 /* Códigos QR */
 .qr-container img {
-    width: 160px;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  width: 160px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(198, 144, 255, 0.4); /* brillo violeta */
 }
 
 .qr-container img:hover {
-    transform: scale(1.1);
+  transform: scale(1.08);
 }
-
