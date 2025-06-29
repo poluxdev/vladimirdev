@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-5">
       <Container>
-        <h2 className="text-center">Contacto </h2>
+        <h2 className="text-center">Redes Sociales</h2>
         <Row className="justify-content-center">
           {/* Instagram */}
           <Col md={4} className="text-center">
