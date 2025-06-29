@@ -3,7 +3,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-color: #f6f4f9; /* lavanda muy claro */
-  height: 100vh;
+  background-attachment: fixed;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -14,19 +15,33 @@
   padding: 2rem;
 }
 
-/* Animación sutil con profundidad */
-.hero-content {
-  transform-style: preserve-3d;
-  transition: transform 0.4s ease-out;
-  text-align: center;
+/* Evita errores de fondo fijo en móviles */
+@media screen and (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+    flex-direction: column;
+    padding: 3rem 1rem;
+  }
 }
 
+/* Capa oscura opcional para mejor contraste de texto */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Ajusta la opacidad si lo deseas */
+  z-index: 1;
+}
+
+/* Contenido principal */
 .hero-content {
   transform-style: preserve-3d;
   transition: transform 0.4s ease-out;
-  text-align: left; /* Alineación a la izquierda */
-  max-width: 480px; /* Evita que se expanda demasiado */
-  padding-left: 2rem; /* Lo empuja al centro del recuadro rojo */
+  text-align: left;
+  max-width: 480px;
+  padding-left: 2rem;
   z-index: 2;
 }
 
@@ -37,38 +52,23 @@
     max-width: 100%;
   }
 }
-.hero-content h1 {
-  font-size: 64px;
-  color: #5e4b8b;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
-  font-weight: bold;
-}
+
+/* Título */
 .hero-content h1 {
   font-size: 64px;
   color: #5e4b8b; /* Violeta profundo */
   font-family: 'Playfair Display', serif;
   letter-spacing: 1px;
-  text-align: left;
   font-weight: bold;
   text-shadow:
     0 0 5px #b799ff,
     0 0 10px #a077ff,
     0 0 15px #8d6fd1,
     0 0 20px #8d6fd1;
+  margin-bottom: 10px;
 }
 
-
-/* Título espiritual */
-h1 {
-  color: #5e4b8b; /* Violeta profundo espiritual */
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  font-family: 'Playfair Display', serif;
-  font-size: 64px;
-  letter-spacing: 1px;
-}
-
-/* Botón espiritual primario para hero */
+/* Botón espiritual */
 button {
   background-color: #6b4ea0;
   color: #ffffff;
@@ -81,6 +81,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   margin-top: 2rem;
+  z-index: 2;
 }
 
 button:hover {
@@ -89,8 +90,7 @@ button:hover {
   box-shadow: 0 6px 18px rgba(141, 111, 209, 0.5);
 }
 
-
-/* Reloj etéreo */
+/* Reloj */
 .clock {
   position: absolute;
   top: 20px;
@@ -103,17 +103,12 @@ button:hover {
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(107, 78, 160, 0.25);
   font-family: 'Segoe UI', sans-serif;
+  z-index: 2;
 }
 
-/* Responsive */
+/* Responsive ajustes de tipografía y botón */
 @media screen and (max-width: 768px) {
-  .hero {
-    height: auto;
-    padding: 3rem 1rem;
-    flex-direction: column;
-  }
-
-  h1 {
+  .hero-content h1 {
     font-size: 36px;
   }
 

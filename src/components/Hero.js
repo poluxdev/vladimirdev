@@ -3,7 +3,7 @@ import { Container, Button, Row, Col } from 'react-bootstrap';
 import { Typewriter } from 'react-simple-typewriter';
 import FallingStars from './FallingStars';
 import './Hero.css';
-import backImage from '../assets/images/back.png'; // Ajusta la ruta si es diferente
+import backImage from '../assets/images/back.png';
 
 const Hero = () => {
   const [time, setTime] = useState(new Date());
@@ -12,7 +12,6 @@ const Hero = () => {
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
@@ -26,8 +25,11 @@ const Hero = () => {
     <section
       className="hero"
       style={{ backgroundImage: `url(${backImage})` }}
+      aria-label="Sección principal de bienvenida"
     >
+      <div className="hero-overlay"></div>
       <FallingStars />
+
       <Container>
         <Row>
           <Col md={8} className="hero-content">
@@ -52,13 +54,17 @@ const Hero = () => {
                 />
               </span>
             </p>
-            <Button variant="light" href="#projects">Explora Tu Mundo Interior</Button>
+            <Button variant="light" href="#projects">
+              Explora Tu Mundo Interior
+            </Button>
           </Col>
-          <Col md={4} className="d-flex justify-content-center align-items-center hero-content">
-            {/* Puedes agregar algo visual aquí */}
+
+          <Col md={4} className="d-flex justify-content-center align-items-center hero-extra">
+            {/* Puedes agregar una imagen, ilustración o animación aquí */}
           </Col>
         </Row>
       </Container>
+
       <div className="clock">{formattedTime}</div>
     </section>
   );
