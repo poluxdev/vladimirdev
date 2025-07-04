@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './Footer.css';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
+import { BsPaypal, BsQrCodeScan, BsCurrencyExchange } from 'react-icons/bs';
+
 
 import qrBinance from '../images/binance.jpg';
 import qrYape from '../images/yape.png';
 import qrPlin from '../images/plin.png';
+import qrDale from '../images/dale.png';
 
 const Footer = () => {
   const [show, setShow] = useState(false);
@@ -18,50 +21,40 @@ const Footer = () => {
   };
 
   return (
-    <footer id="footer" className="bg-dark text-white py-4">
+    <footer id="footer">
       <Container>
-        <Row>
-          <Col md={4} className="text-center text-md-start mb-3 mb-md-0">
+        <Row className="text-center">
+          <Col md={4} className="mb-4 mb-md-0">
             <p>&copy; {new Date().getFullYear()} Polux_Tarot - Todos los derechos reservados.</p>
           </Col>
 
-          <Col md={4} className="text-center mb-3 mb-md-0">
-            <h5 className="mb-3 fw-bold" style={{ fontSize: '1.25rem' }}>🔮 Solicita Tu Lectura Perzonalizada 🔮</h5>
-            <div className="d-flex flex-column align-items-center gap-2">
-              <Button 
-                id="btn-yape"
-                style={{ backgroundColor: "#800080", borderColor: "#800080" }} 
-                onClick={() => handleShow(qrYape, '📱➡️📷 Escanea el código desde la app de Yape')}
-              >
-                Pagar con Yape
+          <Col md={4}>
+            <h5>🔮 Solicita Tu Lectura Personalizada 🔮</h5>
+            <div className="payment-buttons d-flex flex-column align-items-center gap-2">
+              <Button className="btn-yape" id="btn-yape" onClick={() => handleShow(qrYape, '📱 Escanea con Yape')}>
+                <BsQrCodeScan /> Solicita tu lectura con Yape
               </Button>
-
-              <Button 
-                id="btn-plin"
-                style={{ backgroundColor: "#00A859", borderColor: "#00A859" }} 
-                onClick={() => handleShow(qrPlin, '📱➡️📷 Escanea el código desde la app de Plin')}
-              >
-                Pagar con Plin
+              <Button className="btn-plin" id="btn-plin" onClick={() => handleShow(qrPlin, '📱 Escanea con Plin')}>
+                <BsQrCodeScan /> Solicita tu lectura con Plin
+              </Button>
+              <Button className="btn-dale" id="btn-dale" onClick={() => handleShow(qrDale, '📱 Escanea con DALE')}>
+                <BsQrCodeScan /> Solicita tu lectura con DALE
               </Button>
             </div>
           </Col>
 
-          <Col md={4} className="text-center">
-            <div className="d-flex flex-column align-items-center gap-2">
-              <Button 
-                variant="primary" 
+          <Col md={4}>
+            <div className="payment-buttons d-flex flex-column align-items-center gap-2">
+              <Button
+                className="btn-paypal"
+                as="a"
                 href="https://paypal.me/vladimirGarciaL?country.x=PE&locale.x=es_XC"
                 target="_blank"
               >
-                Pagar con PayPal
+                <BsPaypal /> Solicita tu lectura con PayPal
               </Button>
-
-              <Button 
-                id="btn-binance"
-                variant="warning" 
-                onClick={() => handleShow(qrBinance, '📱➡️📷 Escanea el código desde Binance Pay')}
-              >
-                Pagar con Binance Pay
+              <Button className="btn-binance" id="btn-binance" onClick={() => handleShow(qrBinance, '📱 Escanea con Binance')}>
+                <BsCurrencyExchange /> Solicita tu lectura con Binance
               </Button>
             </div>
           </Col>
@@ -73,20 +66,19 @@ const Footer = () => {
           <Modal.Title>{qrTitle}</Modal.Title>
         </Modal.Header>
         <Modal.Body className="text-center">
-          <img src={qrImage} alt="Código QR" style={{ width: '100%', maxWidth: '300px' }} />
-          <p className="mt-3 text-white fw-bold">O también puedes enviar el monto ingresando el número directamente:</p>
+          <img src={qrImage} alt="Código QR" style={{ width: '100%', maxWidth: '300px', borderRadius: '10px' }} />
+          <p className="mt-3 fw-bold text-white">También puedes enviar el monto manualmente:</p>
           <p className="text-warning fs-5">📱 <strong>+51 929 441 018</strong> (también es WhatsApp)</p>
           <p className="text-white">
-            📧 <a 
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=eldiariopolux@gmail.com" 
-              target="_blank" 
+            📧 <a
+              href="mailto:eldiariopolux@gmail.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-warning fw-bold"
             >
               eldiariopolux@gmail.com
             </a>
           </p>
-          <p className="mt-2 text-muted">📷 Escanea el código desde la app o escribe el número manualmente.</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShow(false)}>Cerrar</Button>
