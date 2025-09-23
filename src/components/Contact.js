@@ -27,7 +27,7 @@ const Contact = () => {
           {/* TikTok */}
           <Col md={4} className="text-center">
             <a
-              href="https://www.tiktok.com/@polux_tarot" // Cambia con tu enlace
+              href="https://www.tiktok.com/@poluxtarotoficial" // Cambia con tu enlace
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: '#000000', textDecoration: 'none', fontSize: '1.5rem' }}
