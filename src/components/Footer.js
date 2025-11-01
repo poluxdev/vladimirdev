@@ -25,7 +25,7 @@ const Footer = () => {
       <Container>
         <Row className="text-center">
           <Col md={4} className="mb-4 mb-md-0">
-            <p>&copy; {new Date().getFullYear()} Polux_Tarot - Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Polux Tarot - Todos los derechos reservados.</p>
           </Col>
 
           <Col md={4}>

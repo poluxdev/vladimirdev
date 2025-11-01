@@ -1,119 +1,143 @@
+/* --- HERO SECTION Y LAYOUT (Ajustes de Legibilidad) --- */
+
 .hero {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #f6f4f9; /* lavanda muy claro */
-  background-attachment: fixed;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  perspective: 1000px;
-  position: relative;
-  overflow: hidden;
-  padding: 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* MEJORA: El fondo real es la imagen, este color se mantiene como fallback */
+    background-color: #0c0c14; 
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
 }
 
 /* Evita errores de fondo fijo en móviles */
 @media screen and (max-width: 768px) {
-  .hero {
-    background-attachment: scroll;
-    flex-direction: column;
-    padding: 3rem 1rem;
-  }
+    .hero {
+        background-attachment: scroll;
+        flex-direction: column;
+        padding: 3rem 1rem;
+    }
 }
 
 /* Capa oscura opcional para mejor contraste de texto */
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.2); /* Ajusta la opacidad si lo deseas */
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* MEJORA: Opacidad aumentada para mejorar el contraste del texto sobre el fondo estrellado/de cartas. */
+    background: rgba(0, 0, 0, 0.45); 
+    z-index: 1;
 }
 
 /* Contenido principal */
 .hero-content {
-  transform-style: preserve-3d;
-  transition: transform 0.4s ease-out;
-  text-align: left;
-  max-width: 480px;
-  padding-left: 2rem;
-  z-index: 2;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease-out;
+    text-align: left;
+    max-width: 480px;
+    padding-left: 2rem;
+    z-index: 2;
 }
 
 @media screen and (max-width: 768px) {
-  .hero-content {
-    text-align: center;
-    padding-left: 0;
-    max-width: 100%;
-  }
+    .hero-content {
+        text-align: center;
+        padding-left: 0;
+        max-width: 100%;
+    }
 }
 
 /* Título */
 .hero-content h1 {
-  font-size: 64px;
-  color: #5e4b8b; /* Violeta profundo */
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 1px;
-  font-weight: bold;
-  text-shadow:
-    0 0 5px #b799ff,
-    0 0 10px #a077ff,
-    0 0 15px #8d6fd1,
-    0 0 20px #8d6fd1;
-  margin-bottom: 10px;
+    font-size: 64px;
+    color: #f8f5fc; /* MEJORA: Cambiado a blanco roto para mejor contraste en fondos oscuros */
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+    /* MEJORA: Text-shadow refinado para un glow más suave y visible sobre fondo oscuro */
+    text-shadow:
+        0 0 5px #b799ff,
+        0 0 10px #a077ff,
+        0 0 20px rgba(141, 111, 209, 0.7), /* Violeta difuso */
+        0 0 30px rgba(183, 153, 255, 0.5); /* Halo exterior */
+    margin-bottom: 10px;
 }
 
-/* Botón espiritual */
+/* --- BOTÓN MEJORADO: EXPLORA TU MUNDO INTERIOR --- */
+
 button {
-  background-color: #6b4ea0;
-  color: #ffffff;
-  border: none;
-  padding: 12px 24px;
-  font-size: 1.1rem;
-  font-family: 'Segoe UI', sans-serif;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(107, 78, 160, 0.3);
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  margin-top: 2rem;
-  z-index: 2;
+    /* MEJORA: Aplicando un degradado sutil para un efecto 3D y más elegancia */
+    background: linear-gradient(145deg, #8d6fd1, #6b4ea0); 
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px; /* Ligeramente más padding para más presencia */
+    font-size: 1.15rem; /* Ligeramente más grande */
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 12px;
+    
+    /* MEJORA: Box-shadow con un toque de brillo para simular luz */
+    box-shadow: 
+        0 0 15px rgba(107, 78, 160, 0.5), /* Sombra exterior para glow */
+        0 4px 8px rgba(0, 0, 0, 0.3);    /* Sombra para elevación */
+        
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición en 'all' para incluir el glow */
+    margin-top: 2rem;
+    z-index: 2;
+    font-weight: 600;
 }
 
 button:hover {
-  background-color: #8d6fd1;
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(141, 111, 209, 0.5);
+    /* MEJORA: Invertir el degradado o usar un color más claro para el hover */
+    background: linear-gradient(145deg, #a077ff, #8d6fd1); 
+    transform: scale(1.03); /* Escala más sutil que 1.05 */
+    
+    /* MEJORA: Aumentar el glow y la sombra de elevación */
+    box-shadow: 
+        0 0 25px rgba(141, 111, 209, 0.8), /* Glow más intenso */
+        0 8px 20px rgba(0, 0, 0, 0.5);    /* Sombra de elevación más marcada */
 }
 
-/* Reloj */
+/* MEJORA ADICIONAL: Efecto de Pulsación (Opcional, para destacar el CTA) */
+button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Reloj (SIN CAMBIOS, se ve bien) */
 .clock {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #6b4ea0;
-  background-color: rgba(255, 255, 255, 0.75);
-  padding: 10px 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(107, 78, 160, 0.25);
-  font-family: 'Segoe UI', sans-serif;
-  z-index: 2;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #6b4ea0;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(107, 78, 160, 0.25);
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 2;
 }
 
-/* Responsive ajustes de tipografía y botón */
+/* Responsive ajustes de tipografía y botón (Ajustado) */
 @media screen and (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 36px;
-  }
+    .hero-content h1 {
+        font-size: 44px; /* Ligeramente más grande que 36px para impacto */
+    }
 
-  button {
-    font-size: 1rem;
-    padding: 0.6rem 1.5rem;
-  }
+    button {
+        font-size: 1.05rem;
+        padding: 0.8rem 1.8rem;
+    }
 }

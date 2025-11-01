@@ -1,96 +1,115 @@
 footer {
-  background: linear-gradient(to right, #1f1b2e, #2b2342);
-  color: #f3eaff;
-  padding: 60px 20px 40px;
-  font-family: 'Cormorant Garamond', serif;
-  border-top: 2px solid #b191ff;
-  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.4);
+background: linear-gradient(to right, #1f1b2e, #2b2342);
+color: #f3eaff;
+padding: 60px 20px 40px;
+font-family: 'Cormorant Garamond', serif;
+border-top: 2px solid #b191ff;
+box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5); /* Sombra más profunda */
+position: relative;
 }
 
 footer p {
-  margin: 0;
-  font-size: 1rem;
-  color: #dcd0f2;
+margin: 0;
+font-size: 1rem;
+color: #dcd0f2;
 }
 
 footer h5 {
-  font-family: 'Playfair Display', serif;
-  color: #e5c3ff;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+font-family: 'Playfair Display', serif;
+color: #e5c3ff;
+font-size: 1.6rem; /* Ligeramente más grande /
+margin-bottom: 20px;
+text-shadow: 0 0 5px rgba(240, 219, 255, 0.4); / Glow sutil */
 }
 
 footer a {
-  color: #d6b8ff;
-  text-decoration: none;
+color: #d6b8ff;
+text-decoration: none;
+transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 footer a:hover {
-  color: #f0dbff;
-  text-decoration: underline;
+color: #f0dbff;
+text-decoration: none; /* Quitamos el underline /
+text-shadow: 0 0 10px #b191ff; / Efecto glow */
 }
 
 /* Botones */
+.payment-buttons {
+display: flex;
+gap: 15px;
+
+flex-wrap: wrap;
+margin-top: 30px;
+justify-content: center;
+}
+
 .payment-buttons button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 28px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 12px;
-  min-width: 220px;
-  transition: all 0.3s ease;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+padding: 12px 24px; /* Padding ajustado /
+font-size: 1rem;
+font-weight: 600; / Menos bold /
+border: none;
+border-radius: 10px; / Borde ligeramente más sutil /
+min-width: 180px; / Ancho ajustado /
+transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); / Transición más fluida /
+font-family: 'Segoe UI', sans-serif;
+/ Sombra refinada para elevación */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .payment-buttons button:hover {
-  transform: scale(1.05);
-  filter: brightness(1.08);
+transform: translateY(-3px) scale(1.03); /* Elevación y escala suaves /
+filter: brightness(1.1); / Brillo sutil /
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); / Sombra de hover más marcada */
 }
 
 /* Colores específicos */
 .btn-yape {
-  background-color: #800080;
-  color: #fff;
+background-color: #800080;
+color: #fff;
 }
 
 .btn-plin {
-  background-color: #00A859;
-  color: #fff;
+background-color: #00A859;
+color: #fff;
 }
 
 .btn-dale {
-  background-color: #F6C90E;
-  color: #000;
+background-color: #F6C90E;
+color: #000;
 }
 
 .btn-binance {
-  background-color: #f0b90b;
-  color: #000;
+background-color: #f0b90b;
+color: #000;
 }
 
 .btn-paypal {
-  background-color: #0070ba;
-  color: #fff;
+background-color: #0070ba;
+color: #fff;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .payment-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+.payment-buttons {
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
 
-  .payment-buttons button {
+.payment-buttons button {
     width: 100%;
-    max-width: 300px;
-  }
+    max-width: 250px;
+    font-size: 0.95rem;
+}
 
-  footer h5 {
-    font-size: 1.3rem;
-  }
+footer h5 {
+    font-size: 1.4rem;
+}
+
+
 }

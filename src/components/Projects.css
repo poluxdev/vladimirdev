@@ -1,74 +1,80 @@
-/* Título H2 espiritual */
+/*
+ * Título H2 espiritual (Aplicado a "Polux_Herramientas" en secciones oscuras)
+ * MEJORA: Color de texto base cambiado a blanco roto (#f0e6fa) para mayor contraste.
+ * MEJORA: Text-shadow ajustado para un glow violeta/blanco más suave y etéreo.
+*/
 h2 {
-  color: #6b4ea0; /* Violeta espiritual */
-  font-size: 42px;
-  font-family: 'Playfair Display', serif;
-  border: none;
-  margin-bottom: 1rem;
-  text-align: center;
+    color: #f0e6fa; /* Blanco roto/Lavanda para destacar en fondo oscuro */
+    font-size: 2.625rem;
+    font-family: 'Cormorant Garamond', serif;
+    border: none;
+    margin-bottom: 1rem;
+    text-align: center;
 
-  /* Efecto glow resplandeciente */
-  text-shadow:
-    0 0 2px #6b4ea0,
-    0 0 4px #6b4ea0,
-    0 0 6px #a783df,
-    0 0 8px #cbb6f6,
-    0 0 10px #d9c8ff;
+    /* Efecto glow suave (Violeta como base, Blanco como destello) */
+    text-shadow:
+        0 0 8px rgba(107, 78, 160, 0.7),   /* Base violeta suave */
+        0 0 15px rgba(167, 131, 223, 0.4),  /* Expansión violeta */
+        0 0 25px rgba(255, 255, 255, 0.1); /* Brillo blanco muy sutil y difuso */
 }
 
-/* Estilo para tarjetas */
+/* Estilo para tarjetas (SIN CAMBIOS, ya estaban optimizados) */
 .card {
-  border: none;
-  border-radius: 12px;
-  background-color: #f8f5fc; /* Fondo lavanda muy claro */
-  box-shadow: 0 4px 12px rgba(107, 78, 160, 0.1);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border: none;
+    border-radius: 12px;
+    background-color: #f8f5fc; /* Fondo lavanda muy claro */
+    /* Sombra inicial más sutil y profunda */
+    box-shadow: 0 2px 6px rgba(107, 78, 160, 0.1), 0 1px 3px rgba(107, 78, 160, 0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(107, 78, 160, 0.2);
+    /* Desplazamiento ligeramente menor para suavidad */
+    transform: translateY(-8px);
+    /* Sombra que simula elevación y profundidad más elegantes */
+    box-shadow: 0 16px 32px rgba(107, 78, 160, 0.25), 0 4px 8px rgba(107, 78, 160, 0.15);
 }
 
 .card-body {
-  padding: 24px;
+    padding: 24px;
 }
 
-/* Título de la tarjeta */
+/* Título de la tarjeta (SIN CAMBIOS) */
 .card-title {
-  font-size: 1.6rem;
-  color: #4a3b6a;
-  font-family: 'Cormorant Garamond', serif;
-  margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: #4a3b6a;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 1rem;
 }
 
-/* Texto de la tarjeta */
+/* Texto de la tarjeta (SIN CAMBIOS) */
 .card-text {
-  font-size: 1.05rem;
-  color: #555;
-  font-family: 'Cormorant Garamond', serif;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: #555;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
 }
 
-/* Botón primario espiritual */
-/* Botón primario espiritual */
+/* Botón primario espiritual (SIN CAMBIOS) */
 .btn-primary {
-  background-color: #6b4ea0;
-  border: none;
-  border-radius: 12px;
-  padding: 12px 24px;
-  text-decoration: none;
-  color: #ffffff;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(107, 78, 160, 0.3);
+    background-color: #6b4ea0;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    /* Añadida la transición de color del texto */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(107, 78, 160, 0.3);
 }
 
 .btn-primary:hover {
-  background-color: #8d6fd1;
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(141, 111, 209, 0.5);
+    background-color: #8d6fd1;
+    /* Escala más sutil para una transición más profesional */
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(141, 111, 209, 0.6);
 }

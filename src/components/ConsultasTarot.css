@@ -1,182 +1,241 @@
+/*
+ * Sección de Consultas de Tarot
+ * Mejoras aplicadas:
+ * 1. Uso de variables CSS para colores clave (coherencia).
+ * 2. Aumento de legibilidad del texto corporal.
+ * 3. Estandarización de la fuente en títulos.
+ * 4. Ajuste de contraste en botones claros.
+ * 5. Refinamiento del CTA de urgencia.
+*/
+
+:root {
+    /* Paleta de Colores Primarios */
+    --color-gold: #ffd700;        /* Título Principal (H2) */
+    --color-pink: #ff69b4;        /* Título Secundario (H3) */
+    --color-green-light: #90ee90; /* CTA Urgencia */
+    --color-text-light: #fff;
+    --color-bg-dark: rgba(12, 12, 20, 0.85);
+}
+
 .tarot-section {
-  background-image: url('/public/images/fondoconsultas.png');
-  background-position: center;
-  color: #fff;
-  padding: 60px 20px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('/public/images/fondoconsultas.png');
+    background-position: center;
+    background-size: cover; /* Asegura que la imagen cubra toda el área */
+    color: var(--color-text-light);
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .tarot-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(12, 12, 20, 0.85);
-  z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--color-bg-dark);
+    z-index: -1;
 }
 
-/* Títulos */
+/* --- Títulos --- */
 .tarot-section h2 {
-  font-size: 2.8rem;
-  margin-bottom: 25px;
-  color: #ffd700;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    font-size: 3rem; /* Ligeramente más grande */
+    margin-bottom: 25px;
+    color: var(--color-gold);
+    /* Glow más sutil y enfocado */
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.6), 0 0 15px rgba(255, 215, 0, 0.2);
+    /* Fuente que puede dar más impacto, si se carga en el HTML */
+    font-family: 'Playfair Display', serif; 
 }
 
 .tarot-section h3 {
-  font-size: 1.8rem;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  color: #ff69b4;
-  text-shadow: 0 0 6px rgba(255, 105, 180, 0.3);
+    font-size: 2rem; /* Ligeramente más grande para más impacto */
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--color-pink);
+    text-shadow: 0 0 6px rgba(255, 105, 180, 0.5); /* Sombra más fuerte para contraste */
+    font-family: 'Playfair Display', serif; /* Usar la misma fuente de impacto que el h2 */
 }
 
-/* Listas */
+/* --- Listas y Contenedores de Texto --- */
 .tarot-section ul,
 .tarot-section ol {
-  max-width: 700px;
-  margin: 0 auto 30px;
-  text-align: left;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 12px;
+    max-width: 800px; /* Aumentado el ancho máximo para mejor lectura */
+    margin: 0 auto 30px;
+    text-align: left;
+    font-size: 1.15rem; /* Aumento de tamaño para mejor legibilidad */
+    line-height: 1.7;
+    background-color: rgba(255, 255, 255, 0.08); /* Fondo ligeramente más visible */
+    padding: 25px;
+    border-radius: 12px;
+    /* Borde sutil para definir el contenedor */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 .tarot-section li {
-  margin-bottom: 10px;
+    margin-bottom: 12px; /* Mayor espacio entre elementos de lista */
 }
 
-/* Contenedor de botones */
+/* --- Contenedor de Botones --- */
 .tarot-section .payment-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-/* Estilo base de botones modernos */
+/* Estilo base de botones modernos (Ajustado) */
 .tarot-section .payment-buttons .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-weight: 600;
-  padding: 14px 26px;
-  font-size: 1.05rem;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 200px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),
-              0 6px 15px rgba(0, 0, 0, 0.25);
-  position: relative;
-  overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 700; /* Negrita para mejor contraste */
+    padding: 16px 28px; /* Padding ligeramente mayor */
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 220px; /* Aumentado el ancho mínimo para uniformidad */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 6px 15px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif; /* Consistencia con el cuerpo de texto */
 }
 
 /* Brillo suave al hacer hover */
 .tarot-section .payment-buttons .btn::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
-  transform: scale(0);
-  transition: transform 0.3s ease;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%); /* Más visible */
+    transform: scale(0);
+    transition: transform 0.3s ease;
 }
 
 .tarot-section .payment-buttons .btn:hover::before {
-  transform: scale(1);
+    transform: scale(1);
 }
 
 .tarot-section .payment-buttons .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px); /* Movimiento más notorio */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Sombra más intensa al elevarse */
 }
 
-/* Colores personalizados con gradiente */
+/* --- Colores personalizados con gradiente (Ajustado Contraste) --- */
 .tarot-section .btn-yape {
-  background: linear-gradient(135deg, #800080, #a64ca6);
-  color: #fff;
+    background: linear-gradient(135deg, #800080, #a64ca6);
+    color: var(--color-text-light);
 }
 
 .tarot-section .btn-plin {
-  background: linear-gradient(135deg, #00a859, #4ed6a3);
-  color: #fff;
+    background: linear-gradient(135deg, #00a859, #4ed6a3);
+    color: var(--color-text-light);
 }
 
 .tarot-section .btn-dale {
-  background: linear-gradient(135deg, #f6c90e, #fff08a);
-  color: #000;
+    background: linear-gradient(135deg, #f6c90e, #ffe477); /* Ligeramente más dorado */
+    color: #333; /* Texto más oscuro para mayor contraste */
 }
 
 .tarot-section .btn-binance {
-  background: linear-gradient(135deg, #f0b90b, #ffe477);
-  color: #000;
+    background: linear-gradient(135deg, #f0b90b, #ffd700); /* Ligeramente más dorado */
+    color: #333; /* Texto más oscuro para mayor contraste */
 }
 
 .tarot-section .btn-paypal {
-  background: linear-gradient(135deg, #003087, #0070ba);
-  color: #fff;
+    background: linear-gradient(135deg, #003087, #0070ba);
+    color: var(--color-text-light);
 }
 
-/* CTA final con FOMO */
+/* --- CTA final con FOMO (Urgencia) --- */
 .tarot-section .cta {
-  margin-top: 50px;
-  font-size: 1.5rem;
-  color: #90ee90;
-  background: rgba(255, 255, 255, 0.06);
-  padding: 25px;
-  border-radius: 15px;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 0 15px rgba(144, 238, 144, 0.2);
-  animation: pulseCTA 3s infinite ease-in-out;
+    margin-top: 50px;
+    font-size: 1.6rem; /* Ligeramente más grande */
+    color: var(--color-green-light);
+    background: rgba(255, 255, 255, 0.08); /* Fondo más visible */
+    padding: 30px 25px; /* Más padding para mayor impacto */
+    border-radius: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgba(144, 238, 144, 0.4); /* Borde para enmarcar */
+    box-shadow: 0 0 15px rgba(144, 238, 144, 0.3);
+    animation: pulseCTA 3s infinite ease-in-out;
+}
+
+.tarot-section .cta p {
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+}
+
+.tarot-section .cta .strong-message {
+    font-size: 1.8rem; /* Destacar la frase clave */
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    display: block; /* Asegurar que ocupe su propia línea */
+}
+
+.tarot-section .cta a {
+    /* Estilo para el enlace de la llamada a la acción */
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.tarot-section .cta a:hover {
+    color: var(--color-gold);
 }
 
 @keyframes pulseCTA {
-  0% { box-shadow: 0 0 10px rgba(144, 238, 144, 0.2); }
-  50% { box-shadow: 0 0 20px rgba(144, 238, 144, 0.5); }
-  100% { box-shadow: 0 0 10px rgba(144, 238, 144, 0.2); }
+    0% { box-shadow: 0 0 10px rgba(144, 238, 144, 0.3); }
+    50% { box-shadow: 0 0 25px rgba(144, 238, 144, 0.7); } /* Pulso más notorio */
+    100% { box-shadow: 0 0 10px rgba(144, 238, 144, 0.3); }
 }
 
-/* Responsive */
+/* --- Responsive --- */
 @media (max-width: 768px) {
-  .tarot-section h2 {
-    font-size: 2rem;
-  }
+    .tarot-section {
+        padding: 40px 15px;
+    }
+    
+    .tarot-section h2 {
+        font-size: 2.5rem;
+    }
 
-  .tarot-section h3 {
-    font-size: 1.4rem;
-  }
+    .tarot-section h3 {
+        font-size: 1.6rem;
+    }
 
-  .tarot-section ul,
-  .tarot-section ol {
-    font-size: 1rem;
-    padding: 15px;
-  }
+    .tarot-section ul,
+    .tarot-section ol {
+        font-size: 1.05rem;
+        padding: 20px;
+        max-width: 100%;
+    }
 
-  .tarot-section .cta {
-    font-size: 1.2rem;
-    padding: 20px;
-  }
+    .tarot-section .cta {
+        font-size: 1.3rem;
+        padding: 20px;
+    }
 
-  .tarot-section .payment-buttons .btn {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-.tarot-section .payment-buttons .btn {
-  font-family: 'Poppins', sans-serif; /* o 'Inter', sans-serif */
+    .tarot-section .payment-buttons {
+        gap: 10px;
+    }
+
+    .tarot-section .payment-buttons .btn {
+        width: 100%;
+        max-width: 400px;
+        min-width: unset; /* Permitir que el ancho se ajuste al 100% */
+    }
 }
