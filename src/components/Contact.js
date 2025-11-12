@@ -13,7 +13,7 @@ const Contact = () => {
           {/* Instagram */}
           <Col md={4} className="text-center">
             <a
-              href="https://www.instagram.com/universal_play/"
+              href="https://www.instagram.com/poluxteach/"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: '#E1306C', textDecoration: 'none', fontSize: '1.5rem' }}
