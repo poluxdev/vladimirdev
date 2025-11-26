@@ -56,8 +56,8 @@ const ConsultasTarot = () => {
         </ol>
 
         <h3>Costos:</h3>
-        <p>🇵🇪 Perú: S/ 20 - S/ 40 (Yape, Plin o DALE)</p>
-        <p>🌎 Internacional: $5 - $10 USD (PayPal o Binance)</p>
+        <p>🇵🇪 Perú: S/ 20 (Yape, Plin o DALE)</p>
+        <p>🌎 Internacional: $6 (PayPal o Binance)</p>
 
         <div className="payment-buttons">
           <h3>Realiza tu pago:</h3>
