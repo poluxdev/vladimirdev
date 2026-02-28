@@ -16,80 +16,110 @@ const ConsultasTarot = () => {
   return (
     <section id="tarot" className="tarot-section">
       <div className="container">
-        <h2>Consulta de Tarot</h2>
 
-        <p>
-          ¿Tienes dudas sobre el amor, trabajo, decisiones importantes o tu propósito? Consulta el tarot y recibe una respuesta 100% personalizada en video.
+        {/* HERO */}
+        <h2 className="text-center">
+          🔮 La respuesta que necesitas escuchar ahora
+        </h2>
+
+        <p className="text-center fw-bold mt-3">
+          Si llevas días pensando en una persona, una decisión o un bloqueo que no logras entender,
+          esta lectura es para ti.
         </p>
 
-        <p>
-          La lectura será grabada exclusivamente para ti, mostrando las cartas reales que salieron en tu tirada. Será una lectura clara, puntual y dirigida a la situación que estás consultando.
+        <p className="text-center">
+          Cuando el tarot aparece, no es casualidad.  
+          Algo quiere mostrarse… y hoy puedes verlo con claridad.
         </p>
 
-        <p>
-          Para canalizar correctamente tu energía, necesito tu <strong>nombre</strong> al momento de hacer la lectura. Debido a la alta demanda, agradezco tu <strong>paciencia</strong>. Cada lectura toma su tiempo para ser precisa y significativa.
-        </p>
+        {/* PROMESA */}
+        <div className="highlight-box mt-4">
+          <p>
+            Esta no es una lectura genérica ni automática.
+            Grabaré un <strong>video exclusivo para ti</strong>, mostrando las cartas reales que salen en tu tirada
+            y diciéndote <strong>la verdad que ahora mismo no estás viendo</strong>.
+          </p>
 
-        <h3>Ejemplos de Preguntas:</h3>
-        <ul>
-          <li>¿Qué me espera en el amor los próximos meses? (3 cartas)</li>
-          <li>¿Cómo puedo desbloquear mi situación laboral? (3 cartas)</li>
-          <li>¿Cuál es mi propósito de vida? (7-10 cartas)</li>
-          <li>¿Qué debo aprender de esta etapa que estoy viviendo? (7 cartas)</li>
-          <li>¿Qué mensaje tienen mis guías espirituales? (7-10 cartas)</li>
-          <li>¿Qué siente esa persona por mí? (5 cartas)</li>
-          <li>¿Qué me oculta esa persona? (5 cartas)</li>
-          <li>¿Cómo sanar emocionalmente? (7 cartas)</li>
-        </ul>
+          <p className="fw-bold">
+            Ideal si te preguntas:
+          </p>
 
-        <h3>¿Cómo funciona?</h3>
+          <ul>
+            <li>¿Tiene sentido seguir insistiendo o es momento de soltar?</li>
+            <li>¿Qué energía está bloqueando mi camino ahora?</li>
+            <li>¿Qué decisión me conviene tomar en este momento?</li>
+            <li>¿Qué quiere decirme esta situación que se repite?</li>
+          </ul>
+        </div>
+
+        {/* COMO FUNCIONA */}
+        <h3 className="mt-5">¿Cómo funciona la lectura?</h3>
         <ol>
-          <li>Realiza tu pago por uno de los medios disponibles.</li>
+          <li>Realizas el pago por el medio que prefieras.</li>
           <li>
-            Envía tu pregunta, nombre completo y comprobante de pago por WhatsApp o correo:
-            <br />
-            📧 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=eldiariopolux@gmail.com" target="_blank" rel="noopener noreferrer">
-              eldiariopolux@gmail.com
-            </a>
+            Me envías por WhatsApp o correo:
+            <br />– Tu <strong>nombre</strong>
+            <br />– Tu <strong>pregunta</strong>
+            <br />– El <strong>comprobante de pago</strong>
           </li>
-          <li>Recibirás un video grabado con tu lectura personalizada en menos de 24 horas.</li>
+          <li>
+            Recibes tu <strong>video personalizado</strong> en menos de 24 horas.
+          </li>
         </ol>
 
-        <h3>Costos:</h3>
-        <p>🇵🇪 Perú: S/ 20 (Yape, Plin o DALE)</p>
-        <p>🌎 Internacional: $6 (PayPal o Binance)</p>
+        <p className="mt-3">
+          📧 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=eldiariopolux@gmail.com" target="_blank" rel="noopener noreferrer">
+            eldiariopolux@gmail.com
+          </a>
+        </p>
 
-        <div className="payment-buttons">
-          <h3>Realiza tu pago:</h3>
+        {/* PRECIO */}
+        <h3 className="mt-4">Inversión</h3>
+        <p>🇵🇪 Perú: <strong>S/ 20</strong> (Yape, Plin o DALE)</p>
+        <p>🌎 Internacional: <strong>$6 USD</strong> (PayPal o Binance)</p>
+
+        <p className="fw-bold text-warning">
+          ⚠️ Tomo pocas lecturas al día para mantener la calidad.
+          Si estás aquí, probablemente no sea casualidad.
+        </p>
+
+        {/* BOTONES */}
+        <div className="payment-buttons mt-4">
+          <h3>Reserva tu lectura ahora:</h3>
 
           <button className="btn btn-yape m-2" onClick={() => scrollToFooterAndOpenQR('btn-yape')}>
-            <i className="bi bi-phone-fill"></i> Solicita tu lectura con Yape
+            📱 Pagar con Yape
           </button>
 
           <button className="btn btn-plin m-2" onClick={() => scrollToFooterAndOpenQR('btn-plin')}>
-            <i className="bi bi-lightning-fill"></i> Solicita tu lectura con Plin
-          </button>
-
-          <button className="btn btn-binance m-2" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
-            <i className="bi bi-currency-bitcoin"></i> Realizar pago con Binance
+            ⚡ Pagar con Plin
           </button>
 
           <button className="btn btn-dale m-2" onClick={() => scrollToFooterAndOpenQR('btn-dale')}>
-            <i className="bi bi-bank"></i> Confirmar tu consulta con DALE
+            🏦 Pagar con DALE
+          </button>
+
+          <button className="btn btn-binance m-2" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
+            ₿ Pagar con Binance
           </button>
 
           <a href="https://paypal.me/vladimirGarciaL?country.x=PE&locale.x=es_XC" target="_blank" rel="noopener noreferrer">
             <button className="btn btn-paypal m-2">
-              <i className="bi bi-paypal"></i> Reservar lectura con PayPal
+              💳 Pagar con PayPal
             </button>
           </a>
         </div>
 
-        <p className="cta mt-4 text-center fw-bold">
-          🔮 Cada lectura es única y personalizada, pero no estarán abiertas siempre. <br />
-          ¿Y si justo hoy el tarot tenía algo importante que decirte… y lo dejas pasar? <br />
-          <span className="text-primary">Haz tu consulta ahora y no te quedes con la duda.</span>
+        {/* CIERRE */}
+        <p className="cta mt-5 text-center fw-bold">
+          🔮 A veces no necesitas más tiempo…  
+          necesitas una respuesta clara.  
+          <br />
+          <span className="text-primary">
+            Haz tu consulta ahora y deja de cargar la duda.
+          </span>
         </p>
+
       </div>
     </section>
   );

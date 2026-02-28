@@ -39,10 +39,10 @@ const Hero = () => {
               <span style={{ color: '#39ff14', fontWeight: 'bold' }}>
                 <Typewriter
                   words={[
-                    'Tarotista Humanístico',
-                    'Psicólogo Humanístico',
-                    'Numerólogo Humanístico',
-                    'Astrólogo Humanístico',
+                    'Tarotista',
+                    'Psicólogo ',
+                    'Numerólogo ',
+                    'Astrólogo ',
                     'Creador Digital'
                   ]}
                   loop={9}
