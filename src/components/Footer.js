@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Footer.css';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
-import { BsPaypal, BsQrCodeScan, BsCurrencyExchange, BsCreditCard } from 'react-icons/bs'; // Añadí BsCreditCard
+import { BsPaypal, BsQrCodeScan, BsCurrencyExchange, BsCreditCard } from 'react-icons/bs';
 
 import qrBinance from '../images/binance.jpg';
 import qrYape from '../images/yape.png';
@@ -48,16 +48,26 @@ const Footer = () => {
           <Col md={4}>
             <h5>🌎 Tarjetas e Internacional 🌎</h5>
             <div className="payment-buttons d-flex flex-column align-items-center gap-2">
-              {/* BOTÓN MERCADO PAGO AÑADIDO */}
-              <Button 
-                className="btn-mercadopago" 
-                as="a" 
-                href={linkMercadoPago} 
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <BsCreditCard /> Pagar con Tarjeta (Mercado Pago)
-              </Button>
+              
+              {/* SECCIÓN MERCADO PAGO MEJORADA */}
+             <div className="w-100 d-flex flex-column align-items-center">
+  <Button 
+    className="btn-mercadopago mb-1" 
+    as="a" 
+    href={linkMercadoPago} 
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <BsCreditCard /> Pagar con Tarjeta (Mercado Pago)
+  </Button>
+  
+  {/* Banderas al costado para hacerlo más intuitivo */}
+  <span className="paises-disponibles">
+    🇵🇪 Perú • 🇲🇽 México • 🇦🇷 Arg • 🇨🇱 Chile
+    <br />
+    🇨🇴 Col • 🇺🇾 Uruguay • 🇪🇨 Ecuador
+  </span>
+</div>
 
               <Button
                 className="btn-paypal"
@@ -68,6 +78,7 @@ const Footer = () => {
               >
                 <BsPaypal /> Solicita tu lectura con PayPal
               </Button>
+              
               <Button className="btn-binance" id="btn-binance" onClick={() => handleShow(qrBinance, '📱 Escanea con Binance')}>
                 <BsCurrencyExchange /> Solicita tu lectura con Binance
               </Button>
@@ -83,7 +94,7 @@ const Footer = () => {
         <Modal.Body className="text-center">
           <img src={qrImage} alt="Código QR" style={{ width: '100%', maxWidth: '300px', borderRadius: '10px' }} />
           <p className="mt-3 fw-bold text-white">También puedes enviar el monto manualmente:</p>
-          <p className="text-warning fs-5">📱 <strong>+51 929 441 018</strong> (también es WhatsApp)</p>
+          <p className="text-warning fs-5">📱 <strong>+51 929 441 018</strong> (WhatsApp)</p>
           <p className="text-white">
             📧 <a
               href="mailto:eldiariopolux@gmail.com"

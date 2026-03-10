@@ -35,7 +35,7 @@ const App = () => {
 
       {/* Botón flotante de WhatsApp */}
       <a
-        href="https://wa.me/51929441018?text=Hola%20👋%20Estoy%20interesado(a)%20en%20una%20lectura%20de%20tarot%20personalizada.%20¿Me%20podrías%20dar%20más%20información?"
+        href="https://wa.me/51929441018?text=%C2%A1Hola%20Polux!%20%F0%9F%94%AE%20Ya%20realic%C3%A9%20el%20pago%20de%20mi%20lectura.%20Aqu%C3%AD%20te%20comparto%20mi%20nombre%2C%20mi%20pregunta%20y%20el%20comprobante%20para%20recibir%20mi%20video%20en%20las%20pr%C3%B3ximas%2024%20horas.%20%E2%9C%A8"
         className="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"
