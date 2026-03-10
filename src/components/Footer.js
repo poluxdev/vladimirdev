@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './Footer.css';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
-import { BsPaypal, BsQrCodeScan, BsCurrencyExchange } from 'react-icons/bs';
-
+import { BsPaypal, BsQrCodeScan, BsCurrencyExchange, BsCreditCard } from 'react-icons/bs'; // Añadí BsCreditCard
 
 import qrBinance from '../images/binance.jpg';
 import qrYape from '../images/yape.png';
@@ -20,6 +19,9 @@ const Footer = () => {
     setShow(true);
   };
 
+  // Tu link de Mercado Pago
+  const linkMercadoPago = "https://mpago.la/1y8rFRE";
+
   return (
     <footer id="footer">
       <Container>
@@ -29,7 +31,7 @@ const Footer = () => {
           </Col>
 
           <Col md={4}>
-            <h5>🔮 Solicita Tu Lectura Personalizada 🔮</h5>
+            <h5>🔮 Medios Locales (Perú) 🔮</h5>
             <div className="payment-buttons d-flex flex-column align-items-center gap-2">
               <Button className="btn-yape" id="btn-yape" onClick={() => handleShow(qrYape, '📱 Escanea con Yape')}>
                 <BsQrCodeScan /> Solicita tu lectura con Yape
@@ -44,12 +46,25 @@ const Footer = () => {
           </Col>
 
           <Col md={4}>
+            <h5>🌎 Tarjetas e Internacional 🌎</h5>
             <div className="payment-buttons d-flex flex-column align-items-center gap-2">
+              {/* BOTÓN MERCADO PAGO AÑADIDO */}
+              <Button 
+                className="btn-mercadopago" 
+                as="a" 
+                href={linkMercadoPago} 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BsCreditCard /> Pagar con Tarjeta (Mercado Pago)
+              </Button>
+
               <Button
                 className="btn-paypal"
                 as="a"
                 href="https://paypal.me/vladimirGarciaL?country.x=PE&locale.x=es_XC"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <BsPaypal /> Solicita tu lectura con PayPal
               </Button>

@@ -1,115 +1,124 @@
 footer {
-background: linear-gradient(to right, #1f1b2e, #2b2342);
-color: #f3eaff;
-padding: 60px 20px 40px;
-font-family: 'Cormorant Garamond', serif;
-border-top: 2px solid #b191ff;
-box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5); /* Sombra más profunda */
-position: relative;
+    background: linear-gradient(to right, #1f1b2e, #2b2342);
+    color: #f3eaff;
+    padding: 60px 20px 40px;
+    font-family: 'Cormorant Garamond', serif;
+    border-top: 2px solid #b191ff;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5); /* Sombra más profunda */
+    position: relative;
 }
 
 footer p {
-margin: 0;
-font-size: 1rem;
-color: #dcd0f2;
+    margin: 0;
+    font-size: 1rem;
+    color: #dcd0f2;
 }
 
 footer h5 {
-font-family: 'Playfair Display', serif;
-color: #e5c3ff;
-font-size: 1.6rem; /* Ligeramente más grande /
-margin-bottom: 20px;
-text-shadow: 0 0 5px rgba(240, 219, 255, 0.4); / Glow sutil */
+    font-family: 'Playfair Display', serif;
+    color: #e5c3ff;
+    font-size: 1.6rem; /* Ligeramente más grande */
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(240, 219, 255, 0.4); /* Glow sutil */
 }
 
 footer a {
-color: #d6b8ff;
-text-decoration: none;
-transition: color 0.3s ease, text-shadow 0.3s ease;
+    color: #d6b8ff;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 footer a:hover {
-color: #f0dbff;
-text-decoration: none; /* Quitamos el underline /
-text-shadow: 0 0 10px #b191ff; / Efecto glow */
+    color: #f0dbff;
+    text-decoration: none; /* Quitamos el underline */
+    text-shadow: 0 0 10px #b191ff; /* Efecto glow */
 }
 
-/* Botones */
+/* Contenedor de Botones */
 .payment-buttons {
-display: flex;
-gap: 15px;
-
-flex-wrap: wrap;
-margin-top: 30px;
-justify-content: center;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: center;
 }
 
+/* Estilo Base de Botones */
+.payment-buttons .btn, 
 .payment-buttons button {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
-padding: 12px 24px; /* Padding ajustado /
-font-size: 1rem;
-font-weight: 600; / Menos bold /
-border: none;
-border-radius: 10px; / Borde ligeramente más sutil /
-min-width: 180px; / Ancho ajustado /
-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); / Transición más fluida /
-font-family: 'Segoe UI', sans-serif;
-/ Sombra refinada para elevación */
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    min-width: 200px; /* Un poco más ancho para que quepa el texto largo */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    text-decoration: none; /* Importante para los botones que son etiquetas <a> */
 }
 
+.payment-buttons .btn:hover,
 .payment-buttons button:hover {
-transform: translateY(-3px) scale(1.03); /* Elevación y escala suaves /
-filter: brightness(1.1); / Brillo sutil /
-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); / Sombra de hover más marcada */
+    transform: translateY(-3px) scale(1.03);
+    filter: brightness(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    color: #fff; /* Asegura que el texto no cambie de color en links */
 }
 
-/* Colores específicos */
+/* --- COLORES ESPECÍFICOS --- */
+
+/* NUEVO: Mercado Pago */
+.btn-mercadopago {
+    background-color: #009ee3;
+    color: #fff !important;
+}
+
 .btn-yape {
-background-color: #800080;
-color: #fff;
+    background-color: #800080;
+    color: #fff;
 }
 
 .btn-plin {
-background-color: #00A859;
-color: #fff;
+    background-color: #00A859;
+    color: #fff;
 }
 
 .btn-dale {
-background-color: #F6C90E;
-color: #000;
+    background-color: #F6C90E;
+    color: #000;
 }
 
 .btn-binance {
-background-color: #f0b90b;
-color: #000;
+    background-color: #f0b90b;
+    color: #000;
 }
 
 .btn-paypal {
-background-color: #0070ba;
-color: #fff;
+    background-color: #0070ba;
+    color: #fff !important;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-.payment-buttons {
-flex-direction: column;
-align-items: center;
-gap: 10px;
-}
+    .payment-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
 
-.payment-buttons button {
-    width: 100%;
-    max-width: 250px;
-    font-size: 0.95rem;
-}
+    .payment-buttons .btn,
+    .payment-buttons button {
+        width: 100%;
+        max-width: 280px;
+        font-size: 0.95rem;
+    }
 
-footer h5 {
-    font-size: 1.4rem;
-}
-
-
+    footer h5 {
+        font-size: 1.4rem;
+    }
 }

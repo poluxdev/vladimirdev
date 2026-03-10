@@ -13,6 +13,9 @@ const ConsultasTarot = () => {
     }
   };
 
+  // Tu link real de Mercado Pago
+  const linkMercadoPago = "https://mpago.la/1y8rFRE"; 
+
   return (
     <section id="tarot" className="tarot-section">
       <div className="container">
@@ -73,9 +76,9 @@ const ConsultasTarot = () => {
           </a>
         </p>
 
-        {/* PRECIO */}
+        {/* PRECIO ACTUALIZADO */}
         <h3 className="mt-4">Inversión</h3>
-        <p>🇵🇪 Perú: <strong>S/ 20</strong> (Yape, Plin o DALE)</p>
+        <p>🇵🇪 Perú: <strong>S/ 25</strong> (Yape, Plin, DALE o Tarjeta)</p>
         <p>🌎 Internacional: <strong>$7 USD</strong> (PayPal o Binance)</p>
 
         <p className="fw-bold text-warning">
@@ -86,6 +89,13 @@ const ConsultasTarot = () => {
         {/* BOTONES */}
         <div className="payment-buttons mt-4">
           <h3>Reserva tu lectura ahora:</h3>
+
+          {/* BOTÓN MERCADO PAGO ACTUALIZADO */}
+          <a href={linkMercadoPago} target="_blank" rel="noopener noreferrer">
+            <button className="btn btn-mercadopago m-2">
+              💳 Pagar con Tarjeta (Crédito/Débito)
+            </button>
+          </a>
 
           <button className="btn btn-yape m-2" onClick={() => scrollToFooterAndOpenQR('btn-yape')}>
             📱 Pagar con Yape
@@ -105,7 +115,7 @@ const ConsultasTarot = () => {
 
           <a href="https://paypal.me/vladimirGarciaL?country.x=PE&locale.x=es_XC" target="_blank" rel="noopener noreferrer">
             <button className="btn btn-paypal m-2">
-              💳 Pagar con PayPal
+              🔵 Pagar con PayPal
             </button>
           </a>
         </div>

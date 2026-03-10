@@ -6,6 +6,7 @@
     --color-bg-dark: rgba(10, 10, 18, 0.9);
     --color-card-bg: rgba(255, 255, 255, 0.06);
     --color-border-soft: rgba(255, 255, 255, 0.12);
+    --color-mp-blue: #009ee3; /* Azul oficial Mercado Pago */
 }
 
 /* --- SECCIÓN GENERAL --- */
@@ -102,6 +103,7 @@
     border: none;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+    text-decoration: none; /* Por si se usa etiqueta <a> */
 }
 
 .tarot-section .payment-buttons .btn:hover {
@@ -110,6 +112,36 @@
 }
 
 /* --- COLORES DE BOTONES --- */
+
+/* MERCADO PAGO (CON EFECTO DE RESPLANDOR) */
+.tarot-section .btn-mercadopago {
+    background: linear-gradient(135deg, #009ee3, #007eb5);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 158, 227, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.tarot-section .btn-mercadopago::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(30deg);
+    transition: none;
+    animation: sweep 4s infinite;
+}
+
+@keyframes sweep {
+    0% { left: -60%; }
+    20% { left: 120%; }
+    100% { left: 120%; }
+}
+
 .tarot-section .btn-yape {
     background: linear-gradient(135deg, #7b1fa2, #ab47bc);
     color: #fff;
@@ -135,7 +167,7 @@
     color: #fff;
 }
 
-/* --- CTA FINAL (PELIGROSO) --- */
+/* --- CTA FINAL --- */
 .tarot-section .cta {
     margin-top: 60px;
     font-size: 1.55rem;
