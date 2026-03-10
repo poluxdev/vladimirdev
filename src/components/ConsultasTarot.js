@@ -78,8 +78,8 @@ const ConsultasTarot = () => {
 
         {/* PRECIO ACTUALIZADO */}
         <h3 className="mt-4">Inversión</h3>
-        <p>🇵🇪 Perú: <strong>S/ 25</strong> (Yape, Plin, DALE o Tarjeta)</p>
-        <p>🌎 Internacional: <strong>$7 USD</strong> (PayPal o Binance)</p>
+        <p>🇵🇪 Perú: <strong>S/ 25 </strong> (Yape, Plin, DALE o Tarjeta)</p>
+        <p>🌎 Internacional: <strong>$ 8 USD</strong> (PayPal o Binance)</p>
 
         <p className="fw-bold text-warning">
           ⚠️ Tomo pocas lecturas al día para mantener la calidad.
