@@ -19,8 +19,8 @@ const Footer = () => {
     setShow(true);
   };
 
-  // Tu link de Mercado Pago
-  const linkMercadoPago = "https://mpago.la/1y8rFRE";
+  // Link de Mercado Pago actualizado
+  const linkMercadoPago = "https://link.mercadopago.com.pe/poluxtarotista";
 
   return (
     <footer id="footer">
@@ -49,25 +49,24 @@ const Footer = () => {
             <h5>🌎 Tarjetas e Internacional 🌎</h5>
             <div className="payment-buttons d-flex flex-column align-items-center gap-2">
               
-              {/* SECCIÓN MERCADO PAGO MEJORADA */}
-             <div className="w-100 d-flex flex-column align-items-center">
-  <Button 
-    className="btn-mercadopago mb-1" 
-    as="a" 
-    href={linkMercadoPago} 
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <BsCreditCard /> Pagar con Tarjeta (Mercado Pago)
-  </Button>
-  
-  {/* Banderas al costado para hacerlo más intuitivo */}
-  <span className="paises-disponibles">
-    🇵🇪 Perú • 🇲🇽 México • 🇦🇷 Arg • 🇨🇱 Chile
-    <br />
-    🇨🇴 Col • 🇺🇾 Uruguay • 🇪🇨 Ecuador
-  </span>
-</div>
+              {/* SECCIÓN MERCADO PAGO ACTUALIZADA */}
+              <div className="w-100 d-flex flex-column align-items-center">
+                <Button 
+                  className="btn-mercadopago mb-1" 
+                  as="a" 
+                  href={linkMercadoPago} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsCreditCard /> Pagar con Tarjeta (Mercado Pago)
+                </Button>
+                
+                <span className="paises-disponibles">
+                  🇵🇪 Perú • 🇲🇽 México • 🇦🇷 Arg • 🇨🇱 Chile
+                  <br />
+                  🇨🇴 Col • 🇺🇾 Uruguay • 🇪🇨 Ecuador
+                </span>
+              </div>
 
               <Button
                 className="btn-paypal"
