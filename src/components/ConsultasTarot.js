@@ -13,8 +13,8 @@ const ConsultasTarot = () => {
     }
   };
 
-  // Link actualizado de Mercado Pago
-  const linkMercadoPago = "https://link.mercadopago.com.pe/poluxtarotista"; 
+  // NUEVO LINK DE MERCADO PAGO ACTUALIZADO
+  const linkMercadoPago = "https://mpago.la/33BgYwg"; 
 
   return (
     <section id="tarot" className="tarot-section">
@@ -99,14 +99,14 @@ const ConsultasTarot = () => {
           <h3 className="w-100 mb-4">Reserva tu lectura ahora:</h3>
 
           {/* MERCADO PAGO ACTUALIZADO */}
-          <a href={linkMercadoPago} target="_blank" rel="noopener noreferrer">
+          <a href={linkMercadoPago} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
             <button className="btn btn-mercadopago m-2">
-              💳 Pagar con Tarjeta (Ingresa el valor de $8 USD)
+              💳 Pagar con Tarjeta (Débito o Crédito)
             </button>
           </a>
 
           {/* PAYPAL */}
-          <a href="https://paypal.me/vladimirGarciaL?country.x=PE&locale.x=es_XC" target="_blank" rel="noopener noreferrer">
+          <a href="https://paypal.me/vladimirGarciaL?country.x=PE&locale.x=es_XC" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
             <button className="btn btn-paypal m-2">
               🔵 Pagar con PayPal ($8 USD)
             </button>

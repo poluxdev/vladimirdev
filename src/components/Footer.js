@@ -19,8 +19,8 @@ const Footer = () => {
     setShow(true);
   };
 
-  // Link de Mercado Pago actualizado
-  const linkMercadoPago = "https://link.mercadopago.com.pe/poluxtarotista";
+  // NUEVO LINK DE MERCADO PAGO ACTUALIZADO
+  const linkMercadoPago = "https://mpago.la/33BgYwg";
 
   return (
     <footer id="footer">
@@ -62,9 +62,9 @@ const Footer = () => {
                 </Button>
                 
                 <span className="paises-disponibles">
-                  🇵🇪 Perú • 🇲🇽 México • 🇦🇷 Arg • 🇨🇱 Chile
+                  🇵🇪 Perú • 🇲🇽 México • 🇦🇷 Argentina • 🇨🇱 Chile
                   <br />
-                  🇨🇴 Col • 🇺🇾 Uruguay • 🇪🇨 Ecuador
+                  🇨🇴 Colombia • 🇺🇾 Uruguay • 🇪🇨 Ecuador
                 </span>
               </div>
 
