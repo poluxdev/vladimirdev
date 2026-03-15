@@ -20,7 +20,7 @@ const Footer = () => {
   };
 
   // NUEVO LINK DE MERCADO PAGO ACTUALIZADO
-  const linkMercadoPago = "https://mpago.la/33BgYwg";
+  const linkMercadoPago = "https://mpago.la/2DPtzuj";
 
   return (
     <footer id="footer">

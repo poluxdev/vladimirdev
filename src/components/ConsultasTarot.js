@@ -14,7 +14,7 @@ const ConsultasTarot = () => {
   };
 
   // NUEVO LINK DE MERCADO PAGO ACTUALIZADO
-  const linkMercadoPago = "https://mpago.la/33BgYwg"; 
+  const linkMercadoPago = "https://mpago.la/2DPtzuj"; 
 
   return (
     <section id="tarot" className="tarot-section">
@@ -79,12 +79,12 @@ const ConsultasTarot = () => {
         {/* SECCIÓN INVERSIÓN */}
         <div className="inversion-info mt-4">
             <h3 className="">Inversión</h3>
-            <p>🇵🇪 <strong>Perú:</strong> S/ 25 <small>(Yape, Plin o DALE)</small></p>
+            <p>🇵🇪 <strong>Perú:</strong> S/ 75 <small>(Yape, Plin o DALE)</small></p>
             
-            <p>🌎 <strong>Latam e Internacional:</strong> $ 8 USD
+            <p>🌎 <strong>Latam e Internacional:</strong> $ 23 USD
               <br />
               <small style={{ fontSize: '0.9rem', color: 'var(--color-pink)' }}>
-                (Paga el equivalente a <strong>8 USD</strong> en tu moneda local. Mercado Pago/PayPal harán la conversión automáticamente)
+                (Paga el equivalente a <strong>23 USD</strong> en tu moneda local. Mercado Pago/PayPal harán la conversión automáticamente)
               </small>
             </p>
         </div>
@@ -98,7 +98,7 @@ const ConsultasTarot = () => {
         <div className="payment-buttons mt-4">
           <h3 className="w-100 mb-4">Reserva tu lectura ahora:</h3>
 
-          {/* MERCADO PAGO ACTUALIZADO */}
+          {/* MERCADO PAGO */}
           <a href={linkMercadoPago} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
             <button className="btn btn-mercadopago m-2">
               💳 Pagar con Tarjeta (Débito o Crédito)
@@ -108,27 +108,27 @@ const ConsultasTarot = () => {
           {/* PAYPAL */}
           <a href="https://paypal.me/vladimirGarciaL?country.x=PE&locale.x=es_XC" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
             <button className="btn btn-paypal m-2">
-              🔵 Pagar con PayPal ($8 USD)
+              🔵 Pagar con PayPal ($23 USD)
             </button>
           </a>
 
           {/* BINANCE */}
           <button className="btn btn-binance m-2" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
-            ₿ Pagar con Binance (8 USDT)
+            ₿ Pagar con Binance (23 USDT)
           </button>
 
           {/* CONTENEDOR PARA BOTONES DE PERÚ EN HORIZONTAL */}
           <div className="peru-buttons-container mt-2">
             <button className="btn btn-yape m-2" onClick={() => scrollToFooterAndOpenQR('btn-yape')}>
-              📱 Pagar con Yape (Perú - S/ 25)
+              📱 Pagar con Yape (Perú - S/ 75)
             </button>
 
             <button className="btn btn-plin m-2" onClick={() => scrollToFooterAndOpenQR('btn-plin')}>
-              ⚡ Pagar con Plin (Perú - S/ 25)
+              ⚡ Pagar con Plin (Perú - S/ 75)
             </button>
 
             <button className="btn btn-dale m-2" onClick={() => scrollToFooterAndOpenQR('btn-dale')}>
-              🏦 Pagar con DALE (Perú - S/ 25)
+              🏦 Pagar con DALE (Perú - S/ 75)
             </button>
           </div>
         </div>
