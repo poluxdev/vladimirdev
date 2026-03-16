@@ -1,3 +1,4 @@
+/* --- ESTRUCTURA GENERAL DEL FOOTER --- */
 footer {
     background: linear-gradient(to right, #1f1b2e, #2b2342);
     color: #f3eaff;
@@ -8,12 +9,6 @@ footer {
     position: relative;
 }
 
-footer p {
-    margin: 0;
-    font-size: 1rem;
-    color: #dcd0f2;
-}
-
 footer h5 {
     font-family: 'Playfair Display', serif;
     color: #e5c3ff;
@@ -22,19 +17,24 @@ footer h5 {
     text-shadow: 0 0 5px rgba(240, 219, 255, 0.4);
 }
 
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: #dcd0f2;
+}
+
 footer a {
     color: #d6b8ff;
     text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 footer a:hover {
     color: #f0dbff;
-    text-decoration: none;
     text-shadow: 0 0 10px #b191ff;
 }
 
-/* Contenedor de Botones */
+/* --- CONTENEDOR Y ESTILO BASE DE BOTONES --- */
 .payment-buttons {
     display: flex;
     gap: 15px;
@@ -43,7 +43,6 @@ footer a:hover {
     justify-content: center;
 }
 
-/* Estilo Base de Botones */
 .payment-buttons .btn, 
 .payment-buttons button {
     display: flex;
@@ -56,10 +55,10 @@ footer a:hover {
     border: none;
     border-radius: 10px;
     min-width: 220px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-family: 'Segoe UI', Arial, sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: none; /* Unificado aquí */
 }
 
 .payment-buttons .btn:hover,
@@ -70,53 +69,45 @@ footer a:hover {
     color: #fff;
 }
 
-/* --- COLORES ESPECÍFICOS --- */
-.btn-mercadopago {
-    background-color: #009ee3 !important;
-    color: #fff !important;
-}
+/* --- COLORES DE MARCA (CON !IMPORTANT DONDE ES NECESARIO) --- */
+.btn-mercadopago { background-color: #009ee3 !important; color: #fff !important; }
+.btn-yape        { background-color: #800080; color: #fff; }
+.btn-plin        { background-color: #00A859; color: #fff; }
+.btn-dale        { background-color: #F6C90E; color: #000; }
+.btn-binance     { background-color: #f0b90b; color: #000; }
+.btn-paypal      { background-color: #0070ba; color: #fff !important; }
 
-.btn-yape {
-    background-color: #800080;
-    color: #fff;
-}
-
-.btn-plin {
-    background-color: #00A859;
-    color: #fff;
-}
-
-.btn-dale {
-    background-color: #F6C90E;
-    color: #000;
-}
-
-.btn-binance {
-    background-color: #f0b90b;
-    color: #000;
-}
-
-.btn-paypal {
-    background-color: #0070ba;
-    color: #fff !important;
-}
-
-/* --- ESTILO MEJORADO PARA LOS PAÍSES (DORADO VIBRANTE) --- */
+/* --- PAÍSES DISPONIBLES (ESTILO DORADO) --- */
 .paises-disponibles {
-    color: #ffd700 !important; /* Oro puro */
-    font-size: 0.9rem; /* Un poco más grande para legibilidad */
+    color: #ffd700 !important;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-top: 10px;
+    margin: 10px auto 0; /* Centrado automático */
     text-align: center;
     display: block;
-    /* Añadimos sombra negra para que las letras/banderas resalten del fondo morado */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 5px rgba(255, 215, 0, 0.2);
-    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     line-height: 1.5;
-    max-width: 300px; /* Evita que el texto se estire demasiado */
+    max-width: 300px;
 }
 
-/* Responsive */
+/* --- MODAL PERSONALIZADO --- */
+.modal-content {
+    background: #1f1b2e !important;
+    color: #f3eaff !important;
+    border: 1px solid #b191ff !important;
+    border-radius: 15px;
+}
+
+.modal-header, .modal-footer {
+    border-color: rgba(177, 145, 255, 0.3); /* Unificado */
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .payment-buttons {
         flex-direction: column;

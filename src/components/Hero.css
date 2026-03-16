@@ -1,10 +1,8 @@
-/* --- HERO SECTION Y LAYOUT (Ajustes de Legibilidad) --- */
-
+/* --- HERO SECTION Y LAYOUT --- */
 .hero {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* MEJORA: El fondo real es la imagen, este color se mantiene como fallback */
     background-color: #0c0c14; 
     background-attachment: fixed;
     min-height: 100vh;
@@ -16,128 +14,165 @@
     position: relative;
     overflow: hidden;
     padding: 2rem;
+    z-index: 1;
 }
 
-/* Evita errores de fondo fijo en móviles */
+/* Ajuste para móviles */
 @media screen and (max-width: 768px) {
     .hero {
         background-attachment: scroll;
         flex-direction: column;
-        padding: 3rem 1rem;
+        padding: 5rem 1rem;
     }
 }
 
-/* Capa oscura opcional para mejor contraste de texto */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    /* MEJORA: Opacidad aumentada para mejorar el contraste del texto sobre el fondo estrellado/de cartas. */
-    background: rgba(0, 0, 0, 0.45); 
+    background: rgba(0, 0, 0, 0.55); /* Mayor profundidad */
     z-index: 1;
 }
 
-/* Contenido principal */
 .hero-content {
     transform-style: preserve-3d;
     transition: transform 0.4s ease-out;
     text-align: left;
-    max-width: 480px;
-    padding-left: 2rem;
+    max-width: 600px;
     z-index: 2;
 }
 
 @media screen and (max-width: 768px) {
     .hero-content {
         text-align: center;
-        padding-left: 0;
         max-width: 100%;
     }
 }
 
-/* Título */
+/* --- TIPOGRAFÍA --- */
 .hero-content h1 {
-    font-size: 64px;
-    color: #f8f5fc; /* MEJORA: Cambiado a blanco roto para mejor contraste en fondos oscuros */
+    font-size: 72px;
+    color: #f8f5fc;
     font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-weight: bold;
-    /* MEJORA: Text-shadow refinado para un glow más suave y visible sobre fondo oscuro */
     text-shadow:
-        0 0 5px #b799ff,
-        0 0 10px #a077ff,
-        0 0 20px rgba(141, 111, 209, 0.7), /* Violeta difuso */
-        0 0 30px rgba(183, 153, 255, 0.5); /* Halo exterior */
-    margin-bottom: 10px;
+        0 0 10px rgba(183, 153, 255, 0.8),
+        0 0 20px rgba(160, 119, 255, 0.4);
+    margin-bottom: 15px;
 }
 
-/* --- BOTÓN MEJORADO: EXPLORA TU MUNDO INTERIOR --- */
-
-button {
-    /* MEJORA: Aplicando un degradado sutil para un efecto 3D y más elegancia */
-    background: linear-gradient(145deg, #8d6fd1, #6b4ea0); 
-    color: #ffffff;
-    border: none;
-    padding: 14px 28px; /* Ligeramente más padding para más presencia */
-    font-size: 1.15rem; /* Ligeramente más grande */
-    font-family: 'Segoe UI', sans-serif;
-    border-radius: 12px;
-    
-    /* MEJORA: Box-shadow con un toque de brillo para simular luz */
-    box-shadow: 
-        0 0 15px rgba(107, 78, 160, 0.5), /* Sombra exterior para glow */
-        0 4px 8px rgba(0, 0, 0, 0.3);    /* Sombra para elevación */
-        
-    cursor: pointer;
-    transition: all 0.3s ease; /* Transición en 'all' para incluir el glow */
-    margin-top: 2rem;
-    z-index: 2;
-    font-weight: 600;
+.hero-content p {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-bottom: 30px;
 }
 
-button:hover {
-    /* MEJORA: Invertir el degradado o usar un color más claro para el hover */
-    background: linear-gradient(145deg, #a077ff, #8d6fd1); 
-    transform: scale(1.03); /* Escala más sutil que 1.05 */
-    
-    /* MEJORA: Aumentar el glow y la sombra de elevación */
-    box-shadow: 
-        0 0 25px rgba(141, 111, 209, 0.8), /* Glow más intenso */
-        0 8px 20px rgba(0, 0, 0, 0.5);    /* Sombra de elevación más marcada */
+/* --- CONTENEDOR DE BOTONES --- */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }
 
-/* MEJORA ADICIONAL: Efecto de Pulsación (Opcional, para destacar el CTA) */
-button:focus {
-    outline: 2px solid #fff;
-    outline-offset: 2px;
+@media screen and (max-width: 768px) {
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+    }
 }
 
-/* Reloj (SIN CAMBIOS, se ve bien) */
+/* --- BOTÓN 1: EXPLORA TU MUNDO (Cristal Verde) --- */
+.btn-hero-explore {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(57, 255, 20, 0.4) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 14px 28px !important;
+    border-radius: 50px !important;
+    font-size: 1.1rem !important;
+    transition: all 0.4s ease !important;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-hero-explore:hover {
+    background: rgba(57, 255, 20, 0.1) !important;
+    border-color: #39ff14 !important;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.3);
+    color: #39ff14 !important;
+    transform: translateY(-3px);
+}
+
+/* --- BOTÓN 2: TAROT (Oro/Rosa con Pulso) --- */
+.btn-hero-tarot {
+    background: linear-gradient(135deg, #ffd700, #ff85c1) !important;
+    border: none !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    padding: 14px 28px !important;
+    border-radius: 50px !important;
+    font-size: 1.1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease !important;
+    animation: pulseGlow 3s infinite ease-in-out;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-hero-tarot:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 0 30px rgba(255, 133, 193, 0.7);
+    filter: brightness(1.1);
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); }
+}
+
+/* --- RELOJ --- */
 .clock {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #6b4ea0;
-    background-color: rgba(255, 255, 255, 0.75);
-    padding: 10px 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(107, 78, 160, 0.25);
-    font-family: 'Segoe UI', sans-serif;
-    z-index: 2;
+    top: 25px;
+    right: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #f8f5fc;
+    background: rgba(107, 78, 160, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-family: 'monospace';
+    letter-spacing: 2px;
+    z-index: 10;
 }
 
-/* Responsive ajustes de tipografía y botón (Ajustado) */
+/* --- RESPONSIVO FINAL --- */
 @media screen and (max-width: 768px) {
     .hero-content h1 {
-        font-size: 44px; /* Ligeramente más grande que 36px para impacto */
+        font-size: 48px;
     }
-
-    button {
-        font-size: 1.05rem;
-        padding: 0.8rem 1.8rem;
+    .clock {
+        top: 10px;
+        right: 50%;
+        transform: translateX(50%);
+        font-size: 1rem;
+    }
+    .btn-hero-explore, .btn-hero-tarot {
+        width: 100%;
+        max-width: 320px;
     }
 }

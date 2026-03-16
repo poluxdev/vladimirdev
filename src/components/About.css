@@ -1,90 +1,115 @@
-/* Fondo general suave para la sección */
+/* --- SECCIÓN ABOUT (TRANSFORMACIÓN MÍSTICA) --- */
 #about {
-  background-color: #f9f7fb; /* lavanda claro */
-  color: #333;
-  padding: 3rem 0;
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background-color: #08080c; /* Negro profundo acorde al resto */
+    color: #e0e0e0;
+    padding: 100px 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Título principal */
+/* Decoración de fondo sutil */
+#about::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(141, 111, 209, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+/* Título principal con el estilo de la marca */
 #about h2 {
-  font-family: 'Playfair Display', serif;
-  color: #5e4b8b;
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  letter-spacing: 0.5px;
+    font-family: 'Playfair Display', serif;
+    color: var(--color-gold, #ffd700); /* Usando el dorado de tus consultas */
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
 }
 
-/* Párrafos normales */
+/* Contenedor de texto */
 #about p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  color: #444;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    color: #cccccc;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Párrafos destacados (últimos) */
+/* Párrafos destacados (Cita o conclusión) */
 #about p.fw-bold {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-left: 4px solid #7a5ba3;
-  padding: 1rem 1.25rem;
-  font-weight: 600;
-  color: #2e2e2e;
-  margin-top: 2rem;
-  border-radius: 6px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border-left: 4px solid #ff85c1; /* Rosa neón */
+    padding: 1.5rem 2rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-top: 3rem;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    font-style: italic;
 }
 
-/* Estilo para el texto con hover (desarrollador) */
+/* Estilo para el link del certificado (Developer/Psicólogo) */
 .certificado-hover {
-  position: relative;
-  cursor: pointer;
-  color: #6b4ea0;
-  font-weight: 600;
-  transition: color 0.3s ease;
-  text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    color: #39ff14; /* Verde neón para resaltar tus habilidades técnicas */
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: 1px dashed #39ff14;
 }
 
 .certificado-hover:hover {
-  color: #8d6fd1;
+    color: #ffffff;
+    background: rgba(57, 255, 20, 0.1);
+    border-bottom: 1px solid #39ff14;
 }
 
-/* Imagen del certificado (hover visible) */
+/* Imagen del certificado que aparece al hacer hover */
 .certificado-img {
-  display: none;
-  position: absolute;
-  top: 2em;
-  left: 0;
-  width: 280px;
-  max-width: 90vw;
-  border: 1.5px solid #d4c9ec;
-  border-radius: 10px;
-  z-index: 10;
-  box-shadow: 0 8px 24px rgba(107, 78, 160, 0.25);
-  background-color: #fff;
-  transition: all 0.3s ease;
+    display: none;
+    position: absolute;
+    top: -200px; /* Aparece arriba del texto */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    border: 2px solid #8d6fd1;
+    border-radius: 12px;
+    z-index: 100;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(141, 111, 209, 0.4);
+    background-color: #1a1a1a;
+    animation: fadeInScale 0.4s ease-out;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: translateX(-50%) scale(0.9); }
+    to { opacity: 1; transform: translateX(-50%) scale(1); }
 }
 
 .certificado-hover:hover .certificado-img {
-  display: block;
+    display: block;
 }
 
-/* Responsive: para que no se corte nada en móvil */
-@media (max-width: 576px) {
-  #about {
-    padding: 2rem 1rem;
-  }
+/* Responsive */
+@media (max-width: 768px) {
+    #about {
+        padding: 60px 20px;
+        text-align: center;
+    }
 
-  #about h2 {
-    font-size: 1.8rem;
-  }
+    #about h2 {
+        font-size: 2.2rem;
+    }
 
-  #about p {
-    font-size: 1rem;
-  }
-
-  .certificado-img {
-    width: 90vw;
-    left: 0;
-  }
+    .certificado-img {
+        width: 280px;
+        top: 2em; /* En móvil que aparezca debajo */
+    }
 }

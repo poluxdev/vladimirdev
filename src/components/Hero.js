@@ -54,13 +54,28 @@ const Hero = () => {
                 />
               </span>
             </p>
-            <Button variant="light" href="#projects">
-              Explora Tu Mundo Interior
-            </Button>
+            
+            <div className="hero-buttons">
+              {/* BOTÓN SECUNDARIO: EXPLORAR */}
+              <Button 
+                href="#projects" 
+                className="btn-hero-explore me-3"
+              >
+                Explora Tu Mundo Interior
+              </Button>
+
+              {/* BOTÓN PRIMARIO: TAROT (VENTA) */}
+              <Button 
+                href="#tarot" 
+                className="btn-hero-tarot"
+              >
+                🔮 Lectura Personalizada
+              </Button>
+            </div>
           </Col>
 
           <Col md={4} className="d-flex justify-content-center align-items-center hero-extra">
-            {/* Puedes agregar una imagen, ilustración o animación aquí */}
+            {/* Aquí puedes insertar tu logo o una ilustración mística */}
           </Col>
         </Row>
       </Container>

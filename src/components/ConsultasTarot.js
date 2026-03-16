@@ -2,6 +2,7 @@ import React from 'react';
 import './ConsultasTarot.css';
 
 const ConsultasTarot = () => {
+  // Función para bajar al footer y abrir el QR (Binance, Yape, Plin, Dale)
   const scrollToFooterAndOpenQR = (id) => {
     const footerElement = document.getElementById('footer');
     if (footerElement) {
@@ -13,136 +14,121 @@ const ConsultasTarot = () => {
     }
   };
 
-  // NUEVO LINK DE MERCADO PAGO ACTUALIZADO
-  const linkMercadoPago = "https://mpago.la/2DPtzuj"; 
+  // Enlaces de pago
+  const linkMercadoPago = "https://mpago.la/2DPtzuj";
+  const linkPayPal = "https://www.paypal.com/paypalme/vladimirGarciaL?country.x=PE&locale.x=es_XC";
+  
+  // Datos de contacto configurados
+  const email = "eldiariopolux@gmail.com";
+  const whatsappNumber = "51929441018"; // Tu número de Perú configurado correctamente
 
   return (
     <section id="tarot" className="tarot-section">
       <div className="container">
-
-        {/* HERO */}
-        <h2 className="text-center">
-          🔮 La respuesta que necesitas escuchar ahora
-        </h2>
-
-        <p className="text-center fw-bold mt-3">
-          Si llevas días pensando en una persona, una decisión o un bloqueo que no logras entender,
-          esta lectura es para ti.
-        </p>
-
-        <p className="text-center">
-          Cuando el tarot aparece, no es casualidad.  
-          Algo quiere mostrarse… y hoy puedes verlo con claridad.
-        </p>
-
-        {/* PROMESA */}
-        <div className="highlight-box mt-4">
-          <p>
-            Esta no es una lectura genérica ni automática.
-            Grabaré un <strong>video exclusivo para ti</strong>, mostrando las cartas reales que salen en tu tirada
-            y diciéndote <strong>la verdad que ahora mismo no estás viendo</strong>.
+        
+        {/* CABECERA EMOCIONAL */}
+        <div className="hero-content">
+          <h2 className="text-center">🔮 Tu intuición te trajo aquí por una razón</h2>
+          <p className="text-center lead-text">
+            Hay preguntas que no te dejan dormir. <strong>No estás aquí por casualidad:</strong> 
+            el tarot es el espejo de lo que tu alma ya sabe, pero tu mente aún no logra ver.
           </p>
-
-          <p className="fw-bold">
-            Ideal si te preguntas:
-          </p>
-
-          <ul>
-            <li>¿Tiene sentido seguir insistiendo o es momento de soltar?</li>
-            <li>¿Qué energía está bloqueando mi camino ahora?</li>
-            <li>¿Qué decisión me conviene tomar en este momento?</li>
-            <li>¿Qué quiere decirme esta situación que se repite?</li>
-          </ul>
         </div>
 
-        {/* COMO FUNCIONA */}
-        <h3 className="mt-5">¿Cómo funciona la lectura?</h3>
-        <ol>
-          <li>Realizas el pago por el medio que prefieras.</li>
-          <li>
-            Me envías por WhatsApp o correo:
-            <br />– Tu <strong>nombre</strong>
-            <br />– Tu <strong>pregunta</strong>
-            <br />– El <strong>comprobante de pago</strong>
-          </li>
-          <li>
-            Recibes tu <strong>video personalizado</strong> en menos de 24 horas.
-          </li>
-        </ol>
+        {/* PASO 1: EL PAGO */}
+        <div className="payment-container mt-5">
+          <h3 className="text-center mb-4">Paso 1: Elige tu método de pago</h3>
+          
+          <div className="payment-grid">
+            {/* GRUPO PERÚ */}
+            <div className="payment-card peru-card">
+              <div className="card-badge">🇵🇪 Local</div>
+              <h4>Residentes en Perú</h4>
+              <p className="price">S/ 75</p>
+              <div className="button-group-vertical">
+                <button className="btn btn-yape" onClick={() => scrollToFooterAndOpenQR('btn-yape')}>
+                  📱 Pagar con Yape
+                </button>
+                <button className="btn btn-plin" onClick={() => scrollToFooterAndOpenQR('btn-plin')}>
+                  ⚡ Pagar con Plin
+                </button>
+                <button className="btn btn-dale" onClick={() => scrollToFooterAndOpenQR('btn-dale')}>
+                  🏦 Transferencia DALE
+                </button>
+              </div>
+            </div>
 
-        <p className="mt-3">
-          📧 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=eldiariopolux@gmail.com" target="_blank" rel="noopener noreferrer">
-            eldiariopolux@gmail.com
-          </a>
-        </p>
-
-        {/* SECCIÓN INVERSIÓN */}
-        <div className="inversion-info mt-4">
-            <h3 className="">Inversión</h3>
-            <p>🇵🇪 <strong>Perú:</strong> S/ 75 <small>(Yape, Plin o DALE)</small></p>
-            
-            <p>🌎 <strong>Latam e Internacional:</strong> $ 23 USD
-              <br />
-              <small style={{ fontSize: '0.9rem', color: 'var(--color-pink)' }}>
-                (Paga el equivalente a <strong>23 USD</strong> en tu moneda local. Mercado Pago/PayPal harán la conversión automáticamente)
+            {/* GRUPO INTERNACIONAL */}
+            <div className="payment-card international-card featured">
+              <div className="card-badge gold">🌎 Global</div>
+              <h4>Latam & Internacional</h4>
+              <p className="price">$ 23 USD</p>
+              <div className="button-group-vertical">
+                <a href={linkMercadoPago} target="_blank" rel="noopener noreferrer" className="btn btn-mercadopago">
+                  💳 Tarjeta (Débito o Crédito)
+                </a>
+                <a href={linkPayPal} target="_blank" rel="noopener noreferrer" className="btn btn-paypal">
+                  🔵 PayPal (Pago Seguro)
+                </a>
+                <button className="btn btn-binance" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
+                  ₿ Binance (23 USDT)
+                </button>
+              </div>
+              <small className="conversion-note">
+                (Se convierte automáticamente a tu moneda local)
               </small>
-            </p>
+            </div>
+          </div>
         </div>
 
-        <p className="fw-bold text-warning">
-          ⚠️ Tomo pocas lecturas al día para mantener la calidad.
-          Si estás aquí, probablemente no sea casualidad.
-        </p>
+        {/* PASO 2: EL ENVÍO DE DATOS */}
+        <div className="delivery-instructions mt-5">
+          <h3 className="text-center">Paso 2: Envía tus datos de consulta</h3>
+          <p className="text-center mb-4">Una vez realizado el pago, envíame por el canal que prefieras:</p>
+          
+          <div className="contact-methods-grid">
+            
+            {/* WHATSAPP */}
+            <div className="contact-card">
+              <div className="icon">📱</div>
+              <h4>WhatsApp</h4>
+              <p>Envía comprobante, nombre y pregunta. Recibirás tu <strong>video como documento</strong> directamente.</p>
+              <a href={`https://wa.me/${whatsappNumber}?text=Hola!%20He%20realizado%20el%20pago%20de%20mi%20lectura.%20Aquí%20tienes%20mi%20comprobante...`} 
+                 target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
+                Enviar por WhatsApp
+              </a>
+            </div>
 
-        {/* BOTONES DE PAGO */}
-        <div className="payment-buttons mt-4">
-          <h3 className="w-100 mb-4">Reserva tu lectura ahora:</h3>
+            {/* CORREO */}
+            <div className="contact-card">
+              <div className="icon">📧</div>
+              <h4>Correo Electrónico</h4>
+              <p>Envía tus datos a <strong>{email}</strong>. Te responderé con un link de <strong>TransferNow</strong>.</p>
+              <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Consulta%20de%20Tarot%20-%20Comprobante`} 
+                 target="_blank" rel="noopener noreferrer" className="btn btn-email">
+                Enviar por Correo
+              </a>
+            </div>
+          </div>
 
-          {/* MERCADO PAGO */}
-          <a href={linkMercadoPago} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-            <button className="btn btn-mercadopago m-2">
-              💳 Pagar con Tarjeta (Débito o Crédito)
-            </button>
-          </a>
-
-          {/* PAYPAL */}
-          <a href="https://paypal.me/vladimirGarciaL?country.x=PE&locale.x=es_XC" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-            <button className="btn btn-paypal m-2">
-              🔵 Pagar con PayPal ($23 USD)
-            </button>
-          </a>
-
-          {/* BINANCE */}
-          <button className="btn btn-binance m-2" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
-            ₿ Pagar con Binance (23 USDT)
-          </button>
-
-          {/* CONTENEDOR PARA BOTONES DE PERÚ EN HORIZONTAL */}
-          <div className="peru-buttons-container mt-2">
-            <button className="btn btn-yape m-2" onClick={() => scrollToFooterAndOpenQR('btn-yape')}>
-              📱 Pagar con Yape (Perú - S/ 75)
-            </button>
-
-            <button className="btn btn-plin m-2" onClick={() => scrollToFooterAndOpenQR('btn-plin')}>
-              ⚡ Pagar con Plin (Perú - S/ 75)
-            </button>
-
-            <button className="btn btn-dale m-2" onClick={() => scrollToFooterAndOpenQR('btn-dale')}>
-              🏦 Pagar con DALE (Perú - S/ 75)
-            </button>
+          <div className="expiration-notice mt-4">
+            <p>
+              ⚠️ <strong>Privacidad y Tiempo:</strong> Los videos enviados por correo expiran en <strong>7 días</strong> por TransferNow. ¡Asegúrate de descargarlo!
+            </p>
           </div>
         </div>
 
         {/* CIERRE */}
-        <p className="cta mt-5 text-center fw-bold">
-          🔮 A veces no necesitas más tiempo…  
-          necesitas una respuesta clara.  
-          <br />
-          <span className="text-primary">
-            Haz tu consulta ahora y deja de cargar la duda.
-          </span>
-        </p>
+        <div className="scarcity-box">
+          <p className="warning-text">
+            ⚠️ <strong>Atención:</strong> Solo realizo un número limitado de lecturas profundas al día para garantizar una conexión real.
+          </p>
+        </div>
 
+        <p className="cta mt-5 text-center fw-bold">
+          🔮 No permitas que la duda siga drenando tu energía. <br />
+          <span className="text-highlight">Haz tu consulta hoy y recupera tu paz mental.</span>
+        </p>
       </div>
     </section>
   );

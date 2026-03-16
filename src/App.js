@@ -8,7 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ConsultasTarot from './components/ConsultasTarot';
 import whatsappIcon from './images/whatsap.png';
-import ReactGA from 'react-ga4'; // 👈 Asegúrate de importar esto
+import ReactGA from 'react-ga4';
 
 const projects = [
   // Añade más proyectos aquí
@@ -23,6 +23,10 @@ const App = () => {
     });
   };
 
+  // Mensaje Opción 3: Híbrido (Dudas + Confirmación de Pago)
+  const whatsappMessage = "¡Hola Polux! 🔮 Me interesa una lectura de tarot. ¿Me podrías ayudar con unas dudas o confirmarme la recepción de mi pago si ya lo realicé? ¡Muchas gracias!";
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+
   return (
     <div>
       <NavBar />
@@ -35,11 +39,11 @@ const App = () => {
 
       {/* Botón flotante de WhatsApp */}
       <a
-        href="https://wa.me/51929441018?text=%C2%A1Hola%20Polux!%20%F0%9F%94%AE%20Ya%20realic%C3%A9%20el%20pago%20de%20mi%20lectura.%20Aqu%C3%AD%20te%20comparto%20mi%20nombre%2C%20mi%20pregunta%20y%20el%20comprobante%20para%20recibir%20mi%20video%20en%20las%20pr%C3%B3ximas%2024%20horas.%20%E2%9C%A8"
+        href={`https://wa.me/51929441018?text=${encodedMessage}`}
         className="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"
-        title="¿Tienes dudas? Escríbeme por WhatsApp"
+        title="¿Tienes dudas o ya pagaste? Escríbeme"
         onClick={handleWhatsappClick} 
       >
         <div className="whatsapp-tooltip">Escríbeme 📲</div>
