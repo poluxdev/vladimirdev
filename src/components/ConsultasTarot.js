@@ -2,7 +2,7 @@ import React from 'react';
 import './ConsultasTarot.css';
 
 const ConsultasTarot = () => {
-  // Función para bajar al footer y abrir el QR (Binance, Yape, Plin, Dale)
+
   const scrollToFooterAndOpenQR = (id) => {
     const footerElement = document.getElementById('footer');
     if (footerElement) {
@@ -14,38 +14,46 @@ const ConsultasTarot = () => {
     }
   };
 
-  // Enlaces de pago
-  const linkMercadoPago = "https://mpago.la/2DPtzuj";
-  const linkPayPal = "https://www.paypal.com/paypalme/vladimirGarciaL?country.x=PE&locale.x=es_XC";
+  const links = {
+    paypal14: "https://www.paypal.com/paypalme/vladimirGarciaL/14USD",
+    paypal23: "https://www.paypal.com/paypalme/vladimirGarciaL/23USD",
+    mercadoPago14: "https://mpago.la/1pdqLUS", 
+    mercadoPago23: "https://mpago.la/2DPtzuj",
+  };
   
-  // Datos de contacto configurados
   const email = "eldiariopolux@gmail.com";
-  const whatsappNumber = "51929441018"; // Tu número de Perú configurado correctamente
+  const whatsappNumber = "51929441018";
 
   return (
     <section id="tarot" className="tarot-section">
       <div className="container">
         
-        {/* CABECERA EMOCIONAL */}
+        {/* CABECERA */}
         <div className="hero-content">
           <h2 className="text-center">🔮 Tu intuición te trajo aquí por una razón</h2>
           <p className="text-center lead-text">
             Hay preguntas que no te dejan dormir. <strong>No estás aquí por casualidad:</strong> 
-            el tarot es el espejo de lo que tu alma ya sabe, pero tu mente aún no logra ver.
+            el tarot es el espejo de lo que tu alma ya sabe.
           </p>
         </div>
 
-        {/* PASO 1: EL PAGO */}
+        {/* PASO 1: SELECCIÓN DE LECTURA */}
         <div className="payment-container mt-5">
-          <h3 className="text-center mb-4">Paso 1: Elige tu método de pago</h3>
+          <h3 className="text-center mb-4">Paso 1: Selecciona tu consulta según tu duda</h3>
           
           <div className="payment-grid">
-            {/* GRUPO PERÚ */}
+
+            {/* OPCIÓN: PERÚ (Local) */}
             <div className="payment-card peru-card">
-              <div className="card-badge">🇵🇪 Local</div>
-              <h4>Residentes en Perú</h4>
-              <p className="price">S/ 75</p>
-              <div className="button-group-vertical">
+              <div className="card-badge">🇵🇪 Perú</div>
+              <h4>Residentes Local</h4>
+              
+              <div className="local-prices">
+                <div className="price-line"><strong>S/ 45</strong> <span>Lectura Concreta</span></div>
+                <div className="price-line"><strong>S/ 75</strong> <span>Lectura Evolutiva</span></div>
+              </div>
+
+              <div className="button-group-vertical mt-3">
                 <button className="btn btn-yape" onClick={() => scrollToFooterAndOpenQR('btn-yape')}>
                   📱 Pagar con Yape
                 </button>
@@ -58,70 +66,90 @@ const ConsultasTarot = () => {
               </div>
             </div>
 
-            {/* GRUPO INTERNACIONAL */}
-            <div className="payment-card international-card featured">
-              <div className="card-badge gold">🌎 Global</div>
-              <h4>Latam & Internacional</h4>
-              <p className="price">$ 23 USD</p>
+            {/* OPCIÓN: INTERNACIONAL LECTURA CONCRETA */}
+            <div className="payment-card international-card">
+              <div className="card-badge">✨ Rápida</div>
+              <h4>Lectura Concreta</h4>
+              <p className="price">$ 14 USD</p>
+              
+              <p className="card-instruction">Ideal para <strong>una sola duda</strong> puntual:</p>
+              <ul className="example-list">
+                <li>❓ <em>"¿Esa persona especial me volverá a buscar?"</em></li>
+                <li>❓ <em>"¿Lograré concretar ese negocio o empleo?"</em></li>
+                <li>❓ <em>"¿Mi ex todavía piensa en mí?"</em></li>
+              </ul>
+
               <div className="button-group-vertical">
-                <a href={linkMercadoPago} target="_blank" rel="noopener noreferrer" className="btn btn-mercadopago">
-                  💳 Tarjeta (Débito o Crédito)
+                <a href={links.mercadoPago14} target="_blank" rel="noopener noreferrer" className="btn btn-mercadopago">
+                  💳 Tarjeta / Mercado Pago
                 </a>
-                <a href={linkPayPal} target="_blank" rel="noopener noreferrer" className="btn btn-paypal">
-                  🔵 PayPal (Pago Seguro)
+                <a href={links.paypal14} target="_blank" rel="noopener noreferrer" className="btn btn-paypal-simple">
+                  PayPal ($14)
+                </a>
+              </div>
+            </div>
+
+            {/* OPCIÓN: INTERNACIONAL LECTURA EVOLUTIVA */}
+            <div className="payment-card international-card featured">
+              <div className="card-badge gold">⭐ La más completa</div>
+              <h4>Lectura Evolutiva</h4>
+              <p className="price">$ 23 USD</p>
+              
+              <p className="card-instruction">Para quienes necesitan <strong>ver todo el panorama</strong>:</p>
+              <ul className="example-list">
+                <li>🔮 <em>"¿Qué siente por mí, cuáles son sus intenciones y qué pasará?"</em></li>
+                <li>🔮 <em>"¿Cómo me irá en lo profesional y en el amor este mes?"</em></li>
+                <li>🔮 <em>"¿Por qué mis relaciones se bloquean y qué viene para mi futuro?"</em></li>
+              </ul>
+
+              <div className="button-group-vertical">
+                <a href={links.mercadoPago23} target="_blank" rel="noopener noreferrer" className="btn btn-mercadopago">
+                  💳 Tarjeta / Mercado Pago
+                </a>
+                <a href={links.paypal23} target="_blank" rel="noopener noreferrer" className="btn btn-paypal">
+                  Pagar con PayPal ($23)
                 </a>
                 <button className="btn btn-binance" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
                   ₿ Binance (23 USDT)
                 </button>
               </div>
-              <small className="conversion-note">
-                (Se convierte automáticamente a tu moneda local)
-              </small>
             </div>
+
           </div>
         </div>
 
-        {/* PASO 2: EL ENVÍO DE DATOS */}
+        {/* PASO 2: CONTACTO */}
         <div className="delivery-instructions mt-5">
           <h3 className="text-center">Paso 2: Envía tus datos de consulta</h3>
-          <p className="text-center mb-4">Una vez realizado el pago, envíame por el canal que prefieras:</p>
-          
+          <p className="text-center mb-4">Luego de pagar, envíame el comprobante para agendarte:</p>
+
           <div className="contact-methods-grid">
-            
-            {/* WHATSAPP */}
             <div className="contact-card">
               <div className="icon">📱</div>
               <h4>WhatsApp</h4>
-              <p>Envía comprobante, nombre y pregunta. Recibirás tu <strong>video como documento</strong> directamente.</p>
-              <a href={`https://wa.me/${whatsappNumber}?text=Hola!%20He%20realizado%20el%20pago%20de%20mi%20lectura.%20Aquí%20tienes%20mi%20comprobante...`} 
-                 target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
+              <p>Envía comprobante, nombre y tu duda. Recibirás tu <strong>video como documento</strong> en menos de 24 horas.</p>
+              <a href={`https://wa.me/${whatsappNumber}?text=Hola!%20He%20realizado%20el%20pago%20de%20mi%20lectura.%20Aquí%20tienes%20el%20comprobante...`}
+                target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
                 Enviar por WhatsApp
               </a>
             </div>
 
-            {/* CORREO */}
             <div className="contact-card">
               <div className="icon">📧</div>
-              <h4>Correo Electrónico</h4>
-              <p>Envía tus datos a <strong>{email}</strong>. Te responderé con un link de <strong>TransferNow</strong>.</p>
-              <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Consulta%20de%20Tarot%20-%20Comprobante`} 
-                 target="_blank" rel="noopener noreferrer" className="btn btn-email">
+              <h4>Email</h4>
+              <p>Envía tus datos a <strong>{email}</strong>. Te responderé con un link de descarga seguro.</p>
+              <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Consulta%20de%20Tarot%20-%20Comprobante`}
+                target="_blank" rel="noopener noreferrer" className="btn btn-email">
                 Enviar por Correo
               </a>
             </div>
           </div>
-
-          <div className="expiration-notice mt-4">
-            <p>
-              ⚠️ <strong>Privacidad y Tiempo:</strong> Los videos enviados por correo expiran en <strong>7 días</strong> por TransferNow. ¡Asegúrate de descargarlo!
-            </p>
-          </div>
         </div>
 
-        {/* CIERRE */}
+        {/* NOTA DE ESCASEZ */}
         <div className="scarcity-box">
           <p className="warning-text">
-            ⚠️ <strong>Atención:</strong> Solo realizo un número limitado de lecturas profundas al día para garantizar una conexión real.
+            ⚠️ <strong>Nota:</strong> Solo realizo un número limitado de lecturas al día para garantizar una conexión energética real y profunda con cada caso.
           </p>
         </div>
 
@@ -129,6 +157,7 @@ const ConsultasTarot = () => {
           🔮 No permitas que la duda siga drenando tu energía. <br />
           <span className="text-highlight">Haz tu consulta hoy y recupera tu paz mental.</span>
         </p>
+
       </div>
     </section>
   );
