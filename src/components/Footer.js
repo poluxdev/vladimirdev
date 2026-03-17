@@ -19,8 +19,8 @@ const Footer = () => {
     setShow(true);
   };
 
-  // LINK DE MERCADO PAGO
-  const linkMercadoPago = "https://mpago.la/2DPtzuj";
+  // NUEVO LINK DE MERCADO PAGO ACTUALIZADO
+  const linkMercadoPago = "https://mpago.la/33BgYwg";
 
   return (
     <footer id="footer">
@@ -37,24 +37,27 @@ const Footer = () => {
             <div className="payment-buttons d-flex flex-column align-items-center gap-2">
               
               <Button 
+                id="btn-yape"
                 className="btn-yape" 
                 onClick={() => handleShow(qrYape, '📱 Escanea con Yape')}
               >
-                <BsQrCodeScan /> Solicita tu lectura con Yape
+                <BsQrCodeScan /> Invertir con Yape
               </Button>
 
               <Button 
+                id="btn-plin"
                 className="btn-plin" 
                 onClick={() => handleShow(qrPlin, '📱 Escanea con Plin')}
               >
-                <BsQrCodeScan /> Solicita tu lectura con Plin
+                <BsQrCodeScan /> Invertir con Plin
               </Button>
 
               <Button 
+                id="btn-dale"
                 className="btn-dale" 
                 onClick={() => handleShow(qrDale, '📱 Escanea con DALE')}
               >
-                <BsQrCodeScan /> Solicita tu lectura con DALE
+                <BsQrCodeScan /> Invertir con DALE
               </Button>
 
             </div>
@@ -65,7 +68,7 @@ const Footer = () => {
             <h5>🌎 Tarjetas e Internacional 🌎</h5>
             <div className="payment-buttons d-flex flex-column align-items-center gap-2">
               
-              {/* MERCADO PAGO MEJORADO */}
+              {/* MERCADO PAGO ACTUALIZADO */}
               <div className="w-100 d-flex flex-column align-items-center">
                 <Button 
                   className="btn-mercadopago mb-1" 
@@ -74,17 +77,16 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <BsCreditCard /> Pagar con Tarjeta (Mercado Pago)
+                  <BsCreditCard /> Invertir con Tarjeta
                 </Button>
                 
                 <span className="paises-disponibles text-center">
                   🇵🇪 Perú • 🇲🇽 México • 🇦🇷 Argentina • 🇨🇱 Chile <br />
-                  🇨🇴 Colombia • 🇺🇾 Uruguay • 🇪🇨 Ecuador <br />
-                  🇪🇸 España • 🇺🇸 Estados Unidos
+                  🇨🇴 Colombia • 🇺🇾 Uruguay • 🇪🇺 España • 🇺🇸 USA
                 </span>
 
                 <small className="text-muted mt-1">
-                  💳 Acepta tarjetas de débito y crédito internacionales
+                  💳 Débito y Crédito a través de Mercado Pago
                 </small>
               </div>
 
@@ -92,19 +94,20 @@ const Footer = () => {
               <Button
                 className="btn-paypal"
                 as="a"
-                href="https://paypal.me/vladimirGarciaL?country.x=PE&locale.x=es_XC"
+                href="https://www.paypal.com/paypalme/vladimirGarciaL/8USD"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsPaypal /> Solicita tu lectura con PayPal
+                <BsPaypal /> Invertir con PayPal ($8 USD)
               </Button>
 
               {/* BINANCE */}
               <Button 
+                id="btn-binance"
                 className="btn-binance" 
                 onClick={() => handleShow(qrBinance, '📱 Escanea con Binance')}
               >
-                <BsCurrencyExchange /> Solicita tu lectura con Binance
+                <BsCurrencyExchange /> Invertir con Binance
               </Button>
 
             </div>
@@ -131,7 +134,7 @@ const Footer = () => {
           </p>
 
           <p className="text-warning fs-5">
-            📱 <strong>+51 929 441 018</strong> (WhatsApp)
+            📱 <strong>+51 929 441 018</strong>
           </p>
 
           <p className="text-white">

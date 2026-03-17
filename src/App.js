@@ -23,8 +23,8 @@ const App = () => {
     });
   };
 
-  // Mensaje Opción 3: Híbrido (Dudas + Confirmación de Pago)
-  const whatsappMessage = "¡Hola Polux! 🔮 Me interesa una lectura de tarot. ¿Me podrías ayudar con unas dudas o confirmarme la recepción de mi pago si ya lo realicé? ¡Muchas gracias!";
+  // NUEVO MENSAJE: Centrado en la consulta y la guía, sin mencionar pagos.
+  const whatsappMessage = "¡Hola Polux! 🔮 Deseo recibir claridad sobre una situación y me gustaría saber más sobre cómo funcionan tus lecturas de tarot. ¿Podrías ayudarme?";
   const encodedMessage = encodeURIComponent(whatsappMessage);
 
   return (
@@ -43,10 +43,10 @@ const App = () => {
         className="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"
-        title="¿Tienes dudas o ya pagaste? Escríbeme"
+        title="¿Tienes alguna duda? Escríbeme"
         onClick={handleWhatsappClick} 
       >
-        <div className="whatsapp-tooltip">Escríbeme 📲</div>
+        <div className="whatsapp-tooltip">¿Deseas guía? 📲</div>
         <img src={whatsappIcon} alt="WhatsApp" />
       </a>
     </div>
