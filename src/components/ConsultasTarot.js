@@ -128,20 +128,28 @@ const ConsultasTarot = () => {
               <div className="icon">📱</div>
               <h4>WhatsApp</h4>
               <p>Envía comprobante, nombre y tu duda. Recibirás tu <strong>video como documento</strong> en menos de 24 horas.</p>
-              <a href={`https://wa.me/${whatsappNumber}?text=Hola!%20He%20realizado%20el%20pago%20de%20mi%20lectura.%20Aquí%20tienes%20el%20comprobante...`}
-                target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
-                Enviar por WhatsApp
-              </a>
+             <a 
+  href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20✨%20Ya%20realicé%20el%20pago%20de%20mi%20lectura.%20Aquí%20te%20envío%20el%20comprobante.%20Mi%20nombre%20es:%20____%20y%20mi%20pregunta%20es:%20____%20🔮`}
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="btn btn-whatsapp"
+>
+  Enviar por WhatsApp
+</a>
             </div>
 
             <div className="contact-card">
               <div className="icon">📧</div>
               <h4>Email</h4>
               <p>Envía tus datos a <strong>{email}</strong>. Te responderé con un link de descarga seguro.</p>
-              <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Consulta%20de%20Tarot%20-%20Comprobante`}
-                target="_blank" rel="noopener noreferrer" className="btn btn-email">
-                Enviar por Correo
-              </a>
+             <a 
+  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Consulta%20de%20Tarot%20-%20Comprobante&body=Hola%20Polux!%20✨%0A%0AYa%20realicé%20el%20pago%20de%20mi%20lectura.%0AAquí%20te%20envío%20el%20comprobante.%0A%0AMi%20nombre%20es:%20____%0AMi%20pregunta%20es:%20____%20🔮`}
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="btn btn-email"
+>
+  Enviar por Correo
+</a>
             </div>
           </div>
         </div>
