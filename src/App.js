@@ -19,12 +19,14 @@ const App = () => {
     ReactGA.event({
       category: 'Botón WhatsApp',
       action: 'Click en botón flotante de WhatsApp',
-      label: 'WhatsApp Flotante',
+      label: 'Ayuda Pago', // Etiqueta actualizada para analíticas
     });
   };
 
-  // NUEVO MENSAJE: Centrado en la consulta y la guía, sin mencionar pagos.
-  const whatsappMessage = "¡Hola Polux! 🔮 Deseo recibir claridad sobre una situación y me gustaría saber más sobre cómo funcionan tus lecturas de tarot. ¿Podrías ayudarme?";
+  /** * MENSAJE ACTUALIZADO: 
+   * Enfocado en resolver problemas de pago o dudas finales de la guía.
+   */
+  const whatsappMessage = "¡Hola Polux! 🔮 Estaba viendo la guía en tu página pero tuve un inconveniente con el método de pago. ¿Podrías ayudarme a completar mi lectura por aquí?";
   const encodedMessage = encodeURIComponent(whatsappMessage);
 
   return (
@@ -43,10 +45,11 @@ const App = () => {
         className="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"
-        title="¿Tienes alguna duda? Escríbeme"
+        title="¿Problemas con el pago? Escríbeme"
         onClick={handleWhatsappClick} 
       >
-        <div className="whatsapp-tooltip">¿Deseas guía? 📲</div>
+        {/* Tooltip con llamado a la acción sobre dudas de pago */}
+        <div className="whatsapp-tooltip">¿Dudas con el pago? 📲</div>
         <img src={whatsappIcon} alt="WhatsApp" />
       </a>
     </div>

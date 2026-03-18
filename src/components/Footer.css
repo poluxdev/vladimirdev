@@ -1,128 +1,177 @@
 /* --- ESTRUCTURA GENERAL DEL FOOTER --- */
 footer {
-    background: linear-gradient(to right, #1f1b2e, #2b2342);
+    background: linear-gradient(to right, #0a0a12, #1b162b);
     color: #f3eaff;
     padding: 60px 20px 40px;
-    font-family: 'Cormorant Garamond', serif;
-    border-top: 2px solid #b191ff;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
     position: relative;
 }
 
-footer h5 {
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    color: #ffd700;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.footer-title {
     font-family: 'Playfair Display', serif;
     color: #e5c3ff;
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    text-shadow: 0 0 5px rgba(240, 219, 255, 0.4);
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(229, 195, 255, 0.2);
 }
 
-footer p {
-    margin: 0;
-    font-size: 1rem;
-    color: #dcd0f2;
+.footer-copy {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 10px;
 }
 
-footer a {
-    color: #d6b8ff;
-    text-decoration: none;
-    transition: all 0.3s ease;
+.footer-disclaimer {
+    font-size: 0.85rem;
+    color: #b191ff;
+    font-style: italic;
+    line-height: 1.4;
 }
 
-footer a:hover {
-    color: #f0dbff;
-    text-shadow: 0 0 10px #b191ff;
-}
-
-/* --- CONTENEDOR Y ESTILO BASE DE BOTONES --- */
-.payment-buttons {
+/* --- CONTENEDOR DE BOTONES --- */
+.payment-buttons-container {
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
 }
 
-.payment-buttons .btn, 
-.payment-buttons button {
+.btn-footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 12px 24px;
-    font-size: 1rem;
+    gap: 12px;
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
     font-weight: 600;
     border: none;
-    border-radius: 10px;
-    min-width: 220px;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    text-decoration: none; /* Unificado aquí */
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.payment-buttons .btn:hover,
-.payment-buttons button:hover {
-    transform: translateY(-3px) scale(1.03);
+.btn-footer:hover {
+    transform: translateY(-3px);
     filter: brightness(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     color: #fff;
 }
 
-/* --- COLORES DE MARCA (CON !IMPORTANT DONDE ES NECESARIO) --- */
-.btn-mercadopago { background-color: #009ee3 !important; color: #fff !important; }
-.btn-yape        { background-color: #800080; color: #fff; }
-.btn-plin        { background-color: #00A859; color: #fff; }
-.btn-dale        { background-color: #F6C90E; color: #000; }
-.btn-binance     { background-color: #f0b90b; color: #000; }
-.btn-paypal      { background-color: #0070ba; color: #fff !important; }
+/* --- COLORES DE BOTONES --- */
+.btn-yape { background-color: #7b1fa2 !important; color: #fff; }
+.btn-plin { background-color: #00b4ff !important; color: #fff; }
+.btn-dale { background-color: #ffeb3b !important; color: #000; }
+.btn-mercadopago { background-color: #009ee3 !important; color: #fff; }
+.btn-paypal { background-color: #0070ba !important; color: #fff; }
+.btn-binance { background-color: #f3ba2f !important; color: #000; }
 
-/* --- PAÍSES DISPONIBLES (ESTILO DORADO) --- */
-.paises-disponibles {
-    color: #ffd700 !important;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin: 10px auto 0; /* Centrado automático */
+/* --- LISTA DE PAÍSES (Dorado Sutil) --- */
+.paises-list {
+    color: #ffd700;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px 0 15px;
+    opacity: 0.8;
+    max-width: 280px;
+    line-height: 1.4;
     text-align: center;
+}
+
+/* --- MODAL Y QR --- */
+.qr-modal .modal-content {
+    background: #151221 !important;
+    border: 1px solid rgba(255, 215, 0, 0.4) !important;
+    border-radius: 24px;
+    color: #fff;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.qr-container-bg {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 18px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.qr-img-fluid {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+}
+
+/* --- ESTILO NORMAL PARA EL NÚMERO Y CORREO --- */
+.manual-payment-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+}
+
+.manual-payment-info p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+}
+
+.manual-number {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
     display: block;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 5px rgba(255, 215, 0, 0.2);
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.5;
-    max-width: 300px;
 }
 
-/* --- MODAL PERSONALIZADO --- */
-.modal-content {
-    background: #1f1b2e !important;
-    color: #f3eaff !important;
-    border: 1px solid #b191ff !important;
-    border-radius: 15px;
+.manual-email {
+    color: #b191ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-.modal-header, .modal-footer {
-    border-color: rgba(177, 145, 255, 0.3); /* Unificado */
-}
-
-.btn-close {
-    filter: invert(1) grayscale(100%) brightness(200%);
+.manual-email:hover {
+    color: #ffd700;
+    text-decoration: underline;
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .payment-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
+    footer {
+        padding: 40px 20px;
+        text-align: center;
+    }
+    
+    .footer-brand, .footer-copy, .footer-disclaimer {
+        text-align: center;
     }
 
-    .payment-buttons .btn,
-    .payment-buttons button {
-        width: 100%;
-        max-width: 280px;
-        font-size: 0.95rem;
+    .footer-title {
+        margin-top: 30px;
+        font-size: 1.2rem;
     }
 
-    footer h5 {
-        font-size: 1.4rem;
+    .btn-footer {
+        max-width: 100%;
     }
 }
