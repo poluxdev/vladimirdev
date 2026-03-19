@@ -30,36 +30,43 @@ const Footer = () => {
           <Col md={4} className="mb-4 mb-md-0 text-md-start">
             <h5 className="footer-brand">Polux Tarot</h5>
             <p className="footer-copy">&copy; {new Date().getFullYear()} - Todos los derechos reservados.</p>
-            <p className="footer-disclaimer">Lecturas de tarot personalizadas con enfoque evolutivo y confidencial.</p>
+            <p className="footer-disclaimer">
+              Lecturas de tarot personalizadas con enfoque evolutivo y confidencial.  
+              Cada lectura interpreta tus energías actuales y tu situación con claridad.
+            </p>
           </Col>
 
           {/* MEDIOS LOCALES PERÚ */}
           <Col md={4} className="mb-4 mb-md-0">
             <h5 className="footer-title">🇵🇪 Residentes Perú</h5>
+            <p className="footer-subtext">
+              Cada lectura es única, interpretada con cuidado y respeto.  
+              No predice un destino fijo, sino que te ayuda a entender tus energías y tu situación actual.
+            </p>
             <div className="payment-buttons-container">
               
               <Button 
                 id="btn-yape"
                 className="btn-footer btn-yape" 
-                onClick={() => handleShow(qrYape, '📱 Escanea para pagar con Yape')}
+                onClick={() => handleShow(qrYape, '✨ Quiero mi lectura (Yape)')}
               >
-                <BsQrCodeScan /> Pago con Yape
+                <BsQrCodeScan /> ✨ Quiero mi lectura (Yape)
               </Button>
 
               <Button 
                 id="btn-plin"
                 className="btn-footer btn-plin" 
-                onClick={() => handleShow(qrPlin, '📱 Escanea para pagar con Plin')}
+                onClick={() => handleShow(qrPlin, '✨ Quiero mi lectura (Plin)')}
               >
-                <BsQrCodeScan /> Pago con Plin
+                <BsQrCodeScan /> ✨ Quiero mi lectura (Plin)
               </Button>
 
               <Button 
                 id="btn-dale"
                 className="btn-footer btn-dale" 
-                onClick={() => handleShow(qrDale, '📱 Escanea para pagar con DALE')}
+                onClick={() => handleShow(qrDale, '✨ Quiero mi lectura (DALE)')}
               >
-                <BsQrCodeScan /> Pago con DALE
+                <BsQrCodeScan /> ✨ Quiero mi lectura (DALE)
               </Button>
 
             </div>
@@ -68,6 +75,9 @@ const Footer = () => {
           {/* INTERNACIONAL */}
           <Col md={4}>
             <h5 className="footer-title">🌍 Internacional</h5>
+            <p className="footer-subtext">
+              Accede desde cualquier país. Tu lectura llegará en video privado, confidencial y con atención personalizada.
+            </p>
             <div className="payment-buttons-container">
               
               <Button 
@@ -77,7 +87,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsCreditCard /> Tarjeta de Débito / Crédito
+                <BsCreditCard /> ✨ Quiero mi lectura (Tarjeta)
               </Button>
               
               <div className="paises-list">
@@ -91,15 +101,15 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsPaypal /> PayPal ($8 USD)
+                <BsPaypal /> ✨ Quiero mi lectura (PayPal)
               </Button>
 
               <Button 
                 id="btn-binance"
                 className="btn-footer btn-binance" 
-                onClick={() => handleShow(qrBinance, '📱 Escanea para pagar con Binance')}
+                onClick={() => handleShow(qrBinance, '✨ Quiero mi lectura (Binance)')}
               >
-                <BsCurrencyExchange /> Binance (USDT)
+                <BsCurrencyExchange /> ✨ Quiero mi lectura (USDT)
               </Button>
 
             </div>
@@ -131,6 +141,11 @@ const Footer = () => {
             <a href="mailto:eldiariopolux@gmail.com" className="manual-email">
               eldiariopolux@gmail.com
             </a>
+
+            <p className="text-muted mt-3">
+              Tu pago garantiza una lectura realizada con cuidado, claridad y confidencialidad.  
+              Cada detalle se centra en ti y en tu situación.
+            </p>
           </div>
         </Modal.Body>
 

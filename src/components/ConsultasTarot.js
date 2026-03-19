@@ -28,67 +28,79 @@ const ConsultasTarot = () => {
         
         {/* CABECERA */}
         <div className="hero-content">
-          <h2 className="text-center">🔮 Guía para tu Lectura Personalizada</h2>
+          <h2 className="text-center">🔮 Lectura Personalizada</h2>
           <p className="text-center lead-text">
-            Sigue estos pasos para recibir una interpretación profunda de las cartas en formato video, 
-            enfocada totalmente en tu energía actual.
+            Si sientes que necesitas claridad, aquí puedes acceder a una lectura enfocada en tu situación actual.
+            No es una predicción fija, es una interpretación profunda para ayudarte a entender lo que estás viviendo.
           </p>
         </div>
 
         <div className="guide-wrapper">
           
-          {/* PASO 1: EL PAGO */}
+          {/* PASO 1 */}
           <div className="guide-step">
             <div className="step-number">1</div>
             <div className="step-content">
-              <h3>Selecciona tu método de acceso</h3>
-              <p>Elige la opción que prefieras para cubrir el valor de la sesión y recibir tu video.</p>
+              <h3>Accede a tu lectura</h3>
+              <p>
+                Este es un espacio personalizado donde me enfoco completamente en tu energía y tu pregunta.
+                Puedes elegir el método que prefieras para solicitar tu lectura.
+              </p>
+
+              <p className="text-center subtle-text">
+                Cada lectura es única y se realiza de forma consciente, sin respuestas automáticas ni interpretaciones genéricas.
+              </p>
               
               <div className="payment-grid">
-                {/* OPCIÓN PERÚ */}
+                
+                {/* PERÚ */}
                 <div className="payment-card">
                   <span className="location-tag">🇵🇪 Perú</span>
                   <p className="price">S/ 25.00</p>
                   <div className="button-group-vertical">
                     <button className="btn btn-yape" onClick={() => scrollToFooterAndOpenQR('btn-yape')}>
-                      📱 Pagar con Yape
+                      📱 Quiero mi lectura (Yape)
                     </button>
                     <button className="btn btn-plin" onClick={() => scrollToFooterAndOpenQR('btn-plin')}>
-                      ⚡ Pagar con Plin
+                      ⚡ Quiero mi lectura (Plin)
                     </button>
                   </div>
                 </div>
 
-                {/* OPCIÓN INTERNACIONAL */}
+                {/* INTERNACIONAL */}
                 <div className="payment-card featured">
                   <span className="location-tag">🌍 Internacional</span>
                   <p className="price">$ 8.00 USD</p>
                   <div className="button-group-vertical">
                     <a href={links.mercadoPago} target="_blank" rel="noopener noreferrer" className="btn btn-mercadopago">
-                      💳 Tarjeta / Mercado Pago
+                      💳 Quiero mi lectura (Tarjeta)
                     </a>
                     <a href={links.paypal} target="_blank" rel="noopener noreferrer" className="btn btn-paypal">
-                      PayPal
+                      🟡 Quiero mi lectura (PayPal)
                     </a>
                     <button className="btn btn-binance" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
-                      ₿ Binance (USDT)
+                      ₿ Quiero mi lectura (USDT)
                     </button>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
 
-          {/* PASO 2: EL CONTACTO */}
+          {/* PASO 2 */}
           <div className="guide-step">
             <div className="step-number">2</div>
             <div className="step-content">
-              <h3>Envía tu consulta</h3>
-              <p>Para conectar con tu situación, envíame tu nombre, tu pregunta clara y el comprobante de pago.</p>
+              <h3>Cuéntame tu situación</h3>
+              <p>
+                Puedes hacer una pregunta compleja o profunda. 
+                Me enfocaré en tu caso para interpretar las cartas con claridad y detalle.
+              </p>
               
               <div className="contact-methods-grid">
                 <a 
-                  href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20✨%20Ya%20realicé%20el%20pago.%0A%0AMi%20Nombre:%20____%0AMi%20Pregunta:%20____%0A%0A(Adjunto%20comprobante)%20🔮`} 
+                  href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20✨%20Quiero%20mi%20lectura.%0A%0AMi%20Nombre:%20____%0AMi%20Pregunta:%20____%0A%0A(Adjunto%20comprobante)%20🔮`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="contact-option"
@@ -96,12 +108,12 @@ const ConsultasTarot = () => {
                   <span className="icon">📱</span>
                   <div>
                     <strong>WhatsApp</strong>
-                    <span>Envío rápido y directo</span>
+                    <span>Rápido y directo</span>
                   </div>
                 </a>
 
                 <a 
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Consulta%20Tarot%20Personalizada&body=Hola%20Polux!%20✨%0A%0AYa%20realicé%20el%20pago.%0A%0AMi%20nombre:%20____%0AMi%20pregunta:%20____%0A%0A🔮`} 
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Lectura%20Tarot%20Personalizada&body=Hola%20Polux!%20✨%0A%0AQuiero%20mi%20lectura.%0A%0AMi%20nombre:%20____%0AMi%20pregunta:%20____%0A%0A🔮`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="contact-option"
@@ -109,26 +121,32 @@ const ConsultasTarot = () => {
                   <span className="icon">📧</span>
                   <div>
                     <strong>Email</strong>
-                    <span>Para mayor privacidad</span>
+                    <span>Mayor privacidad</span>
                   </div>
                 </a>
               </div>
             </div>
           </div>
 
-          {/* PASO 3: LA ENTREGA */}
+          {/* PASO 3 */}
           <div className="guide-step">
             <div className="step-number">3</div>
             <div className="step-content">
-              <h3>Recibe tu video</h3>
-              <p>En un plazo máximo de <strong>24 horas</strong>, recibirás un enlace privado con la grabación de tu lectura para que puedas verla las veces que necesites.</p>
+              <h3>Recibe tu lectura</h3>
+              <p>
+                En un plazo máximo de <strong>24 horas</strong>, recibirás tu lectura en video.
+                Podrás verla con calma, entender cada mensaje y volver a ella cuando lo necesites.
+              </p>
             </div>
           </div>
 
         </div>
 
+        {/* CIERRE */}
         <div className="final-note text-center">
-          <p>✨ Cada lectura es manejada con absoluta reserva y respeto por tu proceso personal.</p>
+          <p>
+            ✨ Este espacio es completamente confidencial y está pensado para acompañarte con respeto, claridad y consciencia.
+          </p>
         </div>
 
       </div>
