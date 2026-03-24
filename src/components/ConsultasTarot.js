@@ -15,9 +15,8 @@ const ConsultasTarot = () => {
   };
 
   const links = {
-    // Actualizado a 15USD para mercado internacional
     paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/15USD",
-    mercadoPago: "https://mpago.la/33BgYwg", 
+    mercadoPago: "https://mpago.la/1R4Bxch", // Link actualizado de $15 USD
   };
   
   const email = "eldiariopolux@gmail.com";
@@ -27,7 +26,7 @@ const ConsultasTarot = () => {
     <section id="tarot" className="tarot-section">
       <div className="container">
         
-        {/* CABECERA - Optimizada para Polux Tarotista */}
+        {/* CABECERA */}
         <div className="hero-content">
           <h2 className="text-center">🔮 Lectura Personalizada con Polux</h2>
           <p className="text-center lead-text">
@@ -36,20 +35,28 @@ const ConsultasTarot = () => {
           </p>
         </div>
 
+        {/* SECCIÓN DEL VIDEO TUTORIAL ACTUALIZADA */}
+        <div className="video-tutorial-wrapper mb-5 text-center">
+          <h3 className="h5 mb-3">📺 Mira cómo solicitar tu lectura paso a paso</h3>
+          <div className="ratio ratio-16x9 mx-auto" style={{ maxWidth: '700px', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }}>
+            <iframe 
+              src="https://www.youtube.com/embed/YTkrfnmBIV0" 
+              title="Cómo solicitar mi lectura de tarot - Polux" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+
         <div className="guide-wrapper">
           
-          {/* PASO 1 */}
+          {/* PASO 1: ACCESO Y PAGO */}
           <div className="guide-step">
             <div className="step-number">1</div>
             <div className="step-content">
               <h3>Accede a tu lectura</h3>
               <p>
-                Este es un espacio personalizado donde me enfoco completamente en tu energía y tu pregunta.
-                Puedes elegir el método que prefieras para solicitar tu lectura.
-              </p>
-
-              <p className="text-center subtle-text">
-                Cada lectura es única y se realiza de forma consciente, sin respuestas automáticas ni interpretaciones genéricas.
+                Elige el método que prefieras según tu ubicación. La <strong>inversión</strong> garantiza una interpretación consciente y dedicada a tu energía.
               </p>
               
               <div className="payment-grid">
@@ -68,19 +75,19 @@ const ConsultasTarot = () => {
                   </div>
                 </div>
 
-                {/* INTERNACIONAL - Actualizado a $15 USD */}
+                {/* INTERNACIONAL */}
                 <div className="payment-card featured">
                   <span className="location-tag">🌍 Internacional</span>
                   <p className="price">$ 15.00 USD</p>
                   <div className="button-group-vertical">
                     <a href={links.mercadoPago} target="_blank" rel="noopener noreferrer" className="btn btn-mercadopago">
-                      💳 Quiero mi lectura (Tarjeta)
+                      💳 Tarjeta (Mercado Pago)
                     </a>
                     <a href={links.paypal} target="_blank" rel="noopener noreferrer" className="btn btn-paypal">
-                      🟡 Quiero mi lectura (PayPal)
+                      🟡 PayPal
                     </a>
                     <button className="btn btn-binance" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
-                      ₿ Quiero mi lectura (USDT)
+                      ₿ Binance (USDT / QR)
                     </button>
                   </div>
                 </div>
@@ -89,14 +96,13 @@ const ConsultasTarot = () => {
             </div>
           </div>
 
-          {/* PASO 2 */}
+          {/* PASO 2: CONTACTO */}
           <div className="guide-step">
             <div className="step-number">2</div>
             <div className="step-content">
               <h3>Cuéntame tu situación</h3>
               <p>
-                Puedes hacer una pregunta compleja o profunda. 
-                Me enfocaré en tu caso para interpretar las cartas con claridad y detalle.
+                Envía tu comprobante y tu pregunta (puede ser profunda o compleja). Me enfocaré en tu caso para darte la mayor claridad posible.
               </p>
               
               <div className="contact-methods-grid">
@@ -109,7 +115,7 @@ const ConsultasTarot = () => {
                   <span className="icon">📱</span>
                   <div>
                     <strong>WhatsApp</strong>
-                    <span>Rápido y directo</span>
+                    <span>Envío directo del comprobante</span>
                   </div>
                 </a>
 
@@ -122,31 +128,38 @@ const ConsultasTarot = () => {
                   <span className="icon">📧</span>
                   <div>
                     <strong>Email</strong>
-                    <span>Mayor privacidad</span>
+                    <span>Opción para mayor privacidad</span>
                   </div>
                 </a>
               </div>
             </div>
           </div>
 
-          {/* PASO 3 */}
+          {/* PASO 3: ENTREGA PERSONALIZADA */}
           <div className="guide-step">
             <div className="step-number">3</div>
             <div className="step-content">
-              <h3>Recibe tu lectura</h3>
+              <h3>Recibe tu lectura personalizada</h3>
               <p>
-                En un plazo máximo de <strong>24 horas</strong>, recibirás tu lectura en video.
-                Podrás verla con calma, entender cada mensaje y volver a ella cuando lo necesites.
+                En un plazo máximo de <strong>24 horas</strong>, recibirás tu interpretación detallada:
               </p>
+              <ul className="list-unstyled mt-2">
+                <li className="mb-2">
+                  ✅ <strong>Por WhatsApp:</strong> Recibirás el video en <strong>alta calidad (formato documento)</strong> para que lo guardes en tu galería sin perder nitidez.
+                </li>
+                <li>
+                  ✅ <strong>Por Email:</strong> Recibirás un <strong>enlace privado</strong> para ver tu video de forma segura y confidencial.
+                </li>
+              </ul>
             </div>
           </div>
 
         </div>
 
         {/* CIERRE */}
-        <div className="final-note text-center">
+        <div className="final-note text-center mt-5">
           <p>
-            ✨ Este espacio es completamente confidencial y está pensado para acompañarte con respeto, claridad y consciencia.
+            ✨ Este espacio es confidencial. Si llegaste hasta aquí... no es casualidad.
           </p>
         </div>
 
