@@ -19,7 +19,8 @@ const Footer = () => {
     setShow(true);
   };
 
-  const linkMercadoPago = "https://mpago.la/33BgYwg";
+  // NUEVO LINK MERCADO PAGO ACTUALIZADO
+  const linkMercadoPago = "https://mpago.la/1R4Bxch";
 
   return (
     <footer id="footer" className="footer-section">
@@ -28,11 +29,11 @@ const Footer = () => {
           
           {/* INFORMACIÓN DE MARCA */}
           <Col md={4} className="mb-4 mb-md-0 text-md-start">
-            <h5 className="footer-brand">Polux Tarot</h5>
+            <h5 className="footer-brand">Polux Tarotista</h5>
             <p className="footer-copy">&copy; {new Date().getFullYear()} - Todos los derechos reservados.</p>
             <p className="footer-disclaimer">
-              Lecturas de tarot personalizadas con enfoque evolutivo y confidencial.  
-              Cada lectura interpreta tus energías actuales y tu situación con claridad.
+              Lecturas de tarot personalizadas con enfoque evolutivo.  
+              Como <strong>tarotista profesional</strong>, brindo claridad y guía confidencial a través de la interpretación de los arcanos.
             </p>
           </Col>
 
@@ -40,8 +41,8 @@ const Footer = () => {
           <Col md={4} className="mb-4 mb-md-0">
             <h5 className="footer-title">🇵🇪 Residentes Perú</h5>
             <p className="footer-subtext">
-              Cada lectura es única, interpretada con cuidado y respeto.  
-              No predice un destino fijo, sino que te ayuda a entender tus energías y tu situación actual.
+              <strong>Inversión: S/ 25.00</strong> <br />
+              Interpretación consciente y respetuosa de tu situación actual.
             </p>
             <div className="payment-buttons-container">
               
@@ -76,7 +77,8 @@ const Footer = () => {
           <Col md={4}>
             <h5 className="footer-title">🌍 Internacional</h5>
             <p className="footer-subtext">
-              Accede desde cualquier país. Tu lectura llegará en video privado, confidencial y con atención personalizada.
+              <strong>Inversión: $ 15.00 USD</strong> <br />
+              Accede desde cualquier país a tu lectura personalizada en video privado.
             </p>
             <div className="payment-buttons-container">
               
@@ -97,7 +99,7 @@ const Footer = () => {
               <Button
                 className="btn-footer btn-paypal"
                 as="a"
-                href="https://www.paypal.com/paypalme/vladimirGarciaL/8USD"
+                href="https://www.paypal.com/paypalme/vladimirGarciaL/15USD"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -143,8 +145,7 @@ const Footer = () => {
             </a>
 
             <p className="text-muted mt-3">
-              Tu pago garantiza una lectura realizada con cuidado, claridad y confidencialidad.  
-              Cada detalle se centra en ti y en tu situación.
+              Tu <strong>inversión</strong> garantiza una lectura realizada con cuidado por Polux Tarotista.
             </p>
           </div>
         </Modal.Body>

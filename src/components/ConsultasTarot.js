@@ -15,7 +15,8 @@ const ConsultasTarot = () => {
   };
 
   const links = {
-    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/8USD",
+    // Actualizado a 15USD para mercado internacional
+    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/15USD",
     mercadoPago: "https://mpago.la/33BgYwg", 
   };
   
@@ -26,12 +27,12 @@ const ConsultasTarot = () => {
     <section id="tarot" className="tarot-section">
       <div className="container">
         
-        {/* CABECERA */}
+        {/* CABECERA - Optimizada para Polux Tarotista */}
         <div className="hero-content">
-          <h2 className="text-center">🔮 Lectura Personalizada</h2>
+          <h2 className="text-center">🔮 Lectura Personalizada con Polux</h2>
           <p className="text-center lead-text">
             Si sientes que necesitas claridad, aquí puedes acceder a una lectura enfocada en tu situación actual.
-            No es una predicción fija, es una interpretación profunda para ayudarte a entender lo que estás viviendo.
+            Como <strong>tarotista profesional</strong>, te ofrezco una interpretación profunda para ayudarte a entender lo que estás viviendo.
           </p>
         </div>
 
@@ -67,10 +68,10 @@ const ConsultasTarot = () => {
                   </div>
                 </div>
 
-                {/* INTERNACIONAL */}
+                {/* INTERNACIONAL - Actualizado a $15 USD */}
                 <div className="payment-card featured">
                   <span className="location-tag">🌍 Internacional</span>
-                  <p className="price">$ 8.00 USD</p>
+                  <p className="price">$ 15.00 USD</p>
                   <div className="button-group-vertical">
                     <a href={links.mercadoPago} target="_blank" rel="noopener noreferrer" className="btn btn-mercadopago">
                       💳 Quiero mi lectura (Tarjeta)
