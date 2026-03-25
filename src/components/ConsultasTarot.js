@@ -16,7 +16,8 @@ const ConsultasTarot = () => {
 
   const links = {
     paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/15USD",
-    mercadoPago: "https://mpago.la/1R4Bxch", // Link actualizado de $15 USD
+    // 🔴 Mercado Pago desactivado temporalmente
+    // mercadoPago: "https://mpago.la/1R4Bxch",
   };
   
   const email = "eldiariopolux@gmail.com";
@@ -35,7 +36,7 @@ const ConsultasTarot = () => {
           </p>
         </div>
 
-        {/* SECCIÓN DEL VIDEO TUTORIAL ACTUALIZADA */}
+        {/* VIDEO */}
         <div className="video-tutorial-wrapper mb-5 text-center">
           <h3 className="h5 mb-3">📺 Mira cómo solicitar tu lectura paso a paso</h3>
           <div className="ratio ratio-16x9 mx-auto" style={{ maxWidth: '700px', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }}>
@@ -50,7 +51,7 @@ const ConsultasTarot = () => {
 
         <div className="guide-wrapper">
           
-          {/* PASO 1: ACCESO Y PAGO */}
+          {/* PASO 1 */}
           <div className="guide-step">
             <div className="step-number">1</div>
             <div className="step-content">
@@ -79,13 +80,25 @@ const ConsultasTarot = () => {
                 <div className="payment-card featured">
                   <span className="location-tag">🌍 Internacional</span>
                   <p className="price">$ 15.00 USD</p>
+
+                  {/* 🔥 Aviso importante */}
+                  <p style={{ fontSize: '0.9rem', color: '#ffcc00' }}>
+                    ⚠️ Tarjeta disponible temporalmente vía PayPal
+                  </p>
+
                   <div className="button-group-vertical">
+
+                    {/* 🔴 Mercado Pago desactivado */}
+                    {/*
                     <a href={links.mercadoPago} target="_blank" rel="noopener noreferrer" className="btn btn-mercadopago">
                       💳 Tarjeta (Mercado Pago)
                     </a>
+                    */}
+
                     <a href={links.paypal} target="_blank" rel="noopener noreferrer" className="btn btn-paypal">
                       🟡 PayPal
                     </a>
+
                     <button className="btn btn-binance" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
                       ₿ Binance (USDT / QR)
                     </button>
@@ -96,7 +109,7 @@ const ConsultasTarot = () => {
             </div>
           </div>
 
-          {/* PASO 2: CONTACTO */}
+          {/* PASO 2 */}
           <div className="guide-step">
             <div className="step-number">2</div>
             <div className="step-content">
@@ -135,7 +148,7 @@ const ConsultasTarot = () => {
             </div>
           </div>
 
-          {/* PASO 3: ENTREGA PERSONALIZADA */}
+          {/* PASO 3 */}
           <div className="guide-step">
             <div className="step-number">3</div>
             <div className="step-content">
@@ -145,10 +158,10 @@ const ConsultasTarot = () => {
               </p>
               <ul className="list-unstyled mt-2">
                 <li className="mb-2">
-                  ✅ <strong>Por WhatsApp:</strong> Recibirás el video en <strong>alta calidad (formato documento)</strong> para que lo guardes en tu galería sin perder nitidez.
+                  ✅ <strong>Por WhatsApp:</strong> Recibirás el video en <strong>alta calidad (formato documento)</strong>.
                 </li>
                 <li>
-                  ✅ <strong>Por Email:</strong> Recibirás un <strong>enlace privado</strong> para ver tu video de forma segura y confidencial.
+                  ✅ <strong>Por Email:</strong> Recibirás un <strong>enlace privado</strong>.
                 </li>
               </ul>
             </div>
