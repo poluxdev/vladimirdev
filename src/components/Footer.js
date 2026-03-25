@@ -19,8 +19,10 @@ const Footer = () => {
     setShow(true);
   };
 
-  // NUEVO LINK MERCADO PAGO ACTUALIZADO
+  // 🔴 Mercado Pago desactivado temporalmente
+  /*
   const linkMercadoPago = "https://mpago.la/1R4Bxch";
+  */
 
   return (
     <footer id="footer" className="footer-section">
@@ -37,7 +39,7 @@ const Footer = () => {
             </p>
           </Col>
 
-          {/* MEDIOS LOCALES PERÚ */}
+          {/* PERÚ */}
           <Col md={4} className="mb-4 mb-md-0">
             <h5 className="footer-title">🇵🇪 Residentes Perú</h5>
             <p className="footer-subtext">
@@ -80,8 +82,11 @@ const Footer = () => {
               <strong>Inversión: $ 15.00 USD</strong> <br />
               Accede desde cualquier país a tu lectura personalizada en video privado.
             </p>
+
             <div className="payment-buttons-container">
               
+              {/* 🔴 BOTÓN MERCADO PAGO DESACTIVADO */}
+              {/*
               <Button 
                 className="btn-footer btn-mercadopago" 
                 as="a" 
@@ -91,6 +96,7 @@ const Footer = () => {
               >
                 <BsCreditCard /> ✨ Quiero mi lectura (Tarjeta)
               </Button>
+              */}
               
               <div className="paises-list">
                 Perú • México • Argentina • Chile • Colombia • Uruguay • España • USA
@@ -120,7 +126,7 @@ const Footer = () => {
         </Row>
       </Container>
 
-      {/* MODAL QR */}
+      {/* MODAL */}
       <Modal show={show} onHide={() => setShow(false)} centered className="qr-modal">
         <Modal.Header closeButton>
           <Modal.Title>{qrTitle}</Modal.Title>
