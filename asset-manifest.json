@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vladimirdev/static/css/main.820d17e7.css",
-    "main.js": "/vladimirdev/static/js/main.1b392db1.js",
+    "main.css": "/vladimirdev/static/css/main.c5c00210.css",
+    "main.js": "/vladimirdev/static/js/main.aaf15eae.js",
     "static/js/453.a858400f.chunk.js": "/vladimirdev/static/js/453.a858400f.chunk.js",
     "static/media/fondo.png": "/vladimirdev/static/media/fondo.613b5b6a51fb4511262d.png",
     "static/media/fondoconsultas.jpg": "/vladimirdev/static/media/fondoconsultas.98f4de80b3b594a01d75.jpg",
@@ -13,12 +13,12 @@
     "static/media/plin.png": "/vladimirdev/static/media/plin.9ef988ea1c66d52e62d3.png",
     "static/media/sigueme.png": "/vladimirdev/static/media/sigueme.816e132b6240959a9463.png",
     "index.html": "/vladimirdev/index.html",
-    "main.820d17e7.css.map": "/vladimirdev/static/css/main.820d17e7.css.map",
-    "main.1b392db1.js.map": "/vladimirdev/static/js/main.1b392db1.js.map",
+    "main.c5c00210.css.map": "/vladimirdev/static/css/main.c5c00210.css.map",
+    "main.aaf15eae.js.map": "/vladimirdev/static/js/main.aaf15eae.js.map",
     "453.a858400f.chunk.js.map": "/vladimirdev/static/js/453.a858400f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.820d17e7.css",
-    "static/js/main.1b392db1.js"
+    "static/css/main.c5c00210.css",
+    "static/js/main.aaf15eae.js"
   ]
 }
