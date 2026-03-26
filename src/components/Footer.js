@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Footer.css';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
-import { BsPaypal, BsQrCodeScan, BsCurrencyExchange, BsCreditCard } from 'react-icons/bs';
+import { BsPaypal, BsQrCodeScan, BsCurrencyExchange, BsArrowRightCircle } from 'react-icons/bs';
 
 import qrBinance from '../images/binance.jpg';
 import qrYape from '../images/yape.png';
@@ -19,10 +19,10 @@ const Footer = () => {
     setShow(true);
   };
 
-  // 🔴 Mercado Pago desactivado temporalmente
-  /*
-  const linkMercadoPago = "https://mpago.la/1R4Bxch";
-  */
+  const links = {
+    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/15USD",
+    global66: "https://share.global66.com/VLAGAR674",
+  };
 
   return (
     <footer id="footer" className="footer-section">
@@ -85,27 +85,25 @@ const Footer = () => {
 
             <div className="payment-buttons-container">
               
-              {/* 🔴 BOTÓN MERCADO PAGO DESACTIVADO */}
-              {/*
-              <Button 
-                className="btn-footer btn-mercadopago" 
-                as="a" 
-                href={linkMercadoPago} 
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <BsCreditCard /> ✨ Quiero mi lectura (Tarjeta)
-              </Button>
-              */}
-              
               <div className="paises-list">
                 Perú • México • Argentina • Chile • Colombia • Uruguay • España • USA
               </div>
 
+              {/* GLOBAL66 - NUEVA OPCIÓN RECOMENDADA */}
+              <Button
+                className="btn-footer btn-global66"
+                as="a"
+                href={links.global66}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BsArrowRightCircle /> ✨ Global66 (Latam)
+              </Button>
+
               <Button
                 className="btn-footer btn-paypal"
                 as="a"
-                href="https://www.paypal.com/paypalme/vladimirGarciaL/15USD"
+                href={links.paypal}
                 target="_blank"
                 rel="noopener noreferrer"
               >

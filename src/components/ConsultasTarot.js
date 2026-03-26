@@ -16,8 +16,8 @@ const ConsultasTarot = () => {
 
   const links = {
     paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/15USD",
-    // 🔴 Mercado Pago desactivado temporalmente
-    // mercadoPago: "https://mpago.la/1R4Bxch",
+    // ✅ Actualizado con tu link de invitado de Global66
+    global66: "https://share.global66.com/VLAGAR674", 
   };
   
   const email = "eldiariopolux@gmail.com";
@@ -81,28 +81,27 @@ const ConsultasTarot = () => {
                   <span className="location-tag">🌍 Internacional</span>
                   <p className="price">$ 15.00 USD</p>
 
-                  {/* 🔥 Aviso importante */}
-                  <p style={{ fontSize: '0.9rem', color: '#ffcc00' }}>
-                    ⚠️ Tarjeta disponible temporalmente vía PayPal
-                  </p>
-
                   <div className="button-group-vertical">
-
-                    {/* 🔴 Mercado Pago desactivado */}
-                    {/*
-                    <a href={links.mercadoPago} target="_blank" rel="noopener noreferrer" className="btn btn-mercadopago">
-                      💳 Tarjeta (Mercado Pago)
+                    {/* GLOBAL66 - MÉTODO RECOMENDADO LATAM */}
+                    <a href={links.global66} target="_blank" rel="noopener noreferrer" className="btn btn-global66">
+                      🚀 Global66 (Recomendado Latam)
                     </a>
-                    */}
+                    <small style={{ fontSize: '0.75rem', marginTop: '-8px', marginBottom: '10px', color: '#ffcc00', textAlign: 'center', display: 'block' }}>
+                      Ideal para Argentina, Chile y Colombia (0% comisión)
+                    </small>
 
                     <a href={links.paypal} target="_blank" rel="noopener noreferrer" className="btn btn-paypal">
-                      🟡 PayPal
+                      🟡 PayPal / Tarjeta
                     </a>
 
                     <button className="btn btn-binance" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
                       ₿ Binance (USDT / QR)
                     </button>
                   </div>
+
+                  <p className="mt-3" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', lineHeight: '1.2' }}>
+                    ⚠️ Nota para Argentina: Global66 es la vía más económica para evitar altos impuestos bancarios.
+                  </p>
                 </div>
 
               </div>
@@ -120,7 +119,7 @@ const ConsultasTarot = () => {
               
               <div className="contact-methods-grid">
                 <a 
-                  href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20✨%20Quiero%20mi%20lectura.%0A%0AMi%20Nombre:%20____%0AMi%20Pregunta:%20____%0A%0A(Adjunto%20comprobante)%20🔮`} 
+                  href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20✨%20He%20realizado%20el%20pago%20de%20mi%20lectura.%0A%0AMi%20Nombre:%20____%0AMi%20Pregunta:%20____%0A%0A(Adjunto%20comprobante)%20🔮`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="contact-option"
@@ -133,7 +132,7 @@ const ConsultasTarot = () => {
                 </a>
 
                 <a 
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Lectura%20Tarot%20Personalizada&body=Hola%20Polux!%20✨%0A%0AQuiero%20mi%20lectura.%0A%0AMi%20nombre:%20____%0AMi%20pregunta:%20____%0A%0A🔮`} 
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Lectura%20Tarot%20Personalizada&body=Hola%20Polux!%20✨%0A%0AHe%20realizado%20mi%20pago.%0A%0AMi%20nombre:%20____%0AMi%20pregunta:%20____%0A%0A🔮`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="contact-option"
