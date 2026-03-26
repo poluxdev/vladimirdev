@@ -16,7 +16,6 @@ const ConsultasTarot = () => {
 
   const links = {
     paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/15USD",
-    // ✅ Actualizado con tu link de invitado de Global66
     global66: "https://share.global66.com/VLAGAR674", 
   };
   
@@ -24,156 +23,123 @@ const ConsultasTarot = () => {
   const whatsappNumber = "51929441018";
 
   return (
-    <section id="tarot" className="tarot-section">
+    <section id="tarot" className="tarot-section py-5">
       <div className="container">
         
-        {/* CABECERA */}
-        <div className="hero-content">
-          <h2 className="text-center">🔮 Lectura Personalizada con Polux</h2>
-          <p className="text-center lead-text">
-            Si sientes que necesitas claridad, aquí puedes acceder a una lectura enfocada en tu situación actual.
-            Como <strong>tarotista profesional</strong>, te ofrezco una interpretación profunda para ayudarte a entender lo que estás viviendo.
+        {/* CABECERA MÍSTICA */}
+        <div className="section-header text-center mb-5">
+          <h2 className="display-4 text-white">Tu Lectura Personalizada</h2>
+          <div className="separator mx-auto mb-4"></div>
+          <p className="lead-text mx-auto" style={{maxWidth: '800px'}}>
+            Un espacio de total privacidad donde el Tarot se convierte en el espejo de tu energía. 
+            Recibe la claridad que necesitas para retomar tu poder personal.
           </p>
         </div>
 
-        {/* VIDEO */}
-        <div className="video-tutorial-wrapper mb-5 text-center">
-          <h3 className="h5 mb-3">📺 Mira cómo solicitar tu lectura paso a paso</h3>
-          <div className="ratio ratio-16x9 mx-auto" style={{ maxWidth: '700px', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }}>
-            <iframe 
-              src="https://www.youtube.com/embed/YTkrfnmBIV0" 
-              title="Cómo solicitar mi lectura de tarot - Polux" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-
+        {/* PASO 1: EL PAGO (La Inversión) */}
         <div className="guide-wrapper">
-          
-          {/* PASO 1 */}
-          <div className="guide-step">
-            <div className="step-number">1</div>
+          <div className="guide-step mb-5">
+            <div className="step-badge">Paso 1</div>
             <div className="step-content">
-              <h3>Accede a tu lectura</h3>
-              <p>
-                Elige el método que prefieras según tu ubicación. La <strong>inversión</strong> garantiza una interpretación consciente y dedicada a tu energía.
-              </p>
+              <h3 className="text-white mb-4">Elige tu modalidad</h3>
               
               <div className="payment-grid">
-                
-                {/* PERÚ */}
-                <div className="payment-card">
-                  <span className="location-tag">🇵🇪 Perú</span>
-                  <p className="price">S/ 25.00</p>
-                  <div className="button-group-vertical">
-                    <button className="btn btn-yape" onClick={() => scrollToFooterAndOpenQR('btn-yape')}>
-                      📱 Quiero mi lectura (Yape)
+                {/* OPCIÓN PERÚ */}
+                <div className="payment-card local">
+                  <div className="card-header-inner">🇵🇪 Perú</div>
+                  <div className="price-tag">S/ 35</div>
+                  <p className="payment-desc">Lectura completa en video</p>
+                  <div className="d-grid gap-2">
+                    <button className="btn btn-payment yape" onClick={() => scrollToFooterAndOpenQR('btn-yape')}>
+                      Pagar con Yape
                     </button>
-                    <button className="btn btn-plin" onClick={() => scrollToFooterAndOpenQR('btn-plin')}>
-                      ⚡ Quiero mi lectura (Plin)
+                    <button className="btn btn-payment plin" onClick={() => scrollToFooterAndOpenQR('btn-plin')}>
+                      Pagar con Plin
                     </button>
                   </div>
                 </div>
 
-                {/* INTERNACIONAL */}
-                <div className="payment-card featured">
-                  <span className="location-tag">🌍 Internacional</span>
-                  <p className="price">$ 15.00 USD</p>
-
-                  <div className="button-group-vertical">
-                    {/* GLOBAL66 - MÉTODO RECOMENDADO LATAM */}
-                    <a href={links.global66} target="_blank" rel="noopener noreferrer" className="btn btn-global66">
-                      🚀 Global66 (Recomendado Latam)
+                {/* OPCIÓN INTERNACIONAL */}
+                <div className="payment-card international featured">
+                  <div className="card-header-inner">🌍 Internacional</div>
+                  <div className="price-tag">$ 15 <small>USD</small></div>
+                  <p className="payment-desc">Disponible para todo el mundo</p>
+                  <div className="d-grid gap-2">
+                    <a href={links.global66} target="_blank" rel="noopener noreferrer" className="btn btn-payment global">
+                      Global66 (Latam 0% Comisión)
                     </a>
-                    <small style={{ fontSize: '0.75rem', marginTop: '-8px', marginBottom: '10px', color: '#ffcc00', textAlign: 'center', display: 'block' }}>
-                      Ideal para Argentina, Chile y Colombia (0% comisión)
-                    </small>
-
-                    <a href={links.paypal} target="_blank" rel="noopener noreferrer" className="btn btn-paypal">
-                      🟡 PayPal / Tarjeta
+                    <a href={links.paypal} target="_blank" rel="noopener noreferrer" className="btn btn-payment paypal">
+                      PayPal / Tarjeta
                     </a>
-
-                    <button className="btn btn-binance" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
-                      ₿ Binance (USDT / QR)
+                    <button className="btn btn-payment binance" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
+                      Binance Pay (USDT)
                     </button>
                   </div>
-
-                  <p className="mt-3" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', lineHeight: '1.2' }}>
-                    ⚠️ Nota para Argentina: Global66 es la vía más económica para evitar altos impuestos bancarios.
-                  </p>
+                  <p className="argentina-note">🇦🇷 Argentina: Recomendamos Global66 para evitar impuestos bancarios.</p>
                 </div>
-
               </div>
             </div>
           </div>
 
-          {/* PASO 2 */}
-          <div className="guide-step">
-            <div className="step-number">2</div>
+          {/* PASO 2: EL CONTACTO */}
+          <div className="guide-step mb-5">
+            <div className="step-badge">Paso 2</div>
             <div className="step-content">
-              <h3>Cuéntame tu situación</h3>
-              <p>
-                Envía tu comprobante y tu pregunta (puede ser profunda o compleja). Me enfocaré en tu caso para darte la mayor claridad posible.
-              </p>
+              <h3 className="text-white mb-4">Envía tu información</h3>
+              {/* Cambiado de text-muted a text-white para legibilidad */}
+              <p className="text-white mb-4">Una vez realizado el pago, envíame los detalles para tu interpretación:</p>
               
-              <div className="contact-methods-grid">
+              <div className="contact-row">
                 <a 
-                  href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20✨%20He%20realizado%20el%20pago%20de%20mi%20lectura.%0A%0AMi%20Nombre:%20____%0AMi%20Pregunta:%20____%0A%0A(Adjunto%20comprobante)%20🔮`} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="contact-option"
+                  href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20✨%20He%20realizado%20el%20pago.%0A%0A*Mi%20Nombre:*%20%0A*Mi%20Pregunta:*%20%0A%0A(Adjunto%20comprobante)%20🔮`} 
+                  target="_blank" rel="noopener noreferrer" className="contact-card"
                 >
-                  <span className="icon">📱</span>
-                  <div>
-                    <strong>WhatsApp</strong>
-                    <span>Envío directo del comprobante</span>
+                  <span className="contact-icon">📱</span>
+                  <div className="contact-info">
+                    <strong>Vía WhatsApp</strong>
+                    <span>Opción más rápida</span>
                   </div>
                 </a>
 
                 <a 
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Lectura%20Tarot%20Personalizada&body=Hola%20Polux!%20✨%0A%0AHe%20realizado%20mi%20pago.%0A%0AMi%20nombre:%20____%0AMi%20pregunta:%20____%0A%0A🔮`} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="contact-option"
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Lectura%20Tarot&body=Nombre:%20%0APregunta:%20`} 
+                  target="_blank" rel="noopener noreferrer" className="contact-card"
                 >
-                  <span className="icon">📧</span>
-                  <div>
-                    <strong>Email</strong>
-                    <span>Opción para mayor privacidad</span>
+                  <span className="contact-icon">📧</span>
+                  <div className="contact-info">
+                    <strong>Vía Email</strong>
+                    <span>Mayor privacidad</span>
                   </div>
                 </a>
               </div>
             </div>
           </div>
 
-          {/* PASO 3 */}
+          {/* PASO 3: LA ENTREGA */}
           <div className="guide-step">
-            <div className="step-number">3</div>
+            <div className="step-badge">Paso 3</div>
             <div className="step-content">
-              <h3>Recibe tu lectura personalizada</h3>
-              <p>
-                En un plazo máximo de <strong>24 horas</strong>, recibirás tu interpretación detallada:
-              </p>
-              <ul className="list-unstyled mt-2">
-                <li className="mb-2">
-                  ✅ <strong>Por WhatsApp:</strong> Recibirás el video en <strong>alta calidad (formato documento)</strong>.
-                </li>
-                <li>
-                  ✅ <strong>Por Email:</strong> Recibirás un <strong>enlace privado</strong>.
-                </li>
-              </ul>
+              <h3 className="text-white mb-4">Recibe tu video en 24h</h3>
+              <div className="delivery-box">
+                <p className="text-white mb-3">Tu lectura se graba de forma dedicada y exclusiva. Recibirás:</p>
+                <ul className="delivery-list">
+                  <li>✦ <strong>Video en alta calidad</strong> enviado como documento (WhatsApp).</li>
+                  <li>✦ <strong>Enlace de descarga segura vía TransferNow</strong> (si eliges Email).</li>
+                  <li>✦ Explicación detallada de cada carta y consejo evolutivo.</li>
+                </ul>
+              </div>
             </div>
           </div>
-
         </div>
 
-        {/* CIERRE */}
-        <div className="final-note text-center mt-5">
-          <p>
-            ✨ Este espacio es confidencial. Si llegaste hasta aquí... no es casualidad.
-          </p>
+        {/* VIDEO TUTORIAL (COMENTADO TEMPORALMENTE)
+        <div className="video-section mt-5 py-5 text-center">
+          <p className="text-muted mb-4 italic">¿Tienes dudas sobre cómo solicitarla? Mira este breve video:</p>
+          <div className="ratio ratio-16x9 mx-auto mistic-video-frame">
+            <iframe src="https://www.youtube.com/embed/YTkrfnmBIV0" title="Tutorial Polux" allowFullScreen></iframe>
+          </div>
         </div>
+        */}
 
       </div>
     </section>

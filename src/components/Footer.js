@@ -6,7 +6,6 @@ import { BsPaypal, BsQrCodeScan, BsCurrencyExchange, BsArrowRightCircle } from '
 import qrBinance from '../images/binance.jpg';
 import qrYape from '../images/yape.png';
 import qrPlin from '../images/plin.png';
-import qrDale from '../images/dale.png';
 
 const Footer = () => {
   const [show, setShow] = useState(false);
@@ -39,37 +38,29 @@ const Footer = () => {
             </p>
           </Col>
 
-          {/* PERÚ */}
+          {/* PERÚ - OPCIONES PRINCIPALES */}
           <Col md={4} className="mb-4 mb-md-0">
             <h5 className="footer-title">🇵🇪 Residentes Perú</h5>
-            <p className="footer-subtext">
-              <strong>Inversión: S/ 25.00</strong> <br />
-              Interpretación consciente y respetuosa de tu situación actual.
-            </p>
+            <div className="footer-subtext text-white">
+              <p><strong>Inversión: S/ 35.00</strong></p>
+              <p>Interpretación consciente y respetuosa de tu situación actual.</p>
+            </div>
             <div className="payment-buttons-container">
               
               <Button 
                 id="btn-yape"
                 className="btn-footer btn-yape" 
-                onClick={() => handleShow(qrYape, '✨ Quiero mi lectura (Yape)')}
+                onClick={() => handleShow(qrYape, '✨ Pago vía Yape')}
               >
-                <BsQrCodeScan /> ✨ Quiero mi lectura (Yape)
+                <BsQrCodeScan /> Yapear S/ 35
               </Button>
 
               <Button 
                 id="btn-plin"
                 className="btn-footer btn-plin" 
-                onClick={() => handleShow(qrPlin, '✨ Quiero mi lectura (Plin)')}
+                onClick={() => handleShow(qrPlin, '✨ Pago vía Plin')}
               >
-                <BsQrCodeScan /> ✨ Quiero mi lectura (Plin)
-              </Button>
-
-              <Button 
-                id="btn-dale"
-                className="btn-footer btn-dale" 
-                onClick={() => handleShow(qrDale, '✨ Quiero mi lectura (DALE)')}
-              >
-                <BsQrCodeScan /> ✨ Quiero mi lectura (DALE)
+                <BsQrCodeScan /> Plinear S/ 35
               </Button>
 
             </div>
@@ -78,18 +69,17 @@ const Footer = () => {
           {/* INTERNACIONAL */}
           <Col md={4}>
             <h5 className="footer-title">🌍 Internacional</h5>
-            <p className="footer-subtext">
-              <strong>Inversión: $ 15.00 USD</strong> <br />
-              Accede desde cualquier país a tu lectura personalizada en video privado.
-            </p>
+            <div className="footer-subtext text-white">
+              <p><strong>Inversión: $ 15.00 USD</strong></p>
+              <p>Entrega en video HD vía <strong>TransferNow</strong> a todo el mundo.</p>
+            </div>
 
             <div className="payment-buttons-container">
               
               <div className="paises-list">
-                Perú • México • Argentina • Chile • Colombia • Uruguay • España • USA
+                México • Argentina • Chile • Colombia • Uruguay • España • USA
               </div>
 
-              {/* GLOBAL66 - NUEVA OPCIÓN RECOMENDADA */}
               <Button
                 className="btn-footer btn-global66"
                 as="a"
@@ -97,7 +87,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsArrowRightCircle /> ✨ Global66 (Latam)
+                <BsArrowRightCircle /> Global66 (Latam 0%)
               </Button>
 
               <Button
@@ -107,15 +97,15 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsPaypal /> ✨ Quiero mi lectura (PayPal)
+                <BsPaypal /> PayPal / Tarjeta
               </Button>
 
               <Button 
                 id="btn-binance"
                 className="btn-footer btn-binance" 
-                onClick={() => handleShow(qrBinance, '✨ Quiero mi lectura (Binance)')}
+                onClick={() => handleShow(qrBinance, '✨ Pago vía Binance (USDT)')}
               >
-                <BsCurrencyExchange /> ✨ Quiero mi lectura (USDT)
+                <BsCurrencyExchange /> Binance Pay (USDT)
               </Button>
 
             </div>
@@ -124,39 +114,43 @@ const Footer = () => {
         </Row>
       </Container>
 
-      {/* MODAL */}
+      {/* MODAL DE PAGO */}
       <Modal show={show} onHide={() => setShow(false)} centered className="qr-modal">
-        <Modal.Header closeButton>
-          <Modal.Title>{qrTitle}</Modal.Title>
+        <Modal.Header closeButton className="border-0">
+          <Modal.Title className="text-white w-100 text-center">{qrTitle}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body className="text-center p-4">
-          <div className="qr-container-bg">
-            <img 
-              src={qrImage} 
-              alt="Código QR de pago" 
-              className="qr-img-fluid"
-            />
+          <div className="d-flex justify-content-center align-items-center mb-4">
+            <div className="qr-container-bg">
+              <img 
+                src={qrImage} 
+                alt="Código QR de pago" 
+                className="qr-img-fluid"
+              />
+            </div>
           </div>
 
-          <div className="manual-payment-info mt-4">
-            <p className="text-secondary mb-1">O envío manual al número:</p>
-            <p className="manual-number">+51 929 441 018</p>
+          <div className="manual-payment-info">
+            <p className="text-white mb-1">O envío manual al número:</p>
+            <p className="manual-number text-white fw-bold">+51 929 441 018</p>
             
-            <p className="text-secondary mb-1">Correo electrónico:</p>
-            <a href="mailto:eldiariopolux@gmail.com" className="manual-email">
+            <p className="text-white mb-1">Correo electrónico:</p>
+            <a href="mailto:eldiariopolux@gmail.com" className="manual-email d-block mb-3">
               eldiariopolux@gmail.com
             </a>
 
-            <p className="text-muted mt-3">
-              Tu <strong>inversión</strong> garantiza una lectura realizada con cuidado por Polux Tarotista.
-            </p>
+            <div className="modal-disclaimer p-3 rounded" style={{backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)'}}>
+              <p className="text-white small mb-0">
+                Al terminar, envía tu captura por WhatsApp o Email para agendar la entrega de tu video.
+              </p>
+            </div>
           </div>
         </Modal.Body>
 
-        <Modal.Footer>
-          <Button variant="outline-light" onClick={() => setShow(false)}>
-            Volver
+        <Modal.Footer className="border-0">
+          <Button variant="outline-light" className="w-100" onClick={() => setShow(false)}>
+            Cerrar
           </Button>
         </Modal.Footer>
       </Modal>

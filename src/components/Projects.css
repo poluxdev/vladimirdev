@@ -1,80 +1,95 @@
-/*
- * Título H2 espiritual (Aplicado a "Polux_Herramientas" en secciones oscuras)
- * MEJORA: Color de texto base cambiado a blanco roto (#f0e6fa) para mayor contraste.
- * MEJORA: Text-shadow ajustado para un glow violeta/blanco más suave y etéreo.
-*/
+/* --- SECCIÓN PROYECTOS (Vibración 7) --- */
+#projects {
+    background-color: #0c0c14; /* Fondo profundo igual al Hero */
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* Título H2 Espiritual */
 h2 {
-    color: #f0e6fa; /* Blanco roto/Lavanda para destacar en fondo oscuro */
-    font-size: 2.625rem;
-    font-family: 'Cormorant Garamond', serif;
-    border: none;
-    margin-bottom: 1rem;
+    color: #ffffff; 
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif; /* Cambiamos a Playfair para mayor elegancia */
+    margin-bottom: 1.5rem;
     text-align: center;
-
-    /* Efecto glow suave (Violeta como base, Blanco como destello) */
-    text-shadow:
-        0 0 8px rgba(107, 78, 160, 0.7),   /* Base violeta suave */
-        0 0 15px rgba(167, 131, 223, 0.4),  /* Expansión violeta */
-        0 0 25px rgba(255, 255, 255, 0.1); /* Brillo blanco muy sutil y difuso */
+    letter-spacing: 2px;
+    /* Glow etéreo blanco/plata */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 
+                 0 0 30px rgba(183, 153, 255, 0.1);
 }
 
-/* Estilo para tarjetas (SIN CAMBIOS, ya estaban optimizados) */
-.card {
-    border: none;
-    border-radius: 12px;
-    background-color: #f8f5fc; /* Fondo lavanda muy claro */
-    /* Sombra inicial más sutil y profunda */
-    box-shadow: 0 2px 6px rgba(107, 78, 160, 0.1), 0 1px 3px rgba(107, 78, 160, 0.05);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+.subtitle-mistic {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    margin-bottom: 3rem;
 }
 
-.card:hover {
-    /* Desplazamiento ligeramente menor para suavidad */
-    transform: translateY(-8px);
-    /* Sombra que simula elevación y profundidad más elegantes */
-    box-shadow: 0 16px 32px rgba(107, 78, 160, 0.25), 0 4px 8px rgba(107, 78, 160, 0.15);
+/* --- TARJETAS DE CRISTAL (Glassmorphism) --- */
+.project-card {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+    background: rgba(255, 255, 255, 0.03) !important; /* Fondo casi invisible */
+    backdrop-filter: blur(10px); /* Efecto de vidrio empañado */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.07) !important;
+    border-color: rgba(183, 153, 255, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .card-body {
-    padding: 24px;
+    padding: 30px;
 }
 
-/* Título de la tarjeta (SIN CAMBIOS) */
-.card-title {
-    font-size: 1.6rem;
-    color: #4a3b6a;
-    font-family: 'Cormorant Garamond', serif;
+/* Título de la tarjeta (Plata) */
+.project-title {
+    font-size: 1.4rem !important;
+    color: #f8f5fc !important;
+    font-family: 'Playfair Display', serif !important;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
-/* Texto de la tarjeta (SIN CAMBIOS) */
-.card-text {
-    font-size: 1.05rem;
-    color: #555;
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+/* Texto de la tarjeta (Gris suave para lectura) */
+.project-text {
+    font-size: 0.95rem !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    font-family: 'Inter', sans-serif !important;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
-/* Botón primario espiritual (SIN CAMBIOS) */
-.btn-primary {
-    background-color: #6b4ea0;
-    border: none;
-    border-radius: 12px;
-    padding: 12px 24px;
-    text-decoration: none;
-    color: #ffffff;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    /* Añadida la transición de color del texto */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 12px rgba(107, 78, 160, 0.3);
+/* --- BOTÓN SUTIL (Sin sombras pesadas) --- */
+.btn-project-link {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 4px !important; /* Estética más seria/minimalista */
+    padding: 10px 20px !important;
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease !important;
 }
 
-.btn-primary:hover {
-    background-color: #8d6fd1;
-    /* Escala más sutil para una transición más profesional */
-    transform: scale(1.02);
-    box-shadow: 0 6px 16px rgba(141, 111, 209, 0.6);
+.btn-project-link:hover {
+    background: #ffffff !important; /* Se vuelve sólido al tocarlo */
+    color: #0c0c14 !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Separador decorativo */
+.separator {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #b799ff, transparent);
+    margin: 0 auto 2rem auto;
 }

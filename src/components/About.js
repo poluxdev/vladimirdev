@@ -1,77 +1,54 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import './About.css';
 
 const About = () => {
   return (
-    <section id="about" className="py-5">
+    <section id="about" className="about-section py-5">
       <Container>
-        {/* Usamos un encabezado claro para el SEO */}
-        <h2 className="text-center mb-4">Sobre Polux Tarotista</h2>
+        <Row className="justify-content-center">
+          <Col lg={9}>
+            <h2 className="section-title text-center mb-5">La Esencia de Polux</h2>
 
-        <p>
-          Hola, soy Vladimir… aunque en el mundo del bienestar y la espiritualidad muchos me conocen como <strong>Polux Tarotista</strong>.
-        </p>
+            <div className="about-text">
+              <p className="intro-text">
+                Hola, soy Vladimir… en este espacio me conoces como <strong>Polux</strong>.
+              </p>
 
-        <p>
-          No estoy aquí para predecirte un destino fijo o hacer adivinación convencional.  
-          Mi forma de trabajar con el <strong>tarot evolutivo</strong> es diferente y enfocada en tu crecimiento personal.
-        </p>
+              <p>
+                No estoy aquí para predecirte un destino fijo. Mi enfoque con el <strong>Tarot Evolutivo</strong> 
+                se aleja de la adivinación convencional para centrarse en tu despertar y claridad presente.
+              </p>
 
-        <p>
-          Para mí, el tarot es un <strong>espejo de energías</strong>.  
-          Una herramienta que refleja lo que estás viviendo, lo que sientes… y lo que necesitas ver con más claridad en tu presente.
-        </p>
+              <blockquote className="mistic-quote">
+                "El Tarot es un espejo de energías: refleja lo que vibras hoy para que decidas tu mañana."
+              </blockquote>
 
-        <p>
-          No se trata de decirte qué va a pasar,  
-          sino de ayudarte a <strong>entender qué está pasando realmente</strong> en tu vida para que recuperes el control.
-        </p>
+              <p>
+                Mi labor es ayudarte a <strong>recuperar el mando de tu vida</strong>. No te diré qué va a pasar, 
+                sino qué está ocurriendo en tu energía para que dejes de repetir patrones y recuperes tu poder personal.
+              </p>
 
-        <p>
-          Cuando logras ver tu situación con claridad:
-          <br />– tomas mejores decisiones  
-          <br />– dejas de repetir patrones  
-          <br />– y recuperas tu <strong>poder personal</strong>
-        </p>
+              <div className="process-box my-5">
+                <h3 className="process-title">🎥 El Mensaje en Video</h3>
+                <p>
+                  Si conectas con esta visión, realizo para ti una <strong>lectura personalizada en video</strong>. 
+                  Un formato íntimo y profundo donde:
+                </p>
+                <ul className="process-list">
+                  <li>Sintonizo con tu pregunta concreta de forma privada.</li>
+                  <li>Muestro el despliegue de las cartas y su simbología aplicada a ti.</li>
+                  <li>Recibes el enlace de tu video en <strong>menos de 24 horas</strong>.</li>
+                </ul>
+              </div>
 
-        <p>
-          Mi enfoque como <strong>tarotista profesional</strong> combina la simbología del tarot con una mirada psicológica.  
-          No solo interpreto las cartas… también te brindo un acompañamiento para comprender el "por qué" detrás de tu situación actual.
-        </p>
-
-        <p>
-          Yo solo soy un <strong>mensajero</strong>, un intérprete de lo que el universo y tu propia energía quieren mostrarte en este momento.
-        </p>
-
-        <hr className="my-5" style={{ opacity: 0.1 }} />
-
-        <p className="fw-bold mt-4">
-          🎥 Lecturas de Tarot Personalizadas
-        </p>
-
-        <p>
-          Si sientes conexión con mi visión terapéutica del tarot, puedes solicitar una consulta privada.
-        </p>
-
-        <p>
-          📩 <strong>¿Cómo funciona mi servicio?</strong>
-          <br />– Me envías tu pregunta o inquietud (puede ser tan compleja como necesites).
-          <br />– Realizo tu <strong>lectura de cartas personalizada</strong> de forma profunda.
-          <br />– Recibes un <strong>video privado</strong> exclusivo para ti.
-        </p>
-
-        <p>
-          En ese video:
-          <br />– Te muestro el despliegue de las cartas.
-          <br />– Te explico el significado de cada una aplicado a tu duda.
-          <br />– <strong>Interpreto tu situación</strong> con total honestidad.
-          <br />– Y te doy la claridad y el consejo que el tarot revela para ti.
-        </p>
-
-        <p className="fw-bold mt-4">
-          Si llegaste hasta aquí… no es casualidad.
-        </p>
+              <p className="final-reflection text-center mt-5">
+                Soy simplemente un intérprete de lo que el universo quiere mostrarte. 
+                <strong> Si estás aquí, ya comenzaste a buscar tu propia claridad.</strong>
+              </p>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </section>
   );

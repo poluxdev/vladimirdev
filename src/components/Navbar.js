@@ -1,21 +1,28 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import './NavBar.css';
 
 const NavBar = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand href="#home">Polux Tarotista</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#home">Inicio</Nav.Link>
-          <Nav.Link href="#about">Sobre Mí</Nav.Link>
-          <Nav.Link href="#tarot">Consultas de Tarot</Nav.Link> {/* ✅ Nuevo enlace */}
-          <Nav.Link href="#projects">Polux herramientas</Nav.Link>
-          <Nav.Link href="#contact">Redes Sociales</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
+    /* Quitamos bg="dark" para usar nuestro propio estilo en CSS */
+    <Navbar variant="dark" expand="lg" fixed="top" className="custom-navbar">
+      <Container>
+        <Navbar.Brand href="#home" className="brand-logo">
+          Polux <span className="brand-sub">Tarotista</span>
+        </Navbar.Brand>
+        
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto text-uppercase"> {/* ms-auto mueve el menú a la derecha */}
+            <Nav.Link href="#home">Inicio</Nav.Link>
+            <Nav.Link href="#about">Esencia</Nav.Link>
+            <Nav.Link href="#tarot" className="nav-highlight">Lecturas</Nav.Link> 
+            <Nav.Link href="#projects">Herramientas</Nav.Link>
+            <Nav.Link href="#contact">Contacto</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 };

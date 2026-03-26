@@ -1,80 +1,94 @@
-/* --- SECCIÓN ABOUT (VERSIÓN MINIMALISTA) --- */
+/* --- SECCIÓN ABOUT (Vibración 7: Inmersiva) --- */
 #about {
-    background-color: #ffffff; /* Fondo blanco puro para máxima limpieza */
-    color: #1a1a1a; /* Texto casi negro para legibilidad */
-    padding: 120px 20px; /* Mucho espacio arriba y abajo */
-    font-family: system-ui, -apple-system, sans-serif; /* Tipografía del sistema, limpia y moderna */
+    background-color: #0c0c14; /* Fondo oscuro coherente con el Hero */
+    color: #e0e0e0; /* Blanco suave para no cansar la vista */
+    padding: 120px 20px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Título principal: Sobrio y elegante */
+/* Título principal: Elegancia Etérea */
 #about h2 {
-    font-family: 'Playfair Display', serif; /* Mantenemos la Serif para elegancia, pero limpia */
-    color: #1a1a1a;
-    font-size: 2.5rem;
-    font-weight: 400; /* Menos grueso */
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 400;
     text-align: center;
     margin-bottom: 4rem;
-    letter-spacing: -0.5px; /* Ligeramente más juntas las letras */
+    letter-spacing: 1px;
+    /* Glow muy sutil para dar profundidad */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
-/* Contenedor de texto: Enfocado en la lectura */
+/* Contenedor de texto: Enfoque en la Calma */
 #about p {
-    font-size: 1.1rem;
-    line-height: 1.8; /* Espaciado cómodo */
-    margin-bottom: 1.5rem;
-    color: #4a4a4a; /* Gris oscuro, suave a la vista */
-    max-width: 700px; /* Ancho de lectura óptimo */
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 1.8rem;
+    color: rgba(255, 255, 255, 0.75); /* Gris plateado suave */
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
+    text-align: left; /* Alineación clásica para lectura larga */
 }
 
-/* Párrafos destacados (Cita o conclusión): Distinción sutil */
+/* Párrafos destacados (El "Gancho" de ventas) */
 #about p.fw-bold {
-    background: transparent;
-    backdrop-filter: none;
-    border-left: 2px solid #1a1a1a; /* Línea fina y negra */
-    padding: 1rem 0 1rem 2rem; /* Solo padding izquierdo */
-    font-weight: 600;
-    color: #1a1a1a;
+    background: rgba(183, 153, 255, 0.03); /* Un toque lavanda casi imperceptible */
+    border-left: 2px solid #b799ff; /* Línea fina color místico */
+    padding: 1.5rem 2rem;
+    font-weight: 500;
+    color: #ffffff;
     margin-top: 4rem;
-    border-radius: 0;
-    box-shadow: none;
-    font-style: normal; /* Menos "decorativo" */
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
 }
 
-/* Estilo para el link del certificado: Funcional */
+/* Certificado: Estilo "Floating Card" */
 .certificado-hover {
     position: relative;
     cursor: pointer;
-    color: #0066cc; /* Azul link estándar, sobrio */
+    color: #b799ff; /* Violeta claro en lugar de azul link */
     font-weight: 500;
-    transition: color 0.2s ease;
-    text-decoration: underline; /* Subrayado normal */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(183, 153, 255, 0.5);
 }
 
 .certificado-hover:hover {
-    color: #004499;
-    background: transparent;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 
-/* Imagen del certificado: Aparición simple */
 .certificado-img {
     display: none;
     position: absolute;
-    top: calc(100% + 10px); /* Aparece justo debajo del link */
+    top: calc(100% + 15px);
     left: 50%;
     transform: translateX(-50%);
-    width: 300px;
-    border: 1px solid #e0e0e0; /* Borde gris muy suave */
-    border-radius: 4px; /* Bordes menos redondeados */
+    width: 320px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
     z-index: 100;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra muy tenue solo para separar del fondo */
-    background-color: #ffffff;
-    animation: none; /* Sin animaciones */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    background-color: #1a1a24;
+    padding: 5px;
 }
 
 .certificado-hover:hover .certificado-img {
     display: block;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Separador sutil */
+hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+    max-width: 200px;
+    margin: 4rem auto !important;
 }
 
 /* Responsive */
@@ -84,12 +98,14 @@
     }
 
     #about h2 {
-        font-size: 2rem;
-        margin-bottom: 3rem;
+        font-size: 2.2rem;
     }
 
-    #about p.fw-bold {
-        margin-top: 3rem;
-        padding-left: 1.5rem;
+    #about p {
+        font-size: 1.1rem;
+    }
+
+    .certificado-img {
+        width: 260px;
     }
 }

@@ -31,32 +31,31 @@ const Hero = () => {
       <FallingStars />
 
       <Container>
-        <Row>
+        <Row className="align-items-center">
           <Col md={8} className="hero-content">
-            <h1>Polux</h1>
-            <p>
+            <h1 className="hero-title">Polux</h1>
+            <p className="hero-subtitle">
               Soy{' '}
-              <span style={{ color: '#39ff14', fontWeight: 'bold' }}>
+              <span className="typewriter-text">
                 <Typewriter
                   words={[
                     'Tarotista',
-                    'Psicólogo ',
-                    'Numerólogo ',
-                    'Astrólogo ',
+                    'Astrólogo',
+                    'Numerólogo',
                     'Creador Digital'
                   ]}
-                  loop={9}
+                  loop={0} // 0 para que sea infinito
                   cursor
                   cursorStyle="_"
-                  typeSpeed={70}
+                  typeSpeed={80}
                   deleteSpeed={50}
-                  delaySpeed={1000}
+                  delaySpeed={2500} // Más tiempo para que lean "Tarotista"
                 />
               </span>
             </p>
             
             <div className="hero-buttons">
-              {/* BOTÓN SECUNDARIO: EXPLORAR */}
+              {/* BOTÓN SECUNDARIO: EXPLORAR (MUNDO INTERIOR) */}
               <Button 
                 href="#projects" 
                 className="btn-hero-explore me-3"
@@ -64,23 +63,23 @@ const Hero = () => {
                 Explora Tu Mundo Interior
               </Button>
 
-              {/* BOTÓN PRIMARIO: TAROT (VENTA) */}
+              {/* BOTÓN PRIMARIO: TAROT (FORMATO CLARO) */}
               <Button 
                 href="#tarot" 
                 className="btn-hero-tarot"
               >
-                🔮 Lectura Personalizada
+                🔮 Recibe tu Lectura en Video
               </Button>
             </div>
           </Col>
 
-          <Col md={4} className="d-flex justify-content-center align-items-center hero-extra">
-            {/* Aquí puedes insertar tu logo o una ilustración mística */}
+          <Col md={4} className="hero-extra text-center">
+             {/* Este espacio queda libre para el mazo de cartas que se ve en la imagen */}
           </Col>
         </Row>
       </Container>
 
-      <div className="clock">{formattedTime}</div>
+      <div className="clock-display">{formattedTime}</div>
     </section>
   );
 };

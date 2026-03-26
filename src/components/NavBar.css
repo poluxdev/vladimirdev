@@ -1,52 +1,108 @@
-/* Estilo general del navbar */
+/* --- NAVBAR VIBRACIÓN 7 (Minimalismo & Plata) --- */
 .navbar {
-  background: linear-gradient(to right, #1e1a30, #2c2440);
-  border-bottom: 2px solid #d9c6f3;
-  font-family: 'Cormorant Garamond', serif;
-  padding: 10px 20px;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(107, 78, 160, 0.2);
+    /* Fondo traslúcido oscuro para integrarse con el espacio */
+    background: rgba(12, 12, 20, 0.8) !important; 
+    backdrop-filter: blur(15px); /* Efecto de vidrio esmerilado */
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* Borde inferior plata muy fino y sutil */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    
+    /* Tipografía limpia y académica */
+    font-family: 'Inter', sans-serif;
+    padding: 15px 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    
+    /* IMPORTANTE: Al no ser fixed, se queda al inicio de la página */
+    position: relative; 
 }
 
-/* Marca / título del navbar */
+/* Marca / Título (Polux Tarotista) */
 .navbar-brand {
-  color: #c9a0dc !important;
-  font-size: 1.6rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
-  transition: color 0.3s ease;
+    color: #ffffff !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    margin-left: 15px;
 }
 
 .navbar-brand:hover {
-  color: #e4c8ff !important;
+    color: #c0c0c0 !important; /* Cambio a plata suave */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-/* Enlaces del navbar */
+/* Enlaces del menú */
 .nav-link {
-  color: #dcd3ec !important;
-  font-size: 1.1rem;
-  margin-right: 15px;
-  transition: color 0.3s ease, transform 0.2s ease;
+    color: rgba(255, 255, 255, 0.6) !important; /* Texto grisáceo para no distraer */
+    font-size: 0.85rem !important; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 15px;
+    transition: all 0.3s ease !important;
+    font-weight: 400;
 }
 
 .nav-link:hover {
-  color: #d5b2ff !important;
-  transform: translateY(-2px);
+    color: #ffffff !important; /* Ilumina al pasar el mouse */
+    transform: translateY(-1px);
 }
 
-/* Activo / Enlace enfocado */
-.nav-link:focus, .nav-link.active {
-  color: #f5e1ff !important;
-  font-weight: 600;
+/* Enlace de Consultas (Resaltado sutil para guiar al usuario) */
+.nav-link[href="#tarot"] {
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 8px 20px !important;
+    background: rgba(255, 255, 255, 0.03);
+    margin-left: 10px;
 }
 
-/* Hamburguesa menú toggle */
+.nav-link[href="#tarot"]:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Menú móvil (Hamburguesa) */
 .navbar-toggler {
-  border-color: #d9c6f3;
-  background-color: rgba(255, 255, 255, 0.1);
+    border: none !important;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
 }
 
 .navbar-toggler-icon {
-  filter: invert(1);
+    /* Hace el icono blanco y minimalista */
+    filter: invert(1) brightness(0.9);
+}
+
+/* --- RESPONSIVO PARA MÓVILES --- */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(12, 12, 20, 0.98); /* Fondo sólido al abrir menú */
+        margin-top: 15px;
+        padding: 2rem;
+        border-radius: 0 0 15px 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link {
+        margin: 12px 0;
+        text-align: center;
+        font-size: 1rem !important;
+        display: block;
+    }
+
+    .nav-link[href="#tarot"] {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin-left: 0 !important;
+        margin-top: 10px;
+    }
 }
