@@ -1,24 +1,23 @@
 {
   "files": {
-    "main.css": "/vladimirdev/static/css/main.c5c00210.css",
-    "main.js": "/vladimirdev/static/js/main.aaf15eae.js",
+    "main.css": "/vladimirdev/static/css/main.f8481088.css",
+    "main.js": "/vladimirdev/static/js/main.7a071e4f.js",
     "static/js/453.a858400f.chunk.js": "/vladimirdev/static/js/453.a858400f.chunk.js",
     "static/media/fondo.png": "/vladimirdev/static/media/fondo.613b5b6a51fb4511262d.png",
     "static/media/fondoconsultas.jpg": "/vladimirdev/static/media/fondoconsultas.98f4de80b3b594a01d75.jpg",
     "static/media/back.png": "/vladimirdev/static/media/back.920d8ce9365fcdefd638.png",
     "static/media/whatsap.png": "/vladimirdev/static/media/whatsap.160db6ce9f0fdbbd8a76.png",
     "static/media/binance.jpg": "/vladimirdev/static/media/binance.04a2a66f63c1fef66eb6.jpg",
-    "static/media/dale.png": "/vladimirdev/static/media/dale.e0363c5c18d5d176bbd3.png",
     "static/media/yape.png": "/vladimirdev/static/media/yape.8ed0b76e58d194830ae2.png",
     "static/media/plin.png": "/vladimirdev/static/media/plin.9ef988ea1c66d52e62d3.png",
     "static/media/sigueme.png": "/vladimirdev/static/media/sigueme.816e132b6240959a9463.png",
     "index.html": "/vladimirdev/index.html",
-    "main.c5c00210.css.map": "/vladimirdev/static/css/main.c5c00210.css.map",
-    "main.aaf15eae.js.map": "/vladimirdev/static/js/main.aaf15eae.js.map",
+    "main.f8481088.css.map": "/vladimirdev/static/css/main.f8481088.css.map",
+    "main.7a071e4f.js.map": "/vladimirdev/static/js/main.7a071e4f.js.map",
     "453.a858400f.chunk.js.map": "/vladimirdev/static/js/453.a858400f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5c00210.css",
-    "static/js/main.aaf15eae.js"
+    "static/css/main.f8481088.css",
+    "static/js/main.7a071e4f.js"
   ]
 }
