@@ -25,121 +25,189 @@ const ConsultasTarot = () => {
   return (
     <section id="tarot" className="tarot-section py-5">
       <div className="container">
-        
-        {/* CABECERA MÍSTICA */}
-        <div className="section-header text-center mb-5">
-          <h2 className="display-4 text-white">Tu Lectura Personalizada</h2>
-          <div className="separator mx-auto mb-4"></div>
-          <p className="lead-text mx-auto" style={{maxWidth: '800px'}}>
-            Un espacio de total privacidad donde el Tarot se convierte en el espejo de tu energía. 
-            Recibe la claridad que necesitas para retomar tu poder personal.
+
+        {/* HERO */}
+        <div className="text-center mb-5">
+          <h1 className="display-3 text-white mb-3">
+            Tu lectura de Tarot personalizada
+          </h1>
+
+          <p className="lead-text mx-auto" style={{maxWidth: '750px'}}>
+            No es una lectura general. Es un mensaje directo para tu situación actual. 
+            Vas a entender qué está pasando, qué viene y qué decisión tomar.
+          </p>
+
+          <p className="text-warning mt-3">
+            ⚡ Entrega en menos de 24 horas
           </p>
         </div>
 
-        {/* PASO 1: EL PAGO (La Inversión) */}
+        {/* BENEFICIOS */}
+        <div className="row text-center mb-5">
+          <div className="col-md-4 mb-3">
+            <h5 className="text-white">🔮 100% Personal</h5>
+            <p>Tu caso específico, no contenido genérico.</p>
+          </div>
+          <div className="col-md-4 mb-3">
+            <h5 className="text-white">🎥 Video privado</h5>
+            <p>Explicación clara carta por carta.</p>
+          </div>
+          <div className="col-md-4 mb-3">
+            <h5 className="text-white">🧠 Claridad real</h5>
+            <p>No validación vacía, sino dirección.</p>
+          </div>
+        </div>
+
+        {/* PRECIO */}
+        <div className="text-center mb-5">
+          <h2 className="text-white">Accede a tu lectura</h2>
+
+          <p className="payment-note">
+            🔒 Pago único • Sin suscripciones • Acceso inmediato
+          </p>
+
+          <div className="price-tag-big mt-3">
+            $15 USD
+          </div>
+
+          <p className="price-local">
+            🇵🇪 Precio especial en Perú: S/ 35
+          </p>
+        </div>
+
+        {/* PAGOS */}
+        <div className="payment-card international featured mb-5">
+          <div className="card-header-inner">💳 Métodos de pago</div>
+
+          <div className="d-grid gap-3 mt-4">
+
+            {/* PERÚ */}
+            <button 
+              className="btn btn-payment yape"
+              onClick={() => scrollToFooterAndOpenQR('btn-yape')}
+            >
+              📱 Pagar con Yape / Plin / Dale (S/ 35)
+            </button>
+
+            {/* INTERNACIONAL */}
+            <a 
+              href={links.paypal} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-payment paypal"
+            >
+              PayPal (tarjeta o cuenta)
+            </a>
+
+            <button 
+              className="btn btn-payment binance" 
+              onClick={() => scrollToFooterAndOpenQR('btn-binance')}
+            >
+              Binance Pay (sin comisiones)
+            </button>
+
+            <a 
+              href={links.global66} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-payment global"
+            >
+              Global66
+            </a>
+
+          </div>
+
+          <p className="text-center mt-3">
+            🔑 <strong>Un solo número para todo:</strong> +51 929 441 018
+          </p>
+
+          <p className="text-center">
+            🇵🇪 Yape • Plin • Dale  
+            🌍 Global66
+          </p>
+
+          <p className="text-success text-center mt-1">
+            ✔ Mismo número para pagar y enviar comprobante
+          </p>
+
+          <p className="text-center mt-2">
+            💡 Puedes usar cualquier método sin problema.
+          </p>
+
+          <p className="payment-trust">
+            ✔ Pago seguro • Atención directa • Respuesta rápida
+          </p>
+        </div>
+
+        {/* PROCESO */}
         <div className="guide-wrapper">
-          <div className="guide-step mb-5">
-            <div className="step-badge">Paso 1</div>
-            <div className="step-content">
-              <h3 className="text-white mb-4">Elige tu modalidad</h3>
-              
-              <div className="payment-grid">
-                {/* OPCIÓN PERÚ */}
-                <div className="payment-card local">
-                  <div className="card-header-inner">🇵🇪 Perú</div>
-                  <div className="price-tag">S/ 35</div>
-                  <p className="payment-desc">Lectura completa en video</p>
-                  <div className="d-grid gap-2">
-                    <button className="btn btn-payment yape" onClick={() => scrollToFooterAndOpenQR('btn-yape')}>
-                      Pagar con Yape
-                    </button>
-                    <button className="btn btn-payment plin" onClick={() => scrollToFooterAndOpenQR('btn-plin')}>
-                      Pagar con Plin
-                    </button>
-                  </div>
-                </div>
 
-                {/* OPCIÓN INTERNACIONAL */}
-                <div className="payment-card international featured">
-                  <div className="card-header-inner">🌍 Internacional</div>
-                  <div className="price-tag">$ 15 <small>USD</small></div>
-                  <p className="payment-desc">Disponible para todo el mundo</p>
-                  <div className="d-grid gap-2">
-                    <a href={links.global66} target="_blank" rel="noopener noreferrer" className="btn btn-payment global">
-                      Global66 (Latam 0% Comisión)
-                    </a>
-                    <a href={links.paypal} target="_blank" rel="noopener noreferrer" className="btn btn-payment paypal">
-                      PayPal / Tarjeta
-                    </a>
-                    <button className="btn btn-payment binance" onClick={() => scrollToFooterAndOpenQR('btn-binance')}>
-                      Binance Pay (USDT)
-                    </button>
-                  </div>
-                  <p className="argentina-note">🇦🇷 Argentina: Recomendamos Global66 para evitar impuestos bancarios.</p>
-                </div>
-              </div>
+          <div className="guide-step mb-4">
+            <div className="step-badge">1</div>
+            <div className="step-content">
+              <h4 className="text-white">Realiza el pago</h4>
+              <p>Elige el método que prefieras arriba.</p>
             </div>
           </div>
 
-          {/* PASO 2: EL CONTACTO */}
-          <div className="guide-step mb-5">
-            <div className="step-badge">Paso 2</div>
+          <div className="guide-step mb-4">
+            <div className="step-badge">2</div>
             <div className="step-content">
-              <h3 className="text-white mb-4">Envía tu información</h3>
-              {/* Cambiado de text-muted a text-white para legibilidad */}
-              <p className="text-white mb-4">Una vez realizado el pago, envíame los detalles para tu interpretación:</p>
-              
-              <div className="contact-row">
-                <a 
-                  href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20✨%20He%20realizado%20el%20pago.%0A%0A*Mi%20Nombre:*%20%0A*Mi%20Pregunta:*%20%0A%0A(Adjunto%20comprobante)%20🔮`} 
-                  target="_blank" rel="noopener noreferrer" className="contact-card"
-                >
-                  <span className="contact-icon">📱</span>
-                  <div className="contact-info">
-                    <strong>Vía WhatsApp</strong>
-                    <span>Opción más rápida</span>
-                  </div>
-                </a>
-
-                <a 
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Lectura%20Tarot&body=Nombre:%20%0APregunta:%20`} 
-                  target="_blank" rel="noopener noreferrer" className="contact-card"
-                >
-                  <span className="contact-icon">📧</span>
-                  <div className="contact-info">
-                    <strong>Vía Email</strong>
-                    <span>Mayor privacidad</span>
-                  </div>
-                </a>
-              </div>
+              <h4 className="text-white">Envía tu pregunta</h4>
+              <p>Nombre + situación o duda específica.</p>
             </div>
           </div>
 
-          {/* PASO 3: LA ENTREGA */}
           <div className="guide-step">
-            <div className="step-badge">Paso 3</div>
+            <div className="step-badge">3</div>
             <div className="step-content">
-              <h3 className="text-white mb-4">Recibe tu video en 24h</h3>
-              <div className="delivery-box">
-                <p className="text-white mb-3">Tu lectura se graba de forma dedicada y exclusiva. Recibirás:</p>
-                <ul className="delivery-list">
-                  <li>✦ <strong>Video en alta calidad</strong> enviado como documento (WhatsApp).</li>
-                  <li>✦ <strong>Enlace de descarga segura vía TransferNow</strong> (si eliges Email).</li>
-                  <li>✦ Explicación detallada de cada carta y consejo evolutivo.</li>
-                </ul>
-              </div>
+              <h4 className="text-white">Recibe tu video</h4>
+              <p>Respuesta clara, directa y sin rodeos en menos de 24h.</p>
             </div>
           </div>
+
         </div>
 
-        {/* VIDEO TUTORIAL (COMENTADO TEMPORALMENTE)
-        <div className="video-section mt-5 py-5 text-center">
-          <p className="text-muted mb-4 italic">¿Tienes dudas sobre cómo solicitarla? Mira este breve video:</p>
-          <div className="ratio ratio-16x9 mx-auto mistic-video-frame">
-            <iframe src="https://www.youtube.com/embed/YTkrfnmBIV0" title="Tutorial Polux" allowFullScreen></iframe>
-          </div>
+        {/* CONTACTO */}
+        <div className="contact-row mt-5">
+
+          <a 
+            href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20Ya%20realicé%20el%20pago%20de%20S%2F35%20/%2015USD%20y%20quiero%20mi%20lectura`} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="contact-card"
+          >
+            <span>📱</span>
+            <div>
+              <strong>Enviar comprobante por WhatsApp</strong>
+              <p>Recibe tu lectura más rápido ⚡</p>
+            </div>
+          </a>
+
+          <a 
+            href={`mailto:${email}`} 
+            className="contact-card"
+          >
+            <span>📧</span>
+            <div>
+              <strong>Enviar comprobante por Email</strong>
+              <p>Opción más privada</p>
+            </div>
+          </a>
+
         </div>
-        */}
+
+        {/* CIERRE */}
+        <div className="text-center mt-5">
+          <p className="text-white" style={{maxWidth:'700px', margin:'0 auto'}}>
+            Si estás aquí, no es casualidad. Hay algo que necesitas entender ahora.  
+            El tarot no decide por ti, pero sí te muestra lo que no estás viendo.
+          </p>
+
+          <p className="text-warning mt-3">
+            ✨ Toma acción hoy
+          </p>
+        </div>
 
       </div>
     </section>
