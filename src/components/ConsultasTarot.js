@@ -67,11 +67,11 @@ const ConsultasTarot = () => {
           </p>
 
           <div className="price-tag-big mt-3">
-            $15 USD
+            $10 USD
           </div>
 
           <p className="price-local">
-            🇵🇪 Precio especial en Perú: S/ 35
+            🇵🇪 Precio especial en Perú: S/ 25
           </p>
         </div>
 
@@ -86,7 +86,7 @@ const ConsultasTarot = () => {
               className="btn btn-payment yape"
               onClick={() => scrollToFooterAndOpenQR('btn-yape')}
             >
-              📱 Pagar con Yape / Plin / Dale (S/ 35)
+              📱 Pagar con Yape / Plin / Dale (S/ 25)
             </button>
 
             {/* INTERNACIONAL */}
