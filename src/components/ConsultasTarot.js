@@ -15,7 +15,7 @@ const ConsultasTarot = () => {
   };
 
   const links = {
-    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/15USD",
+    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/10USD",
     global66: "https://share.global66.com/VLAGAR674", 
   };
   
@@ -71,7 +71,15 @@ const ConsultasTarot = () => {
           </div>
 
           <p className="price-local">
-            🇵🇪 Precio especial en Perú: S/ 25
+            🇵🇪 Disponible en Perú: S/ 25
+          </p>
+
+          <p className="mt-2">
+            🌎 Disponible para: 🇲🇽 🇨🇴 🇨🇱 🇦🇷 🇪🇸 🇺🇸
+          </p>
+
+          <p className="text-success mt-2">
+            🔥 Lectura más solicitada hoy
           </p>
         </div>
 
@@ -96,14 +104,14 @@ const ConsultasTarot = () => {
               rel="noopener noreferrer" 
               className="btn btn-payment paypal"
             >
-              PayPal (tarjeta o cuenta)
+              🌎 PayPal (tarjeta o cuenta)
             </a>
 
             <button 
               className="btn btn-payment binance" 
               onClick={() => scrollToFooterAndOpenQR('btn-binance')}
             >
-              Binance Pay (sin comisiones)
+              💸 Binance Pay QR
             </button>
 
             <a 
@@ -112,7 +120,7 @@ const ConsultasTarot = () => {
               rel="noopener noreferrer" 
               className="btn btn-payment global"
             >
-              Global66
+              🌍 Global66
             </a>
 
           </div>
@@ -123,7 +131,7 @@ const ConsultasTarot = () => {
 
           <p className="text-center">
             🇵🇪 Yape • Plin • Dale  
-            🌍 Global66
+            🌍 Global66 • PayPal • Binance
           </p>
 
           <p className="text-success text-center mt-1">
@@ -172,7 +180,7 @@ const ConsultasTarot = () => {
         <div className="contact-row mt-5">
 
           <a 
-            href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20Ya%20realicé%20el%20pago%20de%20S%2F35%20/%2015USD%20y%20quiero%20mi%20lectura`} 
+            href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20Ya%20realicé%20el%20pago%20de%20S%2F25%20/%2010USD%20y%20quiero%20mi%20lectura.%20Mi%20nombre%20es:%20____%20y%20mi%20pregunta%20es:%20____`} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="contact-card"

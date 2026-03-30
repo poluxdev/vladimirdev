@@ -19,7 +19,7 @@ const Footer = () => {
   };
 
   const links = {
-    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/15USD",
+    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/10USD",
     global66: "https://share.global66.com/VLAGAR674",
   };
 
@@ -38,13 +38,14 @@ const Footer = () => {
             </p>
           </Col>
 
-          {/* PERÚ - OPCIONES PRINCIPALES */}
+          {/* PERÚ */}
           <Col md={4} className="mb-4 mb-md-0">
-            <h5 className="footer-title">🇵🇪 Residentes Perú</h5>
+            <h5 className="footer-title">🇵🇪 Perú</h5>
             <div className="footer-subtext text-white">
-              <p><strong>Inversión: S/ 35.00</strong></p>
-              <p>Interpretación consciente y respetuosa de tu situación actual.</p>
+              <p><strong>Pago: S/ 25</strong></p>
+              <p>Acceso inmediato a tu lectura personalizada.</p>
             </div>
+
             <div className="payment-buttons-container">
               
               <Button 
@@ -52,7 +53,7 @@ const Footer = () => {
                 className="btn-footer btn-yape" 
                 onClick={() => handleShow(qrYape, '✨ Pago vía Yape')}
               >
-                <BsQrCodeScan /> Yapear S/ 35
+                <BsQrCodeScan /> Yapear S/ 25
               </Button>
 
               <Button 
@@ -60,7 +61,7 @@ const Footer = () => {
                 className="btn-footer btn-plin" 
                 onClick={() => handleShow(qrPlin, '✨ Pago vía Plin')}
               >
-                <BsQrCodeScan /> Plinear S/ 35
+                <BsQrCodeScan /> Plinear S/ 25
               </Button>
 
             </div>
@@ -70,14 +71,14 @@ const Footer = () => {
           <Col md={4}>
             <h5 className="footer-title">🌍 Internacional</h5>
             <div className="footer-subtext text-white">
-              <p><strong>Inversión: $ 15.00 USD</strong></p>
-              <p>Entrega en video HD vía <strong>TransferNow</strong> a todo el mundo.</p>
+              <p><strong>Pago: $10 USD</strong></p>
+              <p>Entrega en video HD a cualquier país.</p>
             </div>
 
             <div className="payment-buttons-container">
               
               <div className="paises-list">
-                México • Argentina • Chile • Colombia • Uruguay • España • USA
+                🇲🇽 🇦🇷 🇨🇱 🇨🇴 🇺🇾 🇪🇸 🇺🇸
               </div>
 
               <Button
@@ -87,7 +88,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsArrowRightCircle /> Global66 (Latam 0%)
+                <BsArrowRightCircle /> Global66
               </Button>
 
               <Button
@@ -103,9 +104,9 @@ const Footer = () => {
               <Button 
                 id="btn-binance"
                 className="btn-footer btn-binance" 
-                onClick={() => handleShow(qrBinance, '✨ Pago vía Binance (USDT)')}
+                onClick={() => handleShow(qrBinance, '✨ Pago vía Binance')}
               >
-                <BsCurrencyExchange /> Binance Pay (USDT)
+                <BsCurrencyExchange /> Binance Pay
               </Button>
 
             </div>
@@ -114,7 +115,7 @@ const Footer = () => {
         </Row>
       </Container>
 
-      {/* MODAL DE PAGO */}
+      {/* MODAL */}
       <Modal show={show} onHide={() => setShow(false)} centered className="qr-modal">
         <Modal.Header closeButton className="border-0">
           <Modal.Title className="text-white w-100 text-center">{qrTitle}</Modal.Title>
@@ -132,17 +133,17 @@ const Footer = () => {
           </div>
 
           <div className="manual-payment-info">
-            <p className="text-white mb-1">O envío manual al número:</p>
+            <p className="text-white mb-1">También puedes enviar al número:</p>
             <p className="manual-number text-white fw-bold">+51 929 441 018</p>
             
-            <p className="text-white mb-1">Correo electrónico:</p>
+            <p className="text-white mb-1">Correo:</p>
             <a href="mailto:eldiariopolux@gmail.com" className="manual-email d-block mb-3">
               eldiariopolux@gmail.com
             </a>
 
             <div className="modal-disclaimer p-3 rounded" style={{backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)'}}>
               <p className="text-white small mb-0">
-                Al terminar, envía tu captura por WhatsApp o Email para agendar la entrega de tu video.
+                Envía tu comprobante + nombre + pregunta para recibir tu lectura.
               </p>
             </div>
           </div>
