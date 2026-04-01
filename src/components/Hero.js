@@ -1,85 +1,82 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; // 👈 Importamos los hooks
 import { Container, Button, Row, Col } from 'react-bootstrap';
-import { Typewriter } from 'react-simple-typewriter';
 import FallingStars from './FallingStars';
 import './Hero.css';
 import backImage from '../assets/images/back.png';
 
 const Hero = () => {
+  // --- LÓGICA DEL RELOJ DIGITAL ---
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
-    return () => clearInterval(timer);
+    return () => clearInterval(timer); // Limpieza al desmontar
   }, []);
 
-  const formattedTime = time.toLocaleTimeString('en-US', {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-  });
+  const formatTime = (date) => {
+    return date.toLocaleTimeString([], { 
+      hour: '2-digit', 
+      minute: '2-digit', 
+      second: '2-digit',
+      hour12: true 
+    });
+  };
+  // --------------------------------
 
   return (
-    <section
-      className="hero"
-      style={{ backgroundImage: `url(${backImage})` }}
-      aria-label="Sección principal de bienvenida"
-    >
+    <section className="hero" style={{ backgroundImage: `url(${backImage})` }}>
       <div className="hero-overlay"></div>
       <FallingStars />
 
-      <Container>
-        <Row className="align-items-center">
-          <Col md={8} className="hero-content">
-            <h1 className="hero-title">Polux</h1>
-            <p className="hero-subtitle">
-              Soy{' '}
-              <span className="typewriter-text">
-                <Typewriter
-                  words={[
-                    'Tarotista',
-                    'Astrólogo',
-                    'Numerólogo',
-                    'Creador Digital'
-                  ]}
-                  loop={0} // 0 para que sea infinito
-                  cursor
-                  cursorStyle="_"
-                  typeSpeed={80}
-                  deleteSpeed={50}
-                  delaySpeed={2500} // Más tiempo para que lean "Tarotista"
-                />
-              </span>
+      <Container className="position-relative h-100 d-flex align-items-center">
+        <Row className="w-100 align-items-center">
+          <Col lg={7} md={12} className="hero-content text-start">
+            
+            {/* RELOJ DIGITAL MÍSTICO */}
+            <div className="digital-clock mb-3">
+              <span className="clock-dot"></span> 
+              TIEMPO PRESENTE: {formatTime(time)}
+            </div>
+
+            <h1 className="hero-main-title">
+              CLARIDAD INMEDIATA <br />
+              PARA TU SITUACIÓN ACTUAL
+            </h1>
+            
+            <p className="hero-description">
+              No es una lectura genérica. Es un mensaje directo del <br />
+              <strong>Tarot Evolutivo en video</strong>, personalizado para ti.
             </p>
             
-            <div className="hero-buttons">
-              {/* BOTÓN SECUNDARIO: EXPLORAR (MUNDO INTERIOR) */}
-              <Button 
-                href="#projects" 
-                className="btn-hero-explore me-3"
-              >
-                Explora Tu Mundo Interior
-              </Button>
+            <div className="hero-benefit">
+              <span>⚡</span> Recibe tu respuesta en menos de 24 horas.
+            </div>
 
-              {/* BOTÓN PRIMARIO: TAROT (FORMATO CLARO) */}
+            <div className="hero-cta-wrapper mt-4">
               <Button 
                 href="#tarot" 
-                className="btn-hero-tarot"
+                className="btn-hero-gold"
               >
-                🔮 Recibe tu Lectura en Video
+                <span className="crystal-ball">🔮</span> RESERVAR MI LECTURA EN VIDEO 
               </Button>
+              
+              <div className="hero-trust-badges mt-3">
+                <span>✓ Pago Seguro</span>
+                <span>• Atención Directa</span>
+                <span>• 100% Privado</span>
+              </div>
             </div>
           </Col>
 
-          <Col md={4} className="hero-extra text-center">
-             {/* Este espacio queda libre para el mazo de cartas que se ve en la imagen */}
+          <Col lg={5} className="d-none d-lg-block text-center">
+            <div className="hero-cards-visual">
+              {/* Espacio para visuales adicionales */}
+            </div>
           </Col>
         </Row>
       </Container>
-
-      <div className="clock-display">{formattedTime}</div>
     </section>
   );
 };

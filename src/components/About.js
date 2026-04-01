@@ -29,17 +29,12 @@ const About = () => {
 
               <p>
                 Aprendí viajando hacia dentro de mí. Explorando cada rincón de mi ser, entendí que mi don es el análisis. 
-                Me hice llamar Polux inspirado en su simbolismo y en mi <strong>stellium en Géminis</strong> (los que saben, entienden).
+                Me hice llamar Polux inspirado en su simbolismo y en mi <strong>stellium en Géminis</strong>.
               </p>
 
               <p>
                 No estoy aquí para imponerte ideas. Eso deshonraría mi <strong>Ascendente en Acuario</strong>. 
                 Soy un libre pensador, y eso es lo que deseo para ti: <strong>libertad en todos los sentidos</strong>.
-              </p>
-
-              <p>
-                Si mis herramientas despiertan tu curiosidad y te llevan a un viaje hacia tu interior, 
-                entonces este espacio ya cumplió su propósito contigo.
               </p>
 
               <blockquote className="mistic-quote">
@@ -48,12 +43,7 @@ const About = () => {
 
               <p>
                 No estoy aquí para predecirte un destino fijo. Mi enfoque con el <strong>Tarot Evolutivo</strong> 
-                se centra en tu <strong>claridad presente</strong> y en ayudarte a comprender qué está ocurriendo en tu energía.
-              </p>
-
-              <p>
-                Mi labor es ayudarte a <strong>recuperar el mando de tu vida</strong>, 
-                para que dejes de repetir patrones y vuelvas a tu poder personal.
+                se centra en tu <strong>claridad presente</strong>. Mi labor es ayudarte a <strong>recuperar el mando de tu vida</strong>.
               </p>
 
               {/* PROCESO */}
@@ -65,7 +55,7 @@ const About = () => {
                 <ul className="process-list">
                   <li>Sintonizo con tu pregunta de forma privada.</li>
                   <li>Interpreto las cartas aplicadas directamente a tu situación.</li>
-                  <li>Recibes tu video en <strong>menos de 24 horas</strong>.</li>
+                  <li>Recibes tu video en <strong>menos de 24 horas</strong> por WhatsApp o Email.</li>
                 </ul>
               </div>
 
@@ -75,32 +65,27 @@ const About = () => {
                 
                 <p><strong>Amor y pareja:</strong></p>
                 <ul className="questions-list">
-                  <li>¿Mi pareja es realmente para mí?</li>
-                  <li>¿Mi ex va a volver o debo soltar?</li>
-                  <li>¿Por qué repito el mismo tipo de relaciones?</li>
-                  <li>¿Estoy listo para una nueva relación?</li>
-                  <li>¿Mi relación tiene futuro?</li>
+                  <li>¿Mi pareja es realmente para mí? | ¿Mi ex va a volver o debo soltar?</li>
+                  <li>¿Por qué repito el mismo tipo de relaciones? | ¿Mi relación tiene futuro?</li>
                 </ul>
 
                 <p className="mt-4"><strong>Trabajo y propósito:</strong></p>
                 <ul className="questions-list">
-                  <li>¿Debo cambiar de trabajo o esperar?</li>
-                  <li>¿Estoy en el camino correcto?</li>
-                  <li>¿Qué bloquea mi crecimiento económico?</li>
-                  <li>¿Cómo alinearme con mi propósito?</li>
-                  <li>¿Qué viene para mí en los próximos meses?</li>
+                  <li>¿Debo cambiar de trabajo o esperar? | ¿Estoy en el camino correcto?</li>
+                  <li>¿Qué bloquea mi crecimiento económico? | ¿Cómo alinearme con mi propósito?</li>
                 </ul>
-                
-                <p className="cta-text text-center mt-4">
-                  Si alguna de estas preguntas resuena contigo, una lectura puede darte la claridad que estás buscando.
-                </p>
               </div>
 
-              <p className="final-reflection text-center mt-5">
-                Este espacio es mi <strong>rayito de luz</strong> para quienes están listos para mirar hacia dentro.  
-                <br />
-                <strong>Si estás aquí, ya comenzaste tu proceso.</strong>
-              </p>
+              {/* BOTÓN DE SALTO FINAL */}
+              <div className="text-center mt-5">
+                <p className="final-reflection mb-4">
+                  <strong>Si estás aquí, ya comenzaste tu proceso.</strong>
+                </p>
+                
+                <a href="#tarot" className="btn-jump-to-tarot">
+                  ✨ Ver detalles de mi lectura personalizada
+                </a>
+              </div>
 
             </div>
           </Col>

@@ -1,160 +1,60 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { BsWhatsapp, BsEnvelopeAt, BsInstagram } from 'react-icons/bs';
 import './Footer.css';
-import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
-import { BsPaypal, BsQrCodeScan, BsCurrencyExchange, BsArrowRightCircle } from 'react-icons/bs';
-
-import qrBinance from '../images/binance.jpg';
-import qrYape from '../images/yape.png';
-import qrPlin from '../images/plin.png';
 
 const Footer = () => {
-  const [show, setShow] = useState(false);
-  const [qrImage, setQrImage] = useState('');
-  const [qrTitle, setQrTitle] = useState('');
-
-  const handleShow = (qrSrc, title) => {
-    setQrImage(qrSrc);
-    setQrTitle(title);
-    setShow(true);
-  };
-
-  const links = {
-    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/10USD",
-    global66: "https://share.global66.com/VLAGAR674",
-  };
+  const whatsappNumber = "51929441018";
+  const emailContacto = "eldiariopolux@gmail.com";
 
   return (
     <footer id="footer" className="footer-section">
       <Container>
-        <Row className="text-center align-items-start">
+        <Row className="py-5 align-items-center">
           
-          {/* INFORMACIÓN DE MARCA */}
-          <Col md={4} className="mb-4 mb-md-0 text-md-start">
+          {/* COLUMNA 1: MARCA */}
+          <Col md={4} className="mb-4 mb-md-0 text-center text-md-start">
             <h5 className="footer-brand">Polux Tarotista</h5>
-            <p className="footer-copy">&copy; {new Date().getFullYear()} - Todos los derechos reservados.</p>
-            <p className="footer-disclaimer">
-              Lecturas de tarot personalizadas con enfoque evolutivo.  
-              Como <strong>tarotista profesional</strong>, brindo claridad y guía confidencial a través de la interpretación de los arcanos.
+            <p className="footer-copy">
+              &copy; {new Date().getFullYear()} - Todos los derechos reservados.
             </p>
+            <div className="footer-divider d-none d-md-block"></div>
           </Col>
 
-          {/* PERÚ */}
-          <Col md={4} className="mb-4 mb-md-0">
-            <h5 className="footer-title">🇵🇪 Perú</h5>
-            <div className="footer-subtext text-white">
-              <p><strong>Pago: S/ 25</strong></p>
-              <p>Acceso inmediato a tu lectura personalizada.</p>
-            </div>
-
-            <div className="payment-buttons-container">
-              
-              <Button 
-                id="btn-yape"
-                className="btn-footer btn-yape" 
-                onClick={() => handleShow(qrYape, '✨ Pago vía Yape')}
-              >
-                <BsQrCodeScan /> Yapear S/ 25
-              </Button>
-
-              <Button 
-                id="btn-plin"
-                className="btn-footer btn-plin" 
-                onClick={() => handleShow(qrPlin, '✨ Pago vía Plin')}
-              >
-                <BsQrCodeScan /> Plinear S/ 25
-              </Button>
-
+          {/* COLUMNA 2: FILOSOFÍA BREVE */}
+          <Col md={4} className="mb-4 mb-md-0 text-center">
+            <p className="footer-disclaimer">
+              "Analizo símbolos para darte claridad hoy. <br />
+              Tú decides tu mañana."
+            </p>
+            <div className="social-icons-row">
+              <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" className="social-icon">
+                <BsWhatsapp />
+              </a>
+              <a href="https://www.instagram.com/poluxteach/" target="_blank" rel="noreferrer" className="social-icon">
+                <BsInstagram />
+              </a>
+              <a href={`mailto:${emailContacto}`} className="social-icon">
+                <BsEnvelopeAt />
+              </a>
             </div>
           </Col>
 
-          {/* INTERNACIONAL */}
-          <Col md={4}>
-            <h5 className="footer-title">🌍 Internacional</h5>
-            <div className="footer-subtext text-white">
-              <p><strong>Pago: $10 USD</strong></p>
-              <p>Entrega en video HD a cualquier país.</p>
-            </div>
-
-            <div className="payment-buttons-container">
-              
-              <div className="paises-list">
-                🇲🇽 🇦🇷 🇨🇱 🇨🇴 🇺🇾 🇪🇸 🇺🇸
-              </div>
-
-              <Button
-                className="btn-footer btn-global66"
-                as="a"
-                href={links.global66}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <BsArrowRightCircle /> Global66
-              </Button>
-
-              <Button
-                className="btn-footer btn-paypal"
-                as="a"
-                href={links.paypal}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <BsPaypal /> PayPal / Tarjeta
-              </Button>
-
-              <Button 
-                id="btn-binance"
-                className="btn-footer btn-binance" 
-                onClick={() => handleShow(qrBinance, '✨ Pago vía Binance')}
-              >
-                <BsCurrencyExchange /> Binance Pay
-              </Button>
-
-            </div>
+          {/* COLUMNA 3: CONTACTO RÁPIDO */}
+          <Col md={4} className="text-center text-md-end">
+            <h6 className="footer-contact-title">Contacto Directo</h6>
+            <p className="footer-contact-info mb-1">{emailContacto}</p>
+            <p className="footer-contact-info">+{whatsappNumber}</p>
+            <p className="footer-location small text-white-50">Basado en Perú • Lecturas para el mundo</p>
           </Col>
 
         </Row>
       </Container>
-
-      {/* MODAL */}
-      <Modal show={show} onHide={() => setShow(false)} centered className="qr-modal">
-        <Modal.Header closeButton className="border-0">
-          <Modal.Title className="text-white w-100 text-center">{qrTitle}</Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body className="text-center p-4">
-          <div className="d-flex justify-content-center align-items-center mb-4">
-            <div className="qr-container-bg">
-              <img 
-                src={qrImage} 
-                alt="Código QR de pago" 
-                className="qr-img-fluid"
-              />
-            </div>
-          </div>
-
-          <div className="manual-payment-info">
-            <p className="text-white mb-1">También puedes enviar al número:</p>
-            <p className="manual-number text-white fw-bold">+51 929 441 018</p>
-            
-            <p className="text-white mb-1">Correo:</p>
-            <a href="mailto:eldiariopolux@gmail.com" className="manual-email d-block mb-3">
-              eldiariopolux@gmail.com
-            </a>
-
-            <div className="modal-disclaimer p-3 rounded" style={{backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)'}}>
-              <p className="text-white small mb-0">
-                Envía tu comprobante + nombre + pregunta para recibir tu lectura.
-              </p>
-            </div>
-          </div>
-        </Modal.Body>
-
-        <Modal.Footer className="border-0">
-          <Button variant="outline-light" className="w-100" onClick={() => setShow(false)}>
-            Cerrar
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      
+      {/* BARRA FINAL MUY DISCRETA */}
+      <div className="footer-bottom-bar text-center py-3">
+        <small>Diseñado con enfoque evolutivo por Vladimir</small>
+      </div>
     </footer>
   );
 };

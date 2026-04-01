@@ -1,222 +1,221 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal, Button, Row, Col } from 'react-bootstrap';
+import { BsPaypal, BsQrCodeScan, BsCurrencyExchange, BsArrowRightCircle, BsEnvelopeAt } from 'react-icons/bs';
+import ReactGA from 'react-ga4'; // 👈 Importación esencial para el rastreo
 import './ConsultasTarot.css';
 
+// Importación de tus imágenes de pago
+import qrBinance from '../images/binance.jpg';
+import qrYape from '../images/yape.png';
+import qrPlin from '../images/plin.png';
+
 const ConsultasTarot = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedQr, setSelectedQr] = useState(null);
 
-  const scrollToFooterAndOpenQR = (id) => {
-    const footerElement = document.getElementById('footer');
-    if (footerElement) {
-      footerElement.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => {
-        const btn = document.getElementById(id);
-        if (btn) btn.click();
-      }, 600);
-    }
-  };
-
-  const links = {
-    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/10USD",
-    global66: "https://share.global66.com/VLAGAR674", 
-  };
-  
-  const email = "eldiariopolux@gmail.com";
   const whatsappNumber = "51929441018";
+  const emailContacto = "eldiariopolux@gmail.com";
+  
+  const links = {
+    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/9USD",
+    global66: "https://share.global66.com/VLAGAR674",
+  };
+
+  /**
+   * FUNCIÓN DE RASTREO ACTUALIZADA
+   * Utiliza la librería react-ga4 inicializada en index.js
+   */
+  const trackEvent = (action, label) => {
+    ReactGA.event({
+      category: 'Conversión Tarot',
+      action: action,
+      label: label,
+      value: 9 // Valor aproximado en USD de la conversión
+    });
+  };
+
+  const handleOpenModal = () => {
+    trackEvent('click_boton_reserva_principal', 'Abrió Modal de Pagos');
+    setShowModal(true);
+  };
+
+  const handleOpenQr = (src, title, metodo) => {
+    trackEvent('seleccion_metodo_pago_qr', metodo);
+    setSelectedQr({ src, title });
+  };
+
+  const handleExternalLink = (metodo) => {
+    trackEvent('click_pago_externo', metodo);
+  };
 
   return (
     <section id="tarot" className="tarot-section py-5">
       <div className="container">
+        
+        {/* TARJETA PRINCIPAL */}
+        <div className="price-card-featured mx-auto">
+          <div className="badge-popular">⚡ MÁS SOLICITADA HOY</div>
+          
+          <h2 className="card-title-main">LECTURA DE TAROT EN VIDEO PERSONALIZADA</h2>
+          <p className="card-subtitle-main">100% Personal, Privada y Directa</p>
 
-        {/* HERO */}
-        <div className="text-center mb-5">
-          <h1 className="display-3 text-white mb-3">
-            Tu lectura de Tarot personalizada
-          </h1>
+          <div className="price-display">
+            <span className="currency">$</span>
+            <span className="amount">9</span>
+            <span className="unit">USD</span>
+          </div>
+          <p className="availability-text">✨ Gracias por confiar en mi trabajo</p>
 
-          <p className="lead-text mx-auto" style={{maxWidth: '750px'}}>
-            No es una lectura general. Es un mensaje directo para tu situación actual. 
-            Vas a entender qué está pasando, qué viene y qué decisión tomar.
-          </p>
+          <ul className="benefits-list-new">
+            <li><span>🔮</span> Tu pregunta específica analizada en profundidad.</li>
+            <li><span>🎥</span> Video privado con la interpretación de las cartas que te salieron.</li>
+            <li><span>🧠</span> Claridad real y dirección sin rodeos.</li>
+            <li><span>📩</span> Entrega en menos de 24 horas (WhatsApp o Email).</li>
+          </ul>
 
-          <p className="text-warning mt-3">
-            ⚡ Entrega en menos de 24 horas
-          </p>
+          <button onClick={handleOpenModal} className="btn-main-cta w-100 border-0">
+            🔮 RESERVAR MI LECTURA AHORA
+          </button>
+
+          <div className="payment-methods-grid mt-4">
+             <div className="method-label">Aceptamos pagos de todo el mundo</div>
+             <div className="icons-row">
+                <span className="pay-icon">Yape</span>
+                <span className="pay-icon">Plin</span>
+                <span className="pay-icon">PayPal</span>
+                <span className="pay-icon">Binance</span>
+                <span className="pay-icon">Tarjeta</span>
+             </div>
+          </div>
         </div>
 
-        {/* BENEFICIOS */}
-        <div className="row text-center mb-5">
-          <div className="col-md-4 mb-3">
-            <h5 className="text-white">🔮 100% Personal</h5>
-            <p>Tu caso específico, no contenido genérico.</p>
+        {/* MODAL DE PAGOS CON TRACKING */}
+        <Modal 
+          show={showModal} 
+          onHide={() => { setShowModal(false); setSelectedQr(null); }} 
+          centered 
+          className="tarot-payment-modal"
+        >
+          <Modal.Header closeButton className="border-0 text-white">
+            <Modal.Title className="w-100 text-center">
+              {selectedQr ? selectedQr.title : "Selecciona tu método de pago"}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="p-4">
+            {!selectedQr ? (
+              <>
+                <Row>
+                  <Col md={6} className="border-end border-secondary mb-4 mb-md-0 text-center">
+                    <h6 className="text-warning mb-3 uppercase">🇵🇪 Perú (S/ 25)</h6>
+                    <div className="d-grid gap-2">
+                      <Button variant="outline-light" onClick={() => handleOpenQr(qrYape, 'Pago con Yape', 'Yape')}>
+                        <BsQrCodeScan className="me-2" /> Yape
+                      </Button>
+                      <Button variant="outline-light" onClick={() => handleOpenQr(qrPlin, 'Pago con Plin', 'Plin')}>
+                        <BsQrCodeScan className="me-2" /> Plin
+                      </Button>
+                    </div>
+                  </Col>
+                  <Col md={6} className="text-center">
+                    <h6 className="text-warning mb-3 uppercase">🌍 Internacional ($9 USD)</h6>
+                    <div className="d-grid gap-2">
+                      {/* 1. PayPal */}
+                      <Button 
+                        variant="outline-primary" 
+                        href={links.paypal} 
+                        target="_blank" 
+                        onClick={() => handleExternalLink('PayPal')}
+                      >
+                        <BsPaypal className="me-2" /> PayPal / Tarjeta
+                      </Button>
+
+                      {/* 2. Binance Pay (Segundo lugar) */}
+                      <Button variant="outline-warning" onClick={() => handleOpenQr(qrBinance, 'Binance Pay', 'Binance')}>
+                        <BsCurrencyExchange className="me-2" /> Binance Pay
+                      </Button>
+
+                      {/* 3. Global66 (Tercer lugar) */}
+                      <Button 
+                        variant="outline-info" 
+                        href={links.global66} 
+                        target="_blank"
+                        onClick={() => handleExternalLink('Global66')}
+                      >
+                        <BsArrowRightCircle className="me-2" /> Global66
+                      </Button>
+                    </div>
+                  </Col>
+                </Row>
+                
+                <div className="mt-4 pt-3 border-top border-secondary text-center">
+                  <p className="text-white-50 mb-2 small">¿Prefieres gestionar todo por correo?</p>
+                  <a 
+                    href={`mailto:${emailContacto}`} 
+                    className="text-warning text-decoration-none d-flex align-items-center justify-content-center gap-2"
+                    onClick={() => trackEvent('click_email_modal', 'Email')}
+                  >
+                    <BsEnvelopeAt /> {emailContacto}
+                  </a>
+                </div>
+              </>
+            ) : (
+              <div className="text-center">
+                <div className="qr-container-white p-3 bg-white d-inline-block rounded">
+                  <img src={selectedQr.src} alt="QR" style={{ maxWidth: '200px' }} />
+                </div>
+                <h4 className="text-white mt-3">+51 929 441 018</h4>
+                <p className="text-muted small">Envía el comprobante a este número o a nuestro email.</p>
+                <Button variant="link" className="text-warning" onClick={() => setSelectedQr(null)}>
+                  ← Ver otros métodos de pago
+                </Button>
+              </div>
+            )}
+          </Modal.Body>
+        </Modal>
+
+        {/* PROCESO VERTICAL */}
+        <div className="vertical-steps mt-5">
+          <div className="v-step">
+            <div className="v-num">1</div>
+            <div className="v-text">
+              <strong>PAGA TU LECTURA</strong>
+              <p>Elige tu método de pago preferido arriba.</p>
+            </div>
           </div>
-          <div className="col-md-4 mb-3">
-            <h5 className="text-white">🎥 Video privado</h5>
-            <p>Explicación clara carta por carta.</p>
+          <div className="v-step">
+            <div className="v-num">2</div>
+            <div className="v-text">
+              <strong>ENVÍA TU DUDA Y COMPROBANTE</strong>
+              <p>Escríbeme por WhatsApp o Email con los detalles.</p>
+            </div>
           </div>
-          <div className="col-md-4 mb-3">
-            <h5 className="text-white">🧠 Claridad real</h5>
-            <p>No validación vacía, sino dirección.</p>
+          <div className="v-step">
+            <div className="v-num">3</div>
+            <div className="v-text">
+              <strong>RECIBE TU VIDEO</strong>
+              <p>En menos de 24 horas tendrás tu lectura personalizada.</p>
+            </div>
           </div>
         </div>
 
-        {/* PRECIO */}
-        <div className="text-center mb-5">
-          <h2 className="text-white">Accede a tu lectura</h2>
-
-          <p className="payment-note">
-            🔒 Pago único • Sin suscripciones • Acceso inmediato
-          </p>
-
-          <div className="price-tag-big mt-3">
-            $10 USD
-          </div>
-
-          <p className="price-local">
-            🇵🇪 Disponible en Perú: S/ 25
-          </p>
-
-          <p className="mt-2">
-            🌎 Disponible para: 🇲🇽 🇨🇴 🇨🇱 🇦🇷 🇪🇸 🇺🇸
-          </p>
-
-          <p className="text-success mt-2">
-            🔥 Lectura más solicitada hoy
-          </p>
-        </div>
-
-        {/* PAGOS */}
-        <div className="payment-card international featured mb-5">
-          <div className="card-header-inner">💳 Métodos de pago</div>
-
-          <div className="d-grid gap-3 mt-4">
-
-            {/* PERÚ */}
-            <button 
-              className="btn btn-payment yape"
-              onClick={() => scrollToFooterAndOpenQR('btn-yape')}
-            >
-              📱 Pagar con Yape / Plin / Dale (S/ 25)
-            </button>
-
-            {/* INTERNACIONAL */}
+        {/* BOTONES FINALES */}
+        <div className="text-center mt-4 d-flex flex-column flex-md-row justify-content-center gap-3 align-items-center">
             <a 
-              href={links.paypal} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-payment paypal"
+              href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20Ya%20realicé%20el%20pago%20de%20mi%20lectura.`}
+              className="btn-whatsapp-floating"
+              onClick={() => trackEvent('confirmacion_final_wa', 'WhatsApp')}
             >
-              🌎 PayPal (tarjeta o cuenta)
+              Confirmar por WhatsApp ⚡
             </a>
-
-            <button 
-              className="btn btn-payment binance" 
-              onClick={() => scrollToFooterAndOpenQR('btn-binance')}
-            >
-              💸 Binance Pay QR
-            </button>
-
+            
             <a 
-              href={links.global66} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-payment global"
+              href={`mailto:${emailContacto}?subject=Pago%20Lectura%20Tarot&body=Hola%20Polux,%20adjunto%20mi%20comprobante%20de%20pago.`}
+              className="btn-email-simple"
+              onClick={() => trackEvent('confirmacion_final_email', 'Email')}
             >
-              🌍 Global66
+              <BsEnvelopeAt className="me-2" /> Enviar por Email
             </a>
-
-          </div>
-
-          <p className="text-center mt-3">
-            🔑 <strong>Un solo número para todo:</strong> +51 929 441 018
-          </p>
-
-          <p className="text-center">
-            🇵🇪 Yape • Plin • Dale  
-            🌍 Global66 • PayPal • Binance
-          </p>
-
-          <p className="text-success text-center mt-1">
-            ✔ Mismo número para pagar y enviar comprobante
-          </p>
-
-          <p className="text-center mt-2">
-            💡 Puedes usar cualquier método sin problema.
-          </p>
-
-          <p className="payment-trust">
-            ✔ Pago seguro • Atención directa • Respuesta rápida
-          </p>
         </div>
-
-        {/* PROCESO */}
-        <div className="guide-wrapper">
-
-          <div className="guide-step mb-4">
-            <div className="step-badge">1</div>
-            <div className="step-content">
-              <h4 className="text-white">Realiza el pago</h4>
-              <p>Elige el método que prefieras arriba.</p>
-            </div>
-          </div>
-
-          <div className="guide-step mb-4">
-            <div className="step-badge">2</div>
-            <div className="step-content">
-              <h4 className="text-white">Envía tu pregunta</h4>
-              <p>Nombre + situación o duda específica.</p>
-            </div>
-          </div>
-
-          <div className="guide-step">
-            <div className="step-badge">3</div>
-            <div className="step-content">
-              <h4 className="text-white">Recibe tu video</h4>
-              <p>Respuesta clara, directa y sin rodeos en menos de 24h.</p>
-            </div>
-          </div>
-
-        </div>
-
-        {/* CONTACTO */}
-        <div className="contact-row mt-5">
-
-          <a 
-            href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux!%20Ya%20realicé%20el%20pago%20de%20S%2F25%20/%2010USD%20y%20quiero%20mi%20lectura.%20Mi%20nombre%20es:%20____%20y%20mi%20pregunta%20es:%20____`} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="contact-card"
-          >
-            <span>📱</span>
-            <div>
-              <strong>Enviar comprobante por WhatsApp</strong>
-              <p>Recibe tu lectura más rápido ⚡</p>
-            </div>
-          </a>
-
-          <a 
-            href={`mailto:${email}`} 
-            className="contact-card"
-          >
-            <span>📧</span>
-            <div>
-              <strong>Enviar comprobante por Email</strong>
-              <p>Opción más privada</p>
-            </div>
-          </a>
-
-        </div>
-
-        {/* CIERRE */}
-        <div className="text-center mt-5">
-          <p className="text-white" style={{maxWidth:'700px', margin:'0 auto'}}>
-            Si estás aquí, no es casualidad. Hay algo que necesitas entender ahora.  
-            El tarot no decide por ti, pero sí te muestra lo que no estás viendo.
-          </p>
-
-          <p className="text-warning mt-3">
-            ✨ Toma acción hoy
-          </p>
-        </div>
-
       </div>
     </section>
   );

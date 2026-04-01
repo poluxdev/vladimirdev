@@ -1,173 +1,131 @@
-/* --- HERO SECTION Y LAYOUT --- */
 .hero {
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-color: #0c0c14; 
-    background-attachment: fixed;
-    min-height: 100vh;
-    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    perspective: 1000px;
-    position: relative;
+    color: white;
     overflow: hidden;
-    padding: 2rem;
-    z-index: 1;
-}
-
-@media screen and (max-width: 768px) {
-    .hero {
-        background-attachment: scroll;
-        flex-direction: column;
-        padding: 5rem 1rem;
-    }
 }
 
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: radial-gradient(circle at center, rgba(12, 12, 20, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+    inset: 0;
+    /* Gradiente oscuro para que el texto resalte (como en la imagen) */
+    background: linear-gradient(90deg, rgba(12, 12, 20, 0.95) 30%, rgba(12, 12, 20, 0.4) 100%);
     z-index: 1;
 }
 
 .hero-content {
-    transform-style: preserve-3d;
-    transition: transform 0.4s ease-out;
-    text-align: left;
-    max-width: 650px;
-    z-index: 2;
-}
-
-@media screen and (max-width: 768px) {
-    .hero-content {
-        text-align: center;
-        max-width: 100%;
-    }
-}
-
-/* --- TIPOGRAFÍA (Vibración 7) --- */
-.hero-title {
-    font-size: 82px;
-    color: #ffffff;
-    font-family: 'Playfair Display', serif;
-    letter-spacing: -1px; /* Más elegante */
-    font-weight: 700;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    margin-bottom: 5px;
-}
-
-.hero-subtitle {
-    font-size: 1.6rem;
-    color: #b0b0b0; /* Gris suave */
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 35px;
-}
-
-.typewriter-text {
-    color: #c0c0c0; /* Plata en lugar de verde neón */
-    font-weight: 600;
-    border-bottom: 1px solid rgba(192, 192, 192, 0.3);
-}
-
-/* --- CONTENEDOR DE BOTONES --- */
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-@media screen and (max-width: 768px) {
-    .hero-buttons {
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* --- BOTÓN EXPLORAR (Minimalismo Académico) --- */
-.btn-hero-explore {
-    background: transparent !important;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #e0e0e0 !important;
-    font-weight: 400 !important;
-    padding: 12px 26px !important;
-    border-radius: 4px !important; /* Menos redondeado para ser más serio */
-    font-size: 0.95rem !important;
-    transition: all 0.3s ease !important;
-    text-transform: lowercase; /* Estética minimalista */
-    font-variant: small-caps;
-}
-
-.btn-hero-explore:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.8) !important;
-    color: #fff !important;
-    transform: translateY(-2px);
-}
-
-/* --- BOTÓN TAROT (El "Santuario" - Sin gradientes agresivos) --- */
-.btn-hero-tarot {
-    background: #f8f5fc !important; /* Blanco hueso / Mármol */
-    border: none !important;
-    color: #0c0c14 !important; /* Texto oscuro para contraste */
-    font-weight: 600 !important;
-    padding: 12px 26px !important;
-    border-radius: 4px !important;
-    font-size: 1rem !important;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    animation: softPulse 4s infinite ease-in-out;
-}
-
-.btn-hero-tarot:hover {
-    transform: scale(1.03) translateY(-2px);
-    box-shadow: 0 8px 25px rgba(183, 153, 255, 0.3);
-    background: #ffffff !important;
-}
-
-@keyframes softPulse {
-    0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); }
-    50% { box-shadow: 0 0 25px rgba(183, 153, 255, 0.2); }
-}
-
-/* --- RELOJ (Integrado al misticismo) --- */
-.clock-display {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.6);
-    background: rgba(255, 255, 255, 0.03);
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 5px 15px;
-    font-family: 'Cinzel', serif; /* O una serif académica */
-    letter-spacing: 3px;
     z-index: 10;
 }
 
-/* --- RESPONSIVO FINAL --- */
-@media screen and (max-width: 768px) {
-    .hero-title {
-        font-size: 52px;
+/* Tipografía de la imagen: Elegante y Serif */
+.hero-main-title {
+    font-family: 'Playfair Display', serif; /* Asegúrate de tenerla en tu index.html */
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.hero-description strong {
+    color: #ffd966; /* Dorado suave */
+}
+
+.hero-benefit {
+    color: #ffd966;
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* EL BOTÓN DORADO DE LA IMAGEN */
+.btn-hero-gold {
+    background: linear-gradient(135deg, #d4af37, #f3ba2f);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #000 !important;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-hero-gold:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+}
+
+.crystal-ball {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.hero-trust-badges {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Efecto de marco fino que tiene la imagen */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 20px; left: 20px; right: 20px; bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .hero-main-title { font-size: 2.2rem; }
+    .hero-overlay {
+        background: rgba(12, 12, 20, 0.85); /* Más oscuro en móvil */
     }
-    .clock-display {
-        top: 20px;
-        right: 50%;
-        transform: translateX(50%);
-        border-left: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .btn-hero-explore, .btn-hero-tarot {
-        width: 100%;
-        max-width: 280px;
-    }
+}
+.digital-clock {
+  font-family: 'Courier New', Courier, monospace; /* Fuente tipo digital/mística */
+  color: #ffcc00; /* Dorado */
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+.clock-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-clock 1.5s infinite;
+}
+
+@keyframes pulse-clock {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
 }
