@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import certificadoImg from '../images/certificado.jpg'; // Importa la imagen
 import './About.css';
 
 const About = () => {
+  const [showCertificate, setShowCertificate] = useState(false);
+
   return (
     <section id="about" className="about-section py-5">
       <Container>
@@ -17,7 +20,25 @@ const About = () => {
               </p>
 
               <p>
-                Aquí puedes explorar <strong>numerología, tarot y astrología</strong>. He diseñado sencillas herramientas que utilizo en mi día a día, 
+                Aquí puedes explorar <strong>numerología, tarot y astrología</strong>. He diseñado sencillas herramientas con mis conocimientos en{' '}
+                <span
+                  className="highlight-programacion"
+                  onMouseEnter={() => setShowCertificate(true)}
+                  onMouseLeave={() => setShowCertificate(false)}
+                >
+                  programación
+                  {showCertificate && (
+                    <img
+                      src={certificadoImg}
+                      alt="Certificado Polux"
+                      className="certificado-float"
+                    />
+                  )}
+                </span>
+                .
+              </p>
+
+              <p>
                 como la herramienta Polux: <em>“Vibración de tu nombre”</em> y <em>“El secreto del celular”</em>.
               </p>
 
@@ -42,8 +63,8 @@ const About = () => {
               </blockquote>
 
               <p>
-                No estoy aquí para predecirte un destino fijo. Mi enfoque con el <strong>Tarot Evolutivo</strong> 
-                se centra en tu <strong>claridad presente</strong>. Mi labor es ayudarte a <strong>recuperar el mando de tu vida</strong>.
+                No estoy aquí para predecirte un destino fijo. Mi enfoque con el <strong>Tarot Evolutivo </strong> 
+                 se centra en tu <strong>claridad presente</strong>. Mi labor es ayudarte a <strong>recuperar el mando de tu vida</strong>.
               </p>
 
               {/* PROCESO */}

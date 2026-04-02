@@ -135,3 +135,21 @@ hr {
     font-style: italic;
     font-size: 1.1rem;
 }
+.highlight-programacion {
+  position: relative;
+  cursor: pointer;
+  color: #8e44ad;
+  font-weight: bold;
+}
+
+.certificado-float {
+  position: absolute;
+  top: -160px; /* ajusta según convenga */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+}

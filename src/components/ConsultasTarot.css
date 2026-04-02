@@ -320,3 +320,6 @@
 .tarot-payment-modal .modal-body .border-top {
     border-color: rgba(255, 255, 255, 0.1) !important;
 }
+.price-display .amount {
+    font-size: 4.5rem; /* antes 5rem */
+}
