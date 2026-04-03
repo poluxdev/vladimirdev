@@ -323,3 +323,20 @@
 .price-display .amount {
     font-size: 4.5rem; /* antes 5rem */
 }
+.post-payment-warning {
+  background: rgba(255, 193, 7, 0.12);
+  border: 1px solid #ffc107;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.post-payment-warning a {
+  display: inline-block;
+  margin-top: 5px;
+  color: #25D366;
+  font-weight: bold;
+  text-decoration: none;
+}

@@ -12,9 +12,10 @@ const ConsultasTarot = () => {
   const [selectedQr, setSelectedQr] = useState(null);
 
   const whatsappNumber = "51929441018";
+  const email = "eldiariopolux@gmail.com";
   
   const links = {
-    hotmart: "https://pay.hotmart.com/A105188223X", // <-- link actualizado
+    hotmart: "https://pay.hotmart.com/A105188223X",
     paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/12.99USD",
     global66: "https://share.global66.com/VLAGAR674",
   };
@@ -60,37 +61,84 @@ const ConsultasTarot = () => {
             href={links.hotmart}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackEvent('click_hotmart', 'principal')}
+            onClick={() => {
+              trackEvent('click_hotmart', 'principal');
+
+              setTimeout(() => {
+                window.open(
+                  `https://wa.me/${whatsappNumber}?text=Hola%20acabo%20de%20realizar%20mi%20pago%20quiero%20mi%20lectura`,
+                  '_blank'
+                );
+              }, 2000);
+            }}
             className="btn-main-cta w-100 text-center"
           >
-            💳 PAGAR CON TARJETA (INTERNACIONAL)
+            💳 PAGAR AHORA → ENVIAR DATOS
           </a>
+
+          {/* ⚠️ MENSAJE CLAVE */}
+          <p className="post-payment-warning mt-3">
+            ⚠️ <strong>IMPORTANTE:</strong> Después de pagar, debes enviarme:
+            <br />
+            ✔ Tu nombre  
+            <br />
+            ✔ Tu pregunta  
+            <br /><br />
+
+            📲 Por WhatsApp:
+            <br />
+            <a 
+              href={`https://wa.me/${whatsappNumber}?text=Hola%20ya%20realic%C3%A9%20mi%20pago%20quiero%20mi%20lectura`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Enviar por WhatsApp
+            </a>
+
+            <br /><br />
+
+            📩 O por correo:
+            <br />
+            <a href={`mailto:${email}?subject=Lectura%20de%20tarot&body=Hola,%20ya%20realicé%20mi%20pago.%20Mi%20nombre%20es:%20%0A%20Mi%20pregunta%20es:`}>
+              {email}
+            </a>
+          </p>
 
           {/* PERÚ */}
           <a 
             href={`https://wa.me/${whatsappNumber}?text=Hola%20quiero%20mi%20lectura`}
             className="btn btn-success w-100 mt-2"
           >
-            🇵🇪 PAGAR DESDE PERÚ 
+            🇵🇪 PAGAR DESDE PERÚ
           </a>
 
-          <button onClick={() => setShowModal(true)} className="btn btn-outline-light w-100 mt-2">
+          <button 
+            onClick={() => setShowModal(true)} 
+            className="btn btn-outline-light w-100 mt-2"
+          >
             Ver más métodos de pago
           </button>
 
         </div>
 
         {/* MODAL */}
-        <Modal show={showModal} onHide={() => setShowModal(false)} centered className="tarot-payment-modal">
+        <Modal 
+          show={showModal} 
+          onHide={() => setShowModal(false)} 
+          centered 
+          className="tarot-payment-modal"
+        >
           <Modal.Body>
 
             {!selectedQr ? (
               <Row>
                 <Col md={6}>
                   <h6>🇵🇪 Perú ($12.99)</h6>
+
                   <Button onClick={() => setSelectedQr({src: qrYape, title: 'Yape'})}>
                     Yape
                   </Button>
+
                   <Button onClick={() => setSelectedQr({src: qrPlin, title: 'Plin'})}>
                     Plin
                   </Button>
@@ -118,9 +166,16 @@ const ConsultasTarot = () => {
               </Row>
             ) : (
               <div className="text-center">
-                <img src={selectedQr.src} alt="QR" style={{ maxWidth: '200px' }} />
+                <img 
+                  src={selectedQr.src} 
+                  alt="QR" 
+                  style={{ maxWidth: '200px' }} 
+                />
                 <h4>+51 929 441 018</h4>
-                <Button onClick={() => setSelectedQr(null)}>Volver</Button>
+
+                <Button onClick={() => setSelectedQr(null)}>
+                  Volver
+                </Button>
               </div>
             )}
 
