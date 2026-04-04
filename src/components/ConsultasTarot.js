@@ -73,7 +73,7 @@ const ConsultasTarot = () => {
             }}
             className="btn-main-cta w-100 text-center"
           >
-            💳 PAGAR AHORA → ENVIAR DATOS
+            💳 PAGAR AHORA → INTERNACIONAL
           </a>
 
           {/* ⚠️ MENSAJE CLAVE */}
