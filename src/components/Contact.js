@@ -14,7 +14,7 @@ const Contact = () => {
           
           {/* Instagram */}
           <Col xs={6} md={4} lg={2} className="text-center mb-4">
-            <a href="https://www.instagram.com/poluxteach/" target="_blank" rel="noopener noreferrer" className="social-link instagram">
+            <a href="https://www.instagram.com/poluxtarotoficial/" target="_blank" rel="noopener noreferrer" className="social-link instagram">
               <FaInstagram className="social-icon-fa" />
               <p>Instagram</p>
             </a>

@@ -11,174 +11,186 @@ const ConsultasTarot = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedQr, setSelectedQr] = useState(null);
 
+  const products = [
+    {
+      id: 'personalizada',
+      title: 'LECTURA PERSONALIZADA (1 PREGUNTA)',
+      subtitle: 'Video con respuesta directa a tu duda',
+      price: 12.99,
+      hotmart: "https://pay.hotmart.com/A105188223X",
+      paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/12.99USD",
+      badge: 'POPULAR'
+    },
+    {
+      id: 'general',
+      title: '🌟 LECTURA GENERAL COMPLETA',
+      subtitle: 'Amor, Dinero, Laboral y Energías',
+      price: 19.99,
+      hotmart: "https://pay.hotmart.com/M105290076W", // Link actualizado
+      paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/19.99USD",
+      badge: 'RECOMENDADO'
+    }
+  ];
+
+  // Inicializamos el estado con el primer producto del array
+  const [selectedProduct, setSelectedProduct] = useState(products[0]);
+
   const whatsappNumber = "51929441018";
   const email = "eldiariopolux@gmail.com";
-  
-  const links = {
-    hotmart: "https://pay.hotmart.com/A105188223X",
-    paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/12.99USD",
-    global66: "https://share.global66.com/VLAGAR674",
-  };
 
-  const trackEvent = (action, label) => {
+  const trackEvent = (action, label, price) => {
     ReactGA.event({
       category: 'Conversión Tarot',
       action,
       label,
-      value: 12.99
+      value: price
     });
+  };
+
+  const openPaymentModal = (product) => {
+    setSelectedProduct(product);
+    setShowModal(true);
   };
 
   return (
     <section id="tarot" className="tarot-section py-5">
       <div className="container">
+        <h2 className="text-center text-white mb-5">Elige tu modalidad de lectura</h2>
+        
+        <Row className="justify-content-center">
+          {products.map((product) => (
+            <Col md={5} key={product.id} className="mb-4">
+              <div className={`price-card-featured mx-auto ${product.id === 'general' ? 'border-gold' : ''}`}>
+                <div className="badge-popular">{product.badge}</div>
+                <h2 className="card-title-main">{product.title}</h2>
+                <p className="card-subtitle-main">{product.subtitle}</p>
+                
+                <div className="price-display">
+                  <span className="currency">$</span>
+                  <span className="amount">{product.price}</span>
+                  <span className="unit">USD</span>
+                </div>
 
-        <div className="price-card-featured mx-auto">
-          <div className="badge-popular">⚡ MÁS SOLICITADA HOY</div>
+                <ul className="benefits-list-new">
+                  {product.id === 'personalizada' ? (
+                    <>
+                      <li><span>🔮</span> Análisis profundo de 1 pregunta</li>
+                      <li><span>🎥</span> Video personalizado</li>
+                      <li><span>📩</span> Entrega en menos de 24h</li>
+                    </>
+                  ) : (
+                    <>
+                      <li><span>🃏</span> Tirada amplia (Múltiples cartas)</li>
+                      <li><span>💖</span> Bloques: Amor, Dinero y Laboral</li>
+                      <li><span>✨</span> Lectura de energías actuales</li>
+                      <li><span>🎥</span> Video extendido detallado</li>
+                    </>
+                  )}
+                </ul>
 
-          <h2 className="card-title-main">LECTURA DE TAROT EN VIDEO PERSONALIZADA</h2>
-          <p className="card-subtitle-main">100% Personal, Privada y Directa</p>
+                <Button 
+                  className="btn-main-cta w-100 mb-2" 
+                  onClick={() => openPaymentModal(product)}
+                >
+                  RESERVAR POR ${product.price}
+                </Button>
+              </div>
+            </Col>
+          ))}
+        </Row>
 
-          <div className="price-display">
-            <span className="currency">$</span>
-            <span className="amount">12.99</span>
-            <span className="unit">USD</span>
-          </div>
-
-          <p className="text-warning mt-2">
-            🇵🇪 Si estás en Perú, paga directo por WhatsApp (Yape o Plin)
-          </p>
-
-          <ul className="benefits-list-new">
-            <li><span>🔮</span> Tu pregunta analizada en profundidad</li>
-            <li><span>🎥</span> Video personalizado con tus cartas</li>
-            <li><span>🧠</span> Respuesta clara y directa</li>
-            <li><span>📩</span> Entrega en menos de 24h</li>
-          </ul>
-
-          {/* HOTMART */}
-          <a 
-            href={links.hotmart}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => {
-              trackEvent('click_hotmart', 'principal');
-
-              setTimeout(() => {
-                window.open(
-                  `https://wa.me/${whatsappNumber}?text=Hola%20acabo%20de%20realizar%20mi%20pago%20quiero%20mi%20lectura`,
-                  '_blank'
-                );
-              }, 2000);
-            }}
-            className="btn-main-cta w-100 text-center"
-          >
-            💳 PAGAR AHORA → INTERNACIONAL
-          </a>
-
-          {/* ⚠️ MENSAJE CLAVE */}
-          <p className="post-payment-warning mt-3">
-            ⚠️ <strong>IMPORTANTE:</strong> Después de pagar, debes enviarme:
-            <br />
-            ✔ Tu nombre  
-            <br />
-            ✔ Tu pregunta  
-            <br /><br />
-
-            📲 Por WhatsApp:
-            <br />
-            <a 
-              href={`https://wa.me/${whatsappNumber}?text=Hola%20ya%20realic%C3%A9%20mi%20pago%20quiero%20mi%20lectura`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enviar por WhatsApp
-            </a>
-
-            <br /><br />
-
-            📩 O por correo:
-            <br />
-            <a href={`mailto:${email}?subject=Lectura%20de%20tarot&body=Hola,%20ya%20realicé%20mi%20pago.%20Mi%20nombre%20es:%20%0A%20Mi%20pregunta%20es:`}>
-              {email}
-            </a>
-          </p>
-
-          {/* PERÚ */}
-          <a 
-            href={`https://wa.me/${whatsappNumber}?text=Hola%20quiero%20mi%20lectura`}
-            className="btn btn-success w-100 mt-2"
-          >
-            🇵🇪 PAGAR DESDE PERÚ
-          </a>
-
-          <button 
-            onClick={() => setShowModal(true)} 
-            className="btn btn-outline-light w-100 mt-2"
-          >
-            Ver más métodos de pago
-          </button>
-
+        <div className="price-card-featured mx-auto mt-4 text-center" style={{maxWidth: '800px'}}>
+            <p className="post-payment-warning">
+              ⚠️ <strong>IMPORTANTE:</strong> Después de pagar, envíame tu comprobante, nombre y pregunta (si aplica) por:
+              <br /><br />
+              <a 
+                href={`https://wa.me/${whatsappNumber}?text=Hola%20realicé%20el%20pago%20de%20la%20lectura...`} 
+                className="btn btn-success btn-sm mx-2"
+                target="_blank" rel="noopener noreferrer"
+              >
+                📲 WhatsApp
+              </a>
+              <a 
+                href={`mailto:${email}`} 
+                className="btn btn-outline-light btn-sm mx-2"
+              >
+                📩 Correo
+              </a>
+            </p>
         </div>
 
-        {/* MODAL */}
         <Modal 
           show={showModal} 
-          onHide={() => setShowModal(false)} 
+          onHide={() => {
+            setShowModal(false);
+            setSelectedQr(null); // Limpiar el QR al cerrar
+          }} 
           centered 
           className="tarot-payment-modal"
+          size="lg"
         >
-          <Modal.Body>
+          <Modal.Header closeButton className="bg-dark text-white border-secondary">
+            <Modal.Title className="fs-5">Pagar: {selectedProduct.title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="bg-dark text-white">
 
             {!selectedQr ? (
-              <Row>
-                <Col md={6}>
-                  <h6>🇵🇪 Perú ($12.99)</h6>
-
-                  <Button onClick={() => setSelectedQr({src: qrYape, title: 'Yape'})}>
-                    Yape
-                  </Button>
-
-                  <Button onClick={() => setSelectedQr({src: qrPlin, title: 'Plin'})}>
-                    Plin
-                  </Button>
+              <Row className="g-4">
+                <Col md={6} className="border-end border-secondary">
+                  <h6 className="text-warning mb-3">🇵🇪 Perú (Pago Directo)</h6>
+                  <div className="d-grid gap-2">
+                    <Button variant="outline-info" onClick={() => setSelectedQr({src: qrYape, title: 'Yape'})}>
+                      Pagar con Yape
+                    </Button>
+                    <Button variant="outline-info" onClick={() => setSelectedQr({src: qrPlin, title: 'Plin'})}>
+                      Pagar con Plin
+                    </Button>
+                  </div>
                 </Col>
 
                 <Col md={6}>
-                  <h6>🌍 Internacional ($12.99)</h6>
-
-                  <Button href={links.hotmart} target="_blank" rel="noopener noreferrer">
-                    💳 Tarjeta (Hotmart)
-                  </Button>
-
-                  <Button href={links.paypal} target="_blank" rel="noopener noreferrer">
-                    PayPal
-                  </Button>
-
-                  <Button href={links.global66} target="_blank" rel="noopener noreferrer">
-                    Global66
-                  </Button>
-
-                  <Button onClick={() => setSelectedQr({src: qrBinance, title: 'Binance'})}>
-                    Binance
-                  </Button>
+                  <h6 className="text-warning mb-3">🌍 Internacional ({selectedProduct.price} USD)</h6>
+                  <div className="d-grid gap-2">
+                    <Button 
+                      href={selectedProduct.hotmart} 
+                      target="_blank" 
+                      className="btn-primary" // Cambiado a clase directa para asegurar visibilidad
+                      onClick={() => trackEvent('click_hotmart', selectedProduct.id, selectedProduct.price)}
+                    >
+                      💳 Tarjeta de Crédito (Hotmart)
+                    </Button>
+                    <Button 
+                      variant="primary"
+                      href={selectedProduct.paypal} 
+                      target="_blank"
+                      onClick={() => trackEvent('click_paypal', selectedProduct.id, selectedProduct.price)}
+                    >
+                      Paypal
+                    </Button>
+                    <Button 
+                      variant="outline-light"
+                      onClick={() => setSelectedQr({src: qrBinance, title: 'Binance'})}
+                    >
+                      Binance (USDT)
+                    </Button>
+                  </div>
                 </Col>
               </Row>
             ) : (
-              <div className="text-center">
+              <div className="text-center py-4">
+                <h5>Escanea para pagar {selectedQr.title}</h5>
                 <img 
                   src={selectedQr.src} 
-                  alt="QR" 
-                  style={{ maxWidth: '200px' }} 
+                  alt="QR Pago" 
+                  className="my-3 img-fluid rounded"
+                  style={{ maxWidth: '250px' }} 
                 />
-                <h4>+51 929 441 018</h4>
-
-                <Button onClick={() => setSelectedQr(null)}>
-                  Volver
+                <h4 className="text-info">+51 929 441 018</h4>
+                <Button variant="link" className="text-white" onClick={() => setSelectedQr(null)}>
+                  ← Volver a métodos de pago
                 </Button>
               </div>
             )}
-
           </Modal.Body>
         </Modal>
 
