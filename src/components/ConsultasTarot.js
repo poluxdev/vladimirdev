@@ -82,14 +82,14 @@ const ConsultasTarot = () => {
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
-              ✨ <strong>+190,000</strong> personas confían en mis lecturas
+              ✨ <strong>+190,000</strong>
             </span>
           </div>
         </div>
 
         <h2 className="text-center text-white mb-2">Elige tu modalidad de lectura</h2>
         <p className="text-center text-white-50 mb-5">
-          Cada lectura la hago personalmente
+        
         </p>
 
         <Row className="justify-content-center">
@@ -116,7 +116,7 @@ const ConsultasTarot = () => {
                   className="btn-main-cta w-100 mb-2"
                   onClick={() => openPaymentModal(product)}
                 >
-                  QUIERO MI LECTURA AHORA →
+                  RESERVAR LECTURA POR ${product.price} USD
                 </Button>
               </div>
             </Col>
@@ -125,9 +125,7 @@ const ConsultasTarot = () => {
 
         {/* Bloque de autoridad + confianza */}
         <div className="price-card-featured mx-auto mt-4 text-center" style={{ maxWidth: '800px' }}>
-          <p className="authority-statement mb-3">
-            🌟 Llevo años haciendo lecturas con total entrega y honestidad. Cada video es único, preparado especialmente para ti.
-          </p>
+        
           <p className="post-payment-warning">
             ⚠️ <strong>IMPORTANTE:</strong> Después de pagar, envíame tu comprobante, nombre y pregunta (si aplica) por:
             <br /><br />
