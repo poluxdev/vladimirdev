@@ -68,28 +68,28 @@ const ConsultasTarot = () => {
     <section id="tarot" className="tarot-section py-5">
       <div className="container">
 
-        {/* Prueba social — comunidad */}
+        {/* Prueba social — comunidad actualizada */}
         <div className="text-center mb-4">
           <div className="social-proof-bar d-inline-flex align-items-center gap-4 px-4 py-2 rounded-pill">
             <span className="social-proof-item">
               <span className="social-proof-icon">🎵</span>
-              <strong>+130K</strong> en TikTok
+              <strong>+164K</strong> en TikTok
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
               <span className="social-proof-icon">📘</span>
-              <strong>+60K</strong> en Facebook
+              <strong>+90K</strong> en Facebook
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
-              ✨ <strong>+190,000</strong>
+              ✨ <strong>+254,000</strong>
             </span>
           </div>
         </div>
 
         <h2 className="text-center text-white mb-2">Elige tu modalidad de lectura</h2>
         <p className="text-center text-white-50 mb-5">
-        
+         
         </p>
 
         <Row className="justify-content-center">
@@ -123,26 +123,50 @@ const ConsultasTarot = () => {
           ))}
         </Row>
 
-        {/* Bloque de autoridad + confianza */}
-        <div className="price-card-featured mx-auto mt-4 text-center" style={{ maxWidth: '800px' }}>
-        
-          <p className="post-payment-warning">
-            ⚠️ <strong>IMPORTANTE:</strong> Después de pagar, envíame tu comprobante, nombre y pregunta (si aplica) por:
-            <br /><br />
-            <a
-              href={`https://wa.me/${whatsappNumber}?text=Hola%20realicé%20el%20pago%20de%20la%20lectura...`}
-              className="btn btn-success btn-sm mx-2"
-              target="_blank" rel="noopener noreferrer"
-            >
-              📲 WhatsApp
-            </a>
-            <a
-              href={`mailto:${email}`}
-              className="btn btn-outline-light btn-sm mx-2"
-            >
-              📩 Correo
-            </a>
-          </p>
+        {/* Bloque de autoridad + confianza — DETALLES DE DATOS ACTUALIZADOS */}
+        <div className="price-card-featured mx-auto mt-4 text-start" style={{ maxWidth: '800px' }}>
+          <div className="post-payment-warning p-3">
+            <h5 className="text-warning text-center mb-3">⚠️ IMPORTANTE: REQUISITOS DESPUÉS DE TU PAGO</h5>
+            <p className="text-white-50 text-center mb-4">
+              Para poder canalizar tu energía de forma exacta y grabar tu video, envíame tu comprobante junto con los siguientes datos según tu lectura elegida:
+            </p>
+            
+            <Row className="g-3">
+              <Col md={6} className="border-end border-secondary-subtle">
+                <h6 className="text-info">🔮 Si elegiste: LECTURA PERSONALIZADA</h6>
+                <ul className="text-white small list-unstyled ps-2">
+                  <li>✅ <strong>Tu nombre completo</strong> y fecha de nacimiento.</li>
+                  <li>✅ <strong>Tu pregunta concreta</strong> bien detallada con el contexto actual de la situación.</li>
+                  <li>✅ <strong>Si involucra a otra persona:</strong> Su nombre completo, fecha de nacimiento (o signo zodiacal).</li>
+                </ul>
+              </Col>
+              
+              <Col md={6}>
+                <h6 className="text-info">🃏 Si elegiste: LECTURA GENERAL COMPLETA</h6>
+                <ul className="text-white small list-unstyled ps-2">
+                  <li>✅ <strong>Tu nombre completo</strong> y fecha de nacimiento.</li>
+                  <li>✅ <strong>Breve resumen</strong> de cómo te encuentras hoy en el Amor, Trabajo y lo que te preocupe.</li>
+                  <li>✅ <strong>Si hay pareja/ex de interés:</strong> Nombre completo y fecha de nacimiento (o signo) para auditar la conexión.</li>
+                </ul>
+              </Col>
+            </Row>
+
+            <div className="text-center mt-4">
+              <a
+                href={`https://wa.me/${whatsappNumber}?text=Hola%20Polux,%20ya%20realicé%20el%20pago%20de%20mi%20lectura.%20Aquí%20te%20adjunto%20mi%20comprobante%20y%20mis%20datos...`}
+                className="btn btn-success btn-lg mx-2 px-4 py-2"
+                target="_blank" rel="noopener noreferrer"
+              >
+                📲 Enviar Datos por WhatsApp
+              </a>
+              <a
+                href={`mailto:${email}?subject=Datos%20de%20mi%20Lectura%20de%20Tarot`}
+                className="btn btn-outline-light btn-lg mx-2 px-4 py-2"
+              >
+                📩 Enviar por Correo
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Modal de pago */}
