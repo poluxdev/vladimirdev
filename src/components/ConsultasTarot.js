@@ -16,9 +16,9 @@ const ConsultasTarot = () => {
       id: 'personalizada',
       title: 'LECTURA PERSONALIZADA',
       subtitle: '1 Pregunta · Video con respuesta directa',
-      price: 12.99,
+      price: 19.99,
       hotmart: "https://pay.hotmart.com/A105188223X",
-      paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/12.99USD",
+      paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/19.99USD",
       badge: 'POPULAR',
       benefits: [
         { icon: '🔮', text: 'Análisis profundo de tu pregunta' },
@@ -30,16 +30,32 @@ const ConsultasTarot = () => {
       id: 'general',
       title: 'LECTURA GENERAL COMPLETA',
       subtitle: 'Amor · Dinero · Laboral · Energías',
-      price: 19.99,
+      price: 29.99,
       hotmart: "https://pay.hotmart.com/M105290076W",
-      paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/19.99USD",
+      paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/29.99USD",
       badge: 'RECOMENDADO',
       benefits: [
         { icon: '🃏', text: 'Tirada amplia con múltiples cartas' },
         { icon: '💖', text: 'Bloques: Amor, Dinero y Laboral' },
         { icon: '✨', text: 'Lectura de energías actuales' },
-        { icon: '🎥', text: 'Video extendido y detallado' },
+        { icon: '🎥', text: 'Video claro y detallado' },
         { icon: '📿', text: 'Me tomo el tiempo para conectar con tu energía — entrega en menos de 24h' },
+      ]
+    },
+    {
+      id: 'carta_natal',
+      title: 'CARTA NATAL PERSONALIZADA',
+      subtitle: 'Planetas · Casas · Aspectos · Mapa de Vida',
+      price: 45.00,
+      hotmart: null, // Sin Hotmart activo por el momento
+      paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/45USD",
+      badge: 'PREMIUM',
+      benefits: [
+        { icon: '🌌', text: 'Estudio de tu mapa astral de nacimiento' },
+        { icon: '🪐', text: 'Análisis de Planetas, Casas y Aspectos claves' },
+        { icon: '🎯', text: 'Enfoque según las áreas que quieras profundizar' },
+        { icon: '🎥', text: 'Video HD con voz en off + Gráfico de tu Carta' },
+        { icon: '📿', text: 'Estudio previo y meticuloso de tu mapa astral' },
       ]
     }
   ];
@@ -73,80 +89,94 @@ const ConsultasTarot = () => {
           <div className="social-proof-bar d-inline-flex align-items-center gap-4 px-4 py-2 rounded-pill">
             <span className="social-proof-item">
               <span className="social-proof-icon">🎵</span>
-              <strong>+164K</strong> en TikTok
+              <strong>+167K</strong> en TikTok
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
               <span className="social-proof-icon">📘</span>
-              <strong>+90K</strong> en Facebook
+              <strong>+98K</strong> en Facebook
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
-              ✨ <strong>+254,000</strong>
+              ✨ <strong>+265,000</strong>
             </span>
           </div>
         </div>
 
         <h2 className="text-center text-white mb-2">Elige tu modalidad de lectura</h2>
         <p className="text-center text-white-50 mb-5">
-         
+          
         </p>
 
+        {/* Renderizado adaptado a 3 columnas en pantallas medianas/grandes */}
         <Row className="justify-content-center">
           {products.map((product) => (
-            <Col md={5} key={product.id} className="mb-4">
-              <div className={`price-card-featured mx-auto ${product.id === 'general' ? 'border-gold' : ''}`}>
-                <div className="badge-popular">{product.badge}</div>
-                <h2 className="card-title-main">{product.title}</h2>
-                <p className="card-subtitle-main">{product.subtitle}</p>
+            <Col lg={4} md={6} key={product.id} className="mb-4">
+              <div className={`price-card-featured mx-auto h-100 d-flex flex-column justify-content-between ${product.id === 'general' ? 'border-gold' : ''}`}>
+                <div>
+                  <div className="badge-popular">{product.badge}</div>
+                  <h2 className="card-title-main">{product.title}</h2>
+                  <p className="card-subtitle-main">{product.subtitle}</p>
 
-                <ul className="benefits-list-new">
-                  {product.benefits.map((b, i) => (
-                    <li key={i}><span>{b.icon}</span> {b.text}</li>
-                  ))}
-                </ul>
-
-                <div className="price-display">
-                  <span className="currency">$</span>
-                  <span className="amount">{product.price}</span>
-                  <span className="unit">USD</span>
+                  <ul className="benefits-list-new">
+                    {product.benefits.map((b, i) => (
+                      <li key={i}><span>{b.icon}</span> {b.text}</li>
+                    ))}
+                  </ul>
                 </div>
 
-                <Button
-                  className="btn-main-cta w-100 mb-2"
-                  onClick={() => openPaymentModal(product)}
-                >
-                  RESERVAR LECTURA POR ${product.price} USD
-                </Button>
+                <div>
+                  <div className="price-display">
+                    <span className="currency">$</span>
+                    <span className="amount">{product.price}</span>
+                    <span className="unit">USD</span>
+                  </div>
+
+                  <Button
+                    className="btn-main-cta w-100 mb-2"
+                    onClick={() => openPaymentModal(product)}
+                  >
+                    RESERVAR POR ${product.price} USD
+                  </Button>
+                </div>
               </div>
             </Col>
           ))}
         </Row>
 
         {/* Bloque de autoridad + confianza — DETALLES DE DATOS ACTUALIZADOS */}
-        <div className="price-card-featured mx-auto mt-4 text-start" style={{ maxWidth: '800px' }}>
+        <div className="price-card-featured mx-auto mt-4 text-start" style={{ maxWidth: '900px' }}>
           <div className="post-payment-warning p-3">
             <h5 className="text-warning text-center mb-3">⚠️ IMPORTANTE: REQUISITOS DESPUÉS DE TU PAGO</h5>
             <p className="text-white-50 text-center mb-4">
-              Para poder canalizar tu energía de forma exacta y grabar tu video, envíame tu comprobante junto con los siguientes datos según tu lectura elegida:
+              Para poder canalizar tu energía de forma exacta y preparar tu lectura, envíame tu comprobante junto con tus datos según la opción elegida:
             </p>
             
             <Row className="g-3">
-              <Col md={6} className="border-end border-secondary-subtle">
-                <h6 className="text-info">🔮 Si elegiste: LECTURA PERSONALIZADA</h6>
+              <Col md={4} className="border-end border-secondary-subtle">
+                <h6 className="text-info">🔮 LECTURA PERSONALIZADA</h6>
                 <ul className="text-white small list-unstyled ps-2">
-                  <li>✅ <strong>Tu nombre completo</strong> y fecha de nacimiento.</li>
-                  <li>✅ <strong>Tu pregunta concreta</strong> bien detallada con el contexto actual de la situación.</li>
-                  <li>✅ <strong>Si involucra a otra persona:</strong> Su nombre completo, fecha de nacimiento (o signo zodiacal).</li>
+                  <li>✅ <strong>Nombre completo</strong> y fecha de nacimiento.</li>
+                  <li>✅ <strong>Pregunta concreta</strong> con contexto.</li>
+                  <li>✅ <strong>Si involucra a alguien:</strong> Su nombre y fecha/signo.</li>
                 </ul>
               </Col>
               
-              <Col md={6}>
-                <h6 className="text-info">🃏 Si elegiste: LECTURA GENERAL COMPLETA</h6>
+              <Col md={4} className="border-end border-secondary-subtle">
+                <h6 className="text-info">🃏 LECTURA GENERAL COMPLETA</h6>
                 <ul className="text-white small list-unstyled ps-2">
-                  <li>✅ <strong>Tu nombre completo</strong> y fecha de nacimiento.</li>
-                  <li>✅ <strong>Breve resumen</strong> de cómo te encuentras hoy en el Amor, Trabajo y lo que te preocupe.</li>
-                  <li>✅ <strong>Si hay pareja/ex de interés:</strong> Nombre completo y fecha de nacimiento (o signo) para auditar la conexión.</li>
+                  <li>✅ <strong>Nombre completo</strong> y fecha de nacimiento.</li>
+                  <li>✅ <strong>Resumen</strong> de tu situación en Amor, Trabajo y Salud.</li>
+                  <li>✅ <strong>Si hay pareja/ex:</strong> Su nombre y fecha/signo.</li>
+                </ul>
+              </Col>
+
+              <Col md={4}>
+                <h6 className="text-info">🌌 CARTA NATAL</h6>
+                <ul className="text-white small list-unstyled ps-2">
+                  <li>✅ <strong>Nombre completo.</strong></li>
+                  <li>✅ <strong>Fecha, hora exacta y ciudad/país</strong> de nacimiento.</li>
+                  <li>✅ <strong>Tema o área específica</strong> que desees profundizar.</li>
                 </ul>
               </Col>
             </Row>
@@ -160,7 +190,7 @@ const ConsultasTarot = () => {
                 📲 Enviar Datos por WhatsApp
               </a>
               <a
-                href={`mailto:${email}?subject=Datos%20de%20mi%20Lectura%20de%20Tarot`}
+                href={`mailto:${email}?subject=Datos%20de%20mi%20Lectura`}
                 className="btn btn-outline-light btn-lg mx-2 px-4 py-2"
               >
                 📩 Enviar por Correo
@@ -204,14 +234,21 @@ const ConsultasTarot = () => {
                 <Col md={6}>
                   <h6 className="text-warning mb-3">🌍 Internacional ({selectedProduct.price} USD)</h6>
                   <div className="d-grid gap-2">
-                    <Button
-                      href={selectedProduct.hotmart}
-                      target="_blank"
-                      className="btn-primary"
-                      onClick={() => trackEvent('click_hotmart', selectedProduct.id, selectedProduct.price)}
-                    >
-                      💳 Tarjeta de Crédito (Hotmart)
-                    </Button>
+                    {selectedProduct.hotmart ? (
+                      <Button
+                        href={selectedProduct.hotmart}
+                        target="_blank"
+                        className="btn-primary"
+                        onClick={() => trackEvent('click_hotmart', selectedProduct.id, selectedProduct.price)}
+                      >
+                        💳 Tarjeta de Crédito (Hotmart)
+                      </Button>
+                    ) : (
+                      <Button variant="secondary" disabled>
+                        💳 Hotmart (No disponible para esta opción)
+                      </Button>
+                    )}
+                    
                     <Button
                       variant="primary"
                       href={selectedProduct.paypal}
