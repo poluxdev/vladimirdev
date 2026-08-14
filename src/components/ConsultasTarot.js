@@ -47,7 +47,7 @@ const ConsultasTarot = () => {
       title: 'CARTA NATAL PERSONALIZADA',
       subtitle: 'Planetas · Casas · Aspectos · Mapa de Vida',
       price: 45.00,
-      hotmart: null, // Sin Hotmart activo por el momento
+      hotmart: "https://pay.hotmart.com/Y107132776S",
       paypal: "https://www.paypal.com/paypalme/vladimirGarciaL/45USD",
       badge: 'PREMIUM',
       benefits: [
@@ -89,16 +89,16 @@ const ConsultasTarot = () => {
           <div className="social-proof-bar d-inline-flex align-items-center gap-4 px-4 py-2 rounded-pill">
             <span className="social-proof-item">
               <span className="social-proof-icon">🎵</span>
-              <strong>+167K</strong> en TikTok
+              <strong>+178K</strong> en TikTok
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
               <span className="social-proof-icon">📘</span>
-              <strong>+98K</strong> en Facebook
+              <strong>+104K</strong> en Facebook
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
-              ✨ <strong>+265,000</strong>
+              ✨ <strong>+282,000</strong>
             </span>
           </div>
         </div>
