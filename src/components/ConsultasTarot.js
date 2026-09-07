@@ -14,7 +14,7 @@ const ConsultasTarot = () => {
   const products = [
     {
       id: 'personalizada',
-      title: 'LECTURA PERSONALIZADA',
+      title: 'LECTURA PERSONALIZADA ENFOCADA',
       subtitle: '1 Pregunta · Video con respuesta directa',
       price: 19.99,
       hotmart: "https://pay.hotmart.com/A105188223X",
@@ -89,16 +89,16 @@ const ConsultasTarot = () => {
           <div className="social-proof-bar d-inline-flex align-items-center gap-4 px-4 py-2 rounded-pill">
             <span className="social-proof-item">
               <span className="social-proof-icon">🎵</span>
-              <strong>+178K</strong> en TikTok
+              <strong>+201K</strong> en TikTok
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
               <span className="social-proof-icon">📘</span>
-              <strong>+104K</strong> en Facebook
+              <strong>+120K</strong> en Facebook
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
-              ✨ <strong>+282,000</strong>
+              ✨ <strong>+321,000</strong>
             </span>
           </div>
         </div>
@@ -154,7 +154,7 @@ const ConsultasTarot = () => {
             
             <Row className="g-3">
               <Col md={4} className="border-end border-secondary-subtle">
-                <h6 className="text-info">🔮 LECTURA PERSONALIZADA</h6>
+                <h6 className="text-info">🔮 LECTURA PERSONALIZADA ENFOCADA</h6>
                 <ul className="text-white small list-unstyled ps-2">
                   <li>✅ <strong>Nombre completo</strong> y fecha de nacimiento.</li>
                   <li>✅ <strong>Pregunta concreta</strong> con contexto.</li>
