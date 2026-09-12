@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaInstagram, FaTelegramPlane, FaYoutube, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaYoutube, FaFacebook } from 'react-icons/fa'; // Se eliminó FaTelegramPlane
 import tiktokLogo from '../images/sigueme.png';
 import './Contact.css';
 
@@ -44,13 +44,14 @@ const Contact = () => {
             </a>
           </Col>
 
-          {/* Telegram */}
+          {/* Telegram — Desactivado temporalmente
           <Col xs={6} md={4} lg={2} className="text-center mb-4">
             <a href="https://t.me/poluxtarot" target="_blank" rel="noopener noreferrer" className="social-link telegram">
               <FaTelegramPlane className="social-icon-fa" />
               <p>Telegram</p>
             </a>
           </Col>
+          */}
 
         </Row>
       </Container>
