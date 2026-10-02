@@ -46,7 +46,7 @@ const Hero = () => {
             </h1>
             
             <p className="hero-description">
-              No es una lectura genérica. Es un mensaje directo del <br />
+              Un Mensaje directo del <br />
               <strong>Tarot Evolutivo en video</strong>, personalizado para ti.
             </p>
             

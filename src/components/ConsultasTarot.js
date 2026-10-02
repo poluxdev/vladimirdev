@@ -89,16 +89,16 @@ const ConsultasTarot = () => {
           <div className="social-proof-bar d-inline-flex align-items-center gap-4 px-4 py-2 rounded-pill">
             <span className="social-proof-item">
               <span className="social-proof-icon">🎵</span>
-              <strong>+201K</strong> en TikTok
+              <strong>+221K</strong> en TikTok
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
               <span className="social-proof-icon">📘</span>
-              <strong>+120K</strong> en Facebook
+              <strong>+133K</strong> en Facebook
             </span>
             <span className="social-proof-divider">·</span>
             <span className="social-proof-item">
-              ✨ <strong>+321,000</strong>
+              ✨ <strong>+354,000</strong>
             </span>
           </div>
         </div>
